@@ -1,6 +1,5 @@
-// app/page.tsx
 import BeritaSection from "@/components/landing/berita-section";
-import HeroSection from "@/components/landing/hero-section"; // BENAR, sesuai file
+import HeroSection from "@/components/landing/hero-section";
 import SambutanSection from "@/components/landing/sambutan-section";
 import Footer from "@/components/layouts/footer";
 import Header from "@/components/layouts/header";
