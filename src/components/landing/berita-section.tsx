@@ -63,12 +63,12 @@ const sideNews: NewsItem[] = [
 
 export default function BeritaSection() {
   return (
-    <section className="py-16">
-        <h2 className="mx-5 text-2xl font-bold text-foreground">
-          Berita Terbaru
-        </h2>
-      <div className="container mx-auto grid grid-cols-1 gap-3 px-4 lg:grid-cols-3">
-        
+    <section className="py-16 container mx-auto px-6">
+      <h2 className="text-2xl font-bold text-foreground">
+        Berita Terbaru
+      </h2>
+      <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
+
         {/* Berita Utama */}
         <Card className="lg:col-span-2 rounded-xl overflow-hidden border-none shadow-lg">
           <div className="relative h-64 md:h-72 w-full">
