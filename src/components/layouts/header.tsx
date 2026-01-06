@@ -92,10 +92,13 @@ export default function Header() {
 
                   {/* Dropdown */}
                   <div
-                    className={`absolute right-0 top-full pt-2 ${
-                      desktopDropdown === idx ? "block" : "hidden"
-                    }`}
+                    className={`absolute right-0 top-full pt-2 hover:cursor-pointer transition-all duration-200 ease-out
+    ${desktopDropdown === idx
+                        ? "opacity-100 translate-y-0 visible"
+                        : "opacity-0 -translate-y-2 invisible"
+                      }`}
                   >
+
                     <div className="w-56 rounded-md border bg-white shadow-md">
                       {item.children.map((child) => (
                         <Link
@@ -160,6 +163,7 @@ export default function Header() {
           {nav.map((item, idx) =>
             item.children ? (
               <div key={item.label}>
+                {/* Trigger */}
                 <button
                   className="flex w-full items-center justify-between font-medium"
                   onClick={() =>
@@ -169,28 +173,34 @@ export default function Header() {
                   {item.label}
                   <ChevronDown
                     size={16}
-                    className={`transition ${
-                      mobileDropdown === idx ? "rotate-180" : ""
-                    }`}
+                    className={`transition-transform duration-200 ${mobileDropdown === idx ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
-                {mobileDropdown === idx && (
-                  <div className="mt-2 ml-2 flex flex-col gap-2 text-sm">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.label}
-                        href={child.href}
-                        onClick={() => {
-                          setMobileOpen(false);
-                          setMobileDropdown(null);
-                        }}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                {/* Animated Dropdown */}
+                <div
+                  className={`ml-2 mt-2 flex flex-col gap-2 text-sm overflow-hidden
+            transition-all duration-200 ease-out
+            ${mobileDropdown === idx
+                      ? "max-h-40 opacity-100 translate-y-0"
+                      : "max-h-0 opacity-0 -translate-y-1"
+                    }`}
+                >
+                  {item.children.map((child) => (
+                    <Link
+                      key={child.label}
+                      href={child.href}
+                      className="py-1"
+                      onClick={() => {
+                        setMobileOpen(false);
+                        setMobileDropdown(null);
+                      }}
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             ) : (
               <Link
