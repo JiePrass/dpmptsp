@@ -4,41 +4,108 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* ===== PALET WARNA BIRU FORMAL PEMERINTAH ===== */
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-200: #bfdbfe;
+  --primary-300: #93c5fd;
+  --primary-400: #60a5fa;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
+  --primary-800: #1e40af;
+  --primary-900: #1e3a8a;
+  --primary-950: #172554;
 
+  /* Biru resmi Indonesia - lebih gelap dan formal */
+  --indonesia-blue: #1e3a8a; /* Biru tua utama */
+  --indonesia-blue-light: #3b82f6;
+  --indonesia-blue-dark: #172554;
+
+  /* Merah putih sebagai aksen */
+  --indonesia-red: #dc2626;
+  --white: #ffffff;
+
+  /* Warna pendukung */
+  --gold-accent: #d97706; /* Untuk highlight */
+  --gray-blue: #475569; /* Untuk teks sekunder */
+
+  /* Warna netral untuk pendukung */
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+  --neutral-950: #020617;
+
+  /* Warna aksent */
+  --success: #059669;
+  --warning: #d97706;
+  --error: #dc2626;
+  --info: #0284c7;
+
+  /* ===== VARIABLES UTAMA DENGAN WARNA PEMERINTAH ===== */
   --font-sans: var(--font-outfit);
   --font-mono: var(--font-geist-mono);
   --radius: 0.625rem;
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  
+  /* Warna dasar */
+  --background: var(--white);
+  --foreground: var(--neutral-900);
+  
+  /* Card colors */
+  --card: var(--white);
+  --card-foreground: var(--neutral-900);
+  
+  /* Popover */
+  --popover: var(--white);
+  --popover-foreground: var(--neutral-900);
+  
+  /* Primary - menggunakan biru pemerintah */
+  --primary: var(--indonesia-blue); /* #1e3a8a */
+  --primary-foreground: var(--white);
+  
+  /* Secondary */
+  --secondary: var(--neutral-100);
+  --secondary-foreground: var(--neutral-900);
+  
+  /* Muted */
+  --muted: var(--neutral-100);
+  --muted-foreground: var(--neutral-600);
+  
+  /* Accent */
+  --accent: var(--neutral-100);
+  --accent-foreground: var(--neutral-900);
+  
+  /* Destructive */
+  --destructive: var(--error);
+  
+  /* Border & Input */
+  --border: var(--neutral-200);
+  --input: var(--neutral-200);
+  --ring: var(--indonesia-blue-light);
+  
+  /* Chart colors untuk visualisasi data */
+  --chart-1: var(--indonesia-blue);
+  --chart-2: var(--indonesia-blue-light);
+  --chart-3: var(--neutral-600);
+  --chart-4: var(--gold-accent);
+  --chart-5: var(--success);
+  
+  /* Sidebar */
+  --sidebar: var(--white);
+  --sidebar-foreground: var(--neutral-900);
+  --sidebar-primary: var(--indonesia-blue);
+  --sidebar-primary-foreground: var(--white);
+  --sidebar-accent: var(--neutral-100);
+  --sidebar-accent-foreground: var(--neutral-900);
+  --sidebar-border: var(--neutral-200);
+  --sidebar-ring: var(--indonesia-blue-light);
 }
 
 @theme inline {
@@ -46,6 +113,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-outfit);
   --font-mono: var(--font-geist-mono);
+  
+  /* Sidebar */
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -54,11 +123,15 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
+  
+  /* Chart */
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  
+  /* UI Components */
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -75,6 +148,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  
+  /* Border Radius */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -90,73 +165,65 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code, pre {
+code,
+pre {
   font-family: var(--font-mono);
 }
 
+/* ===== DARK MODE ===== */
 .dark {
-
-  --background: oklch(0.145 0 0);
-
-  --foreground: oklch(0.985 0 0);
-
-  --card: oklch(0.205 0 0);
-
-  --card-foreground: oklch(0.985 0 0);
-
-  --popover: oklch(0.205 0 0);
-
-  --popover-foreground: oklch(0.985 0 0);
-
-  --primary: oklch(0.922 0 0);
-
-  --primary-foreground: oklch(0.205 0 0);
-
-  --secondary: oklch(0.269 0 0);
-
-  --secondary-foreground: oklch(0.985 0 0);
-
-  --muted: oklch(0.269 0 0);
-
-  --muted-foreground: oklch(0.708 0 0);
-
-  --accent: oklch(0.269 0 0);
-
-  --accent-foreground: oklch(0.985 0 0);
-
-  --destructive: oklch(0.704 0.191 22.216);
-
-  --border: oklch(1 0 0 / 10%);
-
-  --input: oklch(1 0 0 / 15%);
-
-  --ring: oklch(0.556 0 0);
-
-  --chart-1: oklch(0.488 0.243 264.376);
-
-  --chart-2: oklch(0.696 0.17 162.48);
-
-  --chart-3: oklch(0.769 0.188 70.08);
-
-  --chart-4: oklch(0.627 0.265 303.9);
-
-  --chart-5: oklch(0.645 0.246 16.439);
-
-  --sidebar: oklch(0.205 0 0);
-
-  --sidebar-foreground: oklch(0.985 0 0);
-
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-
-  --sidebar-accent: oklch(0.269 0 0);
-
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-
-  --sidebar-border: oklch(1 0 0 / 10%);
-
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Warna dasar */
+  --background: var(--neutral-900);
+  --foreground: var(--neutral-50);
+  
+  /* Card colors */
+  --card: var(--neutral-800);
+  --card-foreground: var(--neutral-50);
+  
+  /* Popover */
+  --popover: var(--neutral-800);
+  --popover-foreground: var(--neutral-50);
+  
+  /* Primary - lebih terang di dark mode */
+  --primary: var(--indonesia-blue-light);
+  --primary-foreground: var(--neutral-900);
+  
+  /* Secondary */
+  --secondary: var(--neutral-700);
+  --secondary-foreground: var(--neutral-50);
+  
+  /* Muted */
+  --muted: var(--neutral-800);
+  --muted-foreground: var(--neutral-400);
+  
+  /* Accent */
+  --accent: var(--neutral-700);
+  --accent-foreground: var(--neutral-50);
+  
+  /* Destructive */
+  --destructive: #ef4444;
+  
+  /* Border & Input */
+  --border: var(--neutral-700);
+  --input: var(--neutral-700);
+  --ring: var(--indonesia-blue-light);
+  
+  /* Chart colors untuk dark mode */
+  --chart-1: var(--indonesia-blue-light);
+  --chart-2: var(--primary-500);
+  --chart-3: var(--neutral-500);
+  --chart-4: var(--warning);
+  --chart-5: var(--success);
+  
+  /* Sidebar */
+  --sidebar: var(--neutral-800);
+  --sidebar-foreground: var(--neutral-50);
+  --sidebar-primary: var(--indonesia-blue-light);
+  --sidebar-primary-foreground: var(--neutral-900);
+  --sidebar-accent: var(--neutral-700);
+  --sidebar-accent-foreground: var(--neutral-50);
+  --sidebar-border: var(--neutral-700);
+  --sidebar-ring: var(--indonesia-blue-light);
 }
 
 @layer base {
@@ -165,5 +232,38 @@ code, pre {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* ===== UTILITY CLASSES TAMBAHAN ===== */
+@layer utilities {
+  .bg-government-primary {
+    background-color: var(--indonesia-blue);
+  }
+  
+  .text-government-primary {
+    color: var(--indonesia-blue);
+  }
+  
+  .border-government {
+    border-color: var(--indonesia-blue);
+  }
+  
+  .bg-government-gradient {
+    background: linear-gradient(135deg, var(--indonesia-blue) 0%, var(--indonesia-blue-dark) 100%);
+  }
+  
+  .bg-indonesia-flag {
+    background: linear-gradient(90deg, var(--indonesia-red) 50%, var(--white) 50%);
+  }
+  
+  .shadow-government {
+    box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.1), 0 2px 4px -1px rgba(30, 58, 138, 0.06);
+  }
+  
+  /* Untuk aksesibilitas - kontras tinggi */
+  .contrast-high {
+    --primary: var(--indonesia-blue-dark);
+    --primary-foreground: var(--white);
   }
 }
