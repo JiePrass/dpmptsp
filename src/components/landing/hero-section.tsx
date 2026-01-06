@@ -194,7 +194,7 @@ export default function HeroSection() {
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40 z-10"></div>
 
-      <div className="relative z-20 px-4 pt-24 pb-12 md:pt-32 md:pb-16">
+      <div className="relative z-20 px-4 pt-24 pb-60 md:pt-32 md:pb-64">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
           <div className="text-center mt-20 mb-12 px-4">
@@ -204,12 +204,12 @@ export default function HeroSection() {
             >
               Selamat datang di website
             </Badge>
-            <h1 className="text-4xl lg:text-4xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-2xl lg:text-5xl font-bold text-white leading-tight mb-6">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-100 to-white">
                 Dinas Penanaman Modal
               </span>
               <br />
-              <span className="text-3xl md:text-4xl  font-bold">
+              <span className="text-2xl md:text-5xl  font-bold">
                 dan Pelayanan Terpadu Satu Pintu
               </span>
             </h1>
@@ -219,7 +219,7 @@ export default function HeroSection() {
           </div>
 
           {/* Website Shortcuts Section */}
-          <div className="bg-white/10 backdrop-blur-xl px-20 rounded-4xl p-6 md:p-8 border border-white/20 shadow-2xl shadow-black/30">
+          <div className="bg-white/10 backdrop-blur-xl px-4 rounded-4xl p-6 md:p-8 border border-white/20 shadow-2xl shadow-black/30">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
               <div>
                 <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
@@ -331,7 +331,7 @@ export default function HeroSection() {
           </div>
 
           {/* Stats or Additional Info */}
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3 text-center">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
               <p className="text-2xl md:text-3xl font-bold text-white">17+</p>
               <p className="text-white/80 text-sm">Layanan Digital</p>
@@ -344,28 +344,15 @@ export default function HeroSection() {
               <p className="text-2xl md:text-3xl font-bold text-white">100%</p>
               <p className="text-white/80 text-sm">Transparan</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <p className="text-2xl md:text-3xl font-bold text-white">1 Pintu</p>
-              <p className="text-white/80 text-sm">Pelayanan Terpadu</p>
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? "bg-white w-8 md:w-10"
-                : "bg-white/50 hover:bg-white/80"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+      <div className="absolute bottom-0 left-0 w-full h-40 md:h-60 bg-gradient-to-t from-white via-white/80 to-transparent z-20 pointer-events-none"></div>
+      
+      <div className="absolute bottom-0 left-0 w-full h-48 md:h-72 z-20 pointer-events-none">
+        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-white/95 via-white/50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-white/30 blur-sm opacity-80"></div>
       </div>
     </section>
   );
