@@ -198,7 +198,7 @@ export default function HeroSection() {
           </div>
 
           {/* Website Shortcuts Section */}
-          <div className="bg-white/10 backdrop-blur-xl p-8  rounded-4xl mx-15 border border-white/20 shadow-2xl shadow-black/30">
+          <div className="bg-white/10 backdrop-blur-xl p-8  rounded-4xl border border-white/20 shadow-2xl shadow-black/30">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
               <div>
                 <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
