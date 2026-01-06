@@ -80,7 +80,7 @@ export default function HeroSection() {
     const currentValue = form.getValues("query");
     const newValue = currentValue ? `${currentValue}, ${shortcut}` : shortcut;
     form.setValue("query", newValue);
-    
+
     // Highlight shortcut yang dipilih
     if (!selectedShortcuts.includes(shortcut)) {
       setSelectedShortcuts([...selectedShortcuts, shortcut]);
@@ -90,7 +90,7 @@ export default function HeroSection() {
   const handleSearch = (data: SearchFormValues) => {
     // Handle search logic here
     console.log("Searching for:", data.query, "in category:", data.category);
-    
+
     // Reset selected shortcuts setelah search
     setSelectedShortcuts([]);
   };
@@ -98,14 +98,14 @@ export default function HeroSection() {
   const removeShortcut = (shortcut: string, e: React.MouseEvent) => {
     e.stopPropagation();
     setSelectedShortcuts(selectedShortcuts.filter(s => s !== shortcut));
-    
+
     // Hapus dari query jika ada
     const currentValue = form.getValues("query");
     const updatedValue = currentValue
       .split(', ')
       .filter(item => item !== shortcut)
       .join(', ');
-    
+
     form.setValue("query", updatedValue);
   };
 
@@ -115,9 +115,8 @@ export default function HeroSection() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100 z-0" : "opacity-0 z-[-1]"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 z-0" : "opacity-0 z-[-1]"
+            }`}
         >
           <Image
             src={slide.src}
@@ -232,11 +231,10 @@ export default function HeroSection() {
                               ? "default"
                               : "outline"
                           }
-                          className={`cursor-pointer px-3 py-2 text-sm backdrop-blur-sm transition-all duration-300 ${
-                            selectedShortcuts.includes(shortcut)
-                              ? "bg-white/30 text-white border-white/40"
-                              : "bg-white/10 text-white border-white/20 hover:bg-white/20 hover:border-white/40"
-                          }`}
+                          className={`cursor-pointer px-3 py-2 text-sm backdrop-blur-sm transition-all duration-300 ${selectedShortcuts.includes(shortcut)
+                            ? "bg-white/30 text-white border-white/40"
+                            : "bg-white/10 text-white border-white/20 hover:bg-white/20 hover:border-white/40"
+                            }`}
                           onClick={() => handleShortcutClick(shortcut)}
                         >
                           {shortcut}
@@ -253,7 +251,7 @@ export default function HeroSection() {
                         </Badge>
                       ))}
                     </div>
-                    
+
                     {/* Selected Shortcuts Display */}
                     {selectedShortcuts.length > 0 && (
                       <div className="mt-3 pt-3 border-t border-white/20">
