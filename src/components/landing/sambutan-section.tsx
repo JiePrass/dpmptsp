@@ -6,7 +6,7 @@ export default function SambutanSection() {
     return (
         <section className="w-full py-16">
             <div className="container mx-auto px-4">
-                <Card className="overflow-hidden rounded-3xl border-none shadow-lg">
+                <Card className="overflow-hidden rounded-3xl border-none">
                     <div className="grid grid-cols-1 md:grid-cols-3">
                         {/* Left Profile */}
                         <div className="relative flex flex-col items-center justify-center text-center text-white">
