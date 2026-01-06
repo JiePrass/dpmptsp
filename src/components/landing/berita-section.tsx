@@ -64,11 +64,11 @@ const sideNews: NewsItem[] = [
 export default function BeritaSection() {
   return (
     <section className="py-16">
-      <div className="mb-10 text-center">
+      <div className="mb-10 text-center"> 
         <h2 className="mb-4 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
           Berita & Informasi Terbaru
         </h2>
-        <p className="mx-10  max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        <p className="text-lg leading-relaxed text-muted-foreground">
           Informasi terkini seputar pelayanan perizinan, pembaruan sistem, dan
           kegiatan DPMPTSP Kota Bogor
         </p>

@@ -2,8 +2,6 @@ import BeritaSection from "@/components/landing/berita-section";
 import FAQSection from "@/components/landing/faq-section";
 import HeroSection from "@/components/landing/hero-section";
 import SambutanSection from "@/components/landing/sambutan-section";
-import Footer from "@/components/layouts/footer";
-import Header from "@/components/layouts/header";
 
 
 export default function Home() {

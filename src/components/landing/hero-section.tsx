@@ -29,129 +29,106 @@ import { Badge } from "@/components/ui/badge";
 
 const slides = [
   { src: "/images/hersec.jpg", alt: "Gedung pemerintahan modern" },
-  
 ];
 
 // Warna konsisten berdasarkan tema biru pemerintah
 const websiteShortcuts = [
   {
-    title: "Website",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal",
-    icon: Globe,
-    color: "#1e3a8a", // Biru pemerintah utama
-    description: "Portal utama"
-  },
-  {
     title: "Perizinan Online",
     url: "https://perizinan.kotabogor.go.id/izin2/index.php/account/login",
     icon: FileCheck,
-    color: "#2563eb", // Biru pemerintah lebih terang
-    description: "Ajukan perizinan"
+
+    description: "Ajukan perizinan",
   },
   {
     title: "OSS RBA",
     url: "https://oss.go.id/",
     icon: ShieldCheck,
-    color: "#1d4ed8", // Biru pemerintah
-    description: "Online Single Submission"
+    description: "Online Single Submission",
   },
   {
     title: "SIMBG",
     url: "https://simbg.pu.go.id/",
     icon: Building,
-    color: "#1e40af", // Biru pemerintah
-    description: "Sistem Informasi"
+    description: "Sistem Informasi",
   },
   {
     title: "MPP",
     url: "https://mpp.kotabogor.go.id/",
     icon: Landmark,
-    color: "#172554", // Biru pemerintah gelap
-    description: "Mal Pelayanan Publik"
+    description: "Mal Pelayanan Publik",
   },
   {
     title: "Jenis & Syarat",
     url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/i/2",
     icon: FileText,
-    color: "#3b82f6", // Biru pemerintah terang
-    description: "Informasi persyaratan"
+    description: "Informasi persyaratan",
   },
   {
     title: "Survey Persepsi",
     url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/ipu/5/1",
     icon: ClipboardCheck,
-    color: "#1e3a8a", // Biru pemerintah utama
-    description: "SPAK"
+    description: "SPAK",
   },
   {
     title: "Info Perizinan",
     url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/i/1",
     icon: Eye,
-    color: "#2563eb", // Biru pemerintah
-    description: "Informasi lengkap"
+    description: "Informasi lengkap",
   },
   {
     title: "Tracking Berkas",
     url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/2",
     icon: Search,
-    color: "#1d4ed8", // Biru pemerintah
-    description: "Lacak berkas"
+    description: "Lacak berkas",
   },
   {
     title: "Regulasi",
     url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/i/3",
     icon: BookOpen,
-    color: "#1e40af", // Biru pemerintah
-    description: "Peraturan terkait"
+    description: "Peraturan terkait",
   },
   {
     title: "Kunjungan",
     url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/6",
     icon: Users,
-    color: "#172554", // Biru pemerintah gelap
-    description: "Data kunjungan"
+    description: "Data kunjungan",
   },
   {
     title: "Bantuan",
     url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/5",
     icon: HelpCircle,
-    color: "#3b82f6", // Biru pemerintah terang
-    description: "Pusat bantuan"
+    description: "Pusat bantuan",
   },
   {
     title: "Realisasi Investasi",
     url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/p/2",
     icon: TrendingUp,
-    color: "#1e3a8a", // Biru pemerintah utama
-    description: "Data investasi"
+    description: "Data investasi",
   },
   {
     title: "Promosi Daerah",
     url: "https://perizinan.kotabogor.go.id/portal_22/index.php/landing/index_umkm",
     icon: Megaphone,
-    color: "#2563eb", // Biru pemerintah
-    description: "UMKM & Promosi"
+    description: "UMKM & Promosi",
   },
   {
     title: "SABET SIMASDA",
     url: "https://simasda.kotabogor.go.id/sewa/aset/manfaat",
     icon: Landmark,
-    color: "#1d4ed8", // Biru pemerintah
-    description: "Sewa Aset Elektronik"
+    description: "Sewa Aset Elektronik",
   },
   {
     title: "Call Center",
     url: "https://api.whatsapp.com/send/?phone=08119004440&text&type=phone_number&app_absent=0",
     icon: Phone,
-    color: "#1e40af", // Biru pemerintah
-    description: "WhatsApp"
+    description: "WhatsApp",
   },
   {
     title: "PPID",
     url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/7",
     icon: MessageCircle,
-    color: "#172554", // Biru pemerintah gelap
-    description: "Informasi Publik"
+    description: "Informasi Publik",
   },
 ];
 
@@ -169,7 +146,9 @@ export default function HeroSection() {
   }, []);
 
   // Tentukan berapa banyak shortcut yang ditampilkan
-  const shortcutsToShow = showAllShortcuts ? websiteShortcuts : websiteShortcuts.slice(0, 6);
+  const shortcutsToShow = showAllShortcuts
+    ? websiteShortcuts
+    : websiteShortcuts.slice(0, 6);
 
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 to-blue-900">
@@ -198,8 +177,8 @@ export default function HeroSection() {
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
           <div className="text-center mt-20 mb-12 px-4">
-            <Badge 
-              variant="secondary" 
+            <Badge
+              variant="secondary"
               className="mb-4 text-sm md:text-base px-4 py-1 bg-white/20 text-white border-none"
             >
               Selamat datang di website
@@ -219,7 +198,7 @@ export default function HeroSection() {
           </div>
 
           {/* Website Shortcuts Section */}
-          <div className="bg-white/10 backdrop-blur-xl px-4 rounded-4xl p-6 md:p-8 border border-white/20 shadow-2xl shadow-black/30">
+          <div className="bg-white/10 backdrop-blur-xl p-8  rounded-4xl mx-15 border border-white/20 shadow-2xl shadow-black/30">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
               <div>
                 <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
@@ -229,12 +208,13 @@ export default function HeroSection() {
                   Pilih layanan yang Anda butuhkan
                 </p>
               </div>
-              
+
               {/* Counter */}
               <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 border border-white/20">
                 <Grid className="w-4 h-4 text-white" />
                 <span className="text-white font-semibold">
-                  {showAllShortcuts ? websiteShortcuts.length : 6} dari {websiteShortcuts.length} layanan
+                  {showAllShortcuts ? websiteShortcuts.length : 6} dari{" "}
+                  {websiteShortcuts.length} layanan
                 </span>
               </div>
             </div>
@@ -252,20 +232,20 @@ export default function HeroSection() {
                     onMouseEnter={() => setIsHovered(index)}
                     onMouseLeave={() => setIsHovered(null)}
                   >
-                    <div 
-                      className="h-full rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-white/20 hover:border-white/40"
-                      style={{ 
-                        backgroundColor: item.color,
+                    <div
+                      className="h-full rounded-2xl overflow-hidden bg-primary shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-white/20 hover:border-white/40"
+                      style={{
                         opacity: isHovered === index ? 0.95 : 1,
-                        transform: isHovered === index ? 'translateY(-8px)' : 'translateY(0)'
+                        transform:
+                          isHovered === index
+                            ? "translateY(-8px)"
+                            : "translateY(0)",
                       }}
                     >
                       <div className="p-4 md:p-5 h-full flex flex-col items-center justify-center text-center">
                         {/* Icon Container */}
                         <div className="mb-3 md:mb-4 p-3 rounded-xl bg-white/20 backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300">
-                          <IconComponent 
-                            className="w-7 h-7 md:w-8 md:h-8 text-white group-hover:text-white/95 transition-colors duration-300"
-                          />
+                          <IconComponent className="w-7 h-7 md:w-8 md:h-8 text-white group-hover:text-white/95 transition-colors duration-300" />
                         </div>
 
                         {/* Content */}
@@ -320,12 +300,20 @@ export default function HeroSection() {
             )}
 
             {/* Footer Note */}
-            <div className={`mt-8 pt-6 border-t border-white/20 ${showAllShortcuts ? 'opacity-75' : ''}`}>
+            <div
+              className={`mt-8 pt-6 border-t border-white/20 ${
+                showAllShortcuts ? "opacity-75" : ""
+              }`}
+            >
               <p className="text-center text-white/90 text-sm md:text-base">
-                <span className="text-white font-semibold">{websiteShortcuts.length} layanan</span> tersedia untuk memudahkan Anda
+                <span className="text-white font-semibold">
+                  {websiteShortcuts.length} layanan
+                </span>{" "}
+                tersedia untuk memudahkan Anda
               </p>
               <p className="text-center text-white/70 text-xs md:text-sm mt-1">
-                Klik salah satu kartu untuk mengakses langsung ke layanan terkait
+                Klik salah satu kartu untuk mengakses langsung ke layanan
+                terkait
               </p>
             </div>
           </div>
@@ -349,7 +337,7 @@ export default function HeroSection() {
       </div>
 
       <div className="absolute bottom-0 left-0 w-full h-40 md:h-60 bg-gradient-to-t from-white via-white/80 to-transparent z-20 pointer-events-none"></div>
-      
+
       <div className="absolute bottom-0 left-0 w-full h-48 md:h-72 z-20 pointer-events-none">
         <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-white/95 via-white/50 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-white/30 blur-sm opacity-80"></div>
