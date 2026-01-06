@@ -1,4 +1,3 @@
-
 export default function PerencanaanDanLaporan() {
-<h1>Tentang Kami Page</h1>
+    <h1>Tentang Kami Page</h1>
 }   
