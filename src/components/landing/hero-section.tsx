@@ -29,8 +29,7 @@ import { Badge } from "@/components/ui/badge";
 
 const slides = [
   { src: "/images/hersec.jpg", alt: "Gedung pemerintahan modern" },
-  { src: "/images/hersec1.webp", alt: "Kantor pemerintahan" },
-  { src: "/images/hersec2.jpg", alt: "Tim kerja pemerintahan" },
+  
 ];
 
 // Warna konsisten berdasarkan tema biru pemerintah
@@ -205,25 +204,25 @@ export default function HeroSection() {
             >
               Selamat datang di website
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-4xl lg:text-4xl font-bold text-white leading-tight mb-6">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-100 to-white">
                 Dinas Penanaman Modal
               </span>
               <br />
-              <span className="text-3xl md:text-5xl lg:text-6xl font-bold">
+              <span className="text-3xl md:text-4xl  font-bold">
                 dan Pelayanan Terpadu Satu Pintu
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-light">
+            <p className="text-xl md:text-xl text-gray-200 max-w-3xl mx-auto font-light">
               Melayani masyarakat dengan profesional, transparan, dan akuntabel
             </p>
           </div>
 
           {/* Website Shortcuts Section */}
-          <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-white/20 shadow-2xl shadow-black/30">
+          <div className="bg-white/10 backdrop-blur-xl px-20 rounded-4xl p-6 md:p-8 border border-white/20 shadow-2xl shadow-black/30">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
                   Akses Cepat Layanan
                 </h2>
                 <p className="text-gray-200 text-lg">
