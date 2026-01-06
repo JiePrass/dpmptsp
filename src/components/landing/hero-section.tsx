@@ -31,9 +31,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
 const slides = [
-  { src: "/bg1.jpg", alt: "Gedung pemerintahan modern" },
-  { src: "/bg2.jpeg", alt: "Kantor pemerintahan" },
-  { src: "/bg3.webp", alt: "Tim kerja pemerintahan" },
+  { src: "/images/hersec.jpg", alt: "Gedung pemerintahan modern" },
+  { src: "/images/hersec1.webp", alt: "Kantor pemerintahan" },
+  { src: "/images/hersec2.jpg", alt: "Tim kerja pemerintahan" },
 ];
 
 const shortcuts = [
@@ -137,9 +137,9 @@ export default function HeroSection() {
             Selamat datang di website
           </p>
           <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight drop-shadow-lg">
-            <span className="text-primary">Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu</span>
+            <span className="text-background">Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu</span>
             <br />
-            <span className="text-white">Kota Bogor</span>
+            <span className="text-background">Kota Bogor</span>
           </h1>
           <p className="text-base md:text-lg font-medium text-white mb-8 drop-shadow-lg">
             Melayani masyarakat dengan profesional dan transparan
