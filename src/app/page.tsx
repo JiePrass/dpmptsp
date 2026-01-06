@@ -1,4 +1,5 @@
 import BeritaSection from "@/components/landing/berita-section";
+import FAQSection from "@/components/landing/faq-section";
 import HeroSection from "@/components/landing/hero-section";
 import SambutanSection from "@/components/landing/sambutan-section";
 import Footer from "@/components/layouts/footer";
@@ -13,6 +14,7 @@ export default function Home() {
         <HeroSection />
         <SambutanSection />
         <BeritaSection />
+        <FAQSection />
       </div>
       <Footer />
     </>
