@@ -35,6 +35,13 @@ const nav = [
       { label: "Informasi Publik", href: "/" },
     ],
   },
+  {
+    label: "Berita & Galeri",
+    children: [
+      { label: "Berita", href: "/" },
+      { label: "Galeri", href: "/" },
+    ],
+  },
 ];
 
 export default function Header() {

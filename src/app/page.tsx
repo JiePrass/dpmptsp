@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="flex min-h-screen flex-col font-sans bg-zinc-50 dark:bg-black">
+      <div className="flex min-h-screen flex-col font-sans bg-white dark:bg-black">
         <HeroSection />
         <SambutanSection />
         <BeritaSection />
