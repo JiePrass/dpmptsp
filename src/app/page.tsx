@@ -1,5 +1,12 @@
+import Header from "@/components/layouts/header";
+
 export default function Home() {
   return (
-    <div></div>
+    <>
+      <Header />
+      <div className="min-h-screen">
+        testing
+      </div>
+    </>
   );
 }
