@@ -1,5 +1,5 @@
 // app/page.tsx
-import HeroSection from "@/components/landing/herosection"; // BENAR, sesuai file
+import HeroSection from "@/components/landing/hero-section"; // BENAR, sesuai file
 
 
 export default function Home() {
