@@ -13,7 +13,6 @@ const slides = [
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Auto slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -27,9 +26,8 @@ export default function HeroSection() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100 z-0" : "opacity-0 z-[-1]"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 z-0" : "opacity-0 z-[-1]"
+            }`}
         >
           <Image
             src={slide.src}
@@ -62,7 +60,7 @@ export default function HeroSection() {
           {/* Form Pencarian */}
           <form className="max-w-2xl mx-auto">
             <div className="flex flex-col sm:flex-row gap-3 bg-blue-500/30 backdrop-blur-2xl rounded-2xl p-4 shadow-2xl shadow-black/20 border border-white/30">
-              
+
               {/* Pilihan Kategori */}
               <div className="flex-shrink-0">
                 <label htmlFor="search-category" className="sr-only">
