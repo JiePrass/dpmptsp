@@ -1,5 +1,6 @@
 // app/page.tsx
 import HeroSection from "@/components/landing/hero-section"; // BENAR, sesuai file
+import SambutanSection from "@/components/landing/sambutan";
 import Footer from "@/components/layouts/footer";
 import Header from "@/components/layouts/header";
 
@@ -18,6 +19,7 @@ export default function Home() {
             This is your main page content below the hero section.
           </p>
         </main>
+        <SambutanSection />
       </div>
       <Footer />
     </>
