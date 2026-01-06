@@ -8,13 +8,13 @@ import Header from "@/components/layouts/header";
 export default function Home() {
   return (
     <>
-      <Header />
+      
       <div className="flex min-h-screen flex-col font-sans bg-white dark:bg-black">
         <HeroSection />
         <SambutanSection />
         <BeritaSection />
       </div>
-      <Footer />
+      
     </>
   );
 }

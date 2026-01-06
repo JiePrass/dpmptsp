@@ -1,165 +1,191 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { MapPin, Phone, Mail, Clock, ChevronRight } from "lucide-react";
 
 export default function TentangKamiSection() {
+  const menuItems = [
+    { id: 1, title: "Kami", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/1" },
+    { id: 2, title: "Tugas Pokok Dan Fungsi", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/2" },
+    { id: 3, title: "Struktur Organisasi", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/3" },
+    { id: 4, title: "Penilaian/Penghargaan", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/4" },
+    { id: 5, title: "Perencanaan dan Pelaporan", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/5" },
+    { id: 6, title: "Maklumat Pelayanan", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/6" },
+  ];
+
   return (
-    <section className="w-full py-16 bg-gradient-to-b from-[#fff9c4] to-white">
-      <div className="container mx-auto px-4">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground">Tentang Kami</h1>
-          <div className="mt-2 h-1 w-16 rounded-full bg-primary" />
+    <section className="w-full py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header Section */}
+        <div className="mb-12 mt-10 text-center">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Tentang Kami</h1>
+          <div className="w-24 h-1.5 bg-blue-600 mx-auto rounded-full" />
+          <p className="text-gray-600 mt-6 max-w-3xl mx-auto">
+            Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu Kota Bogor 
+            berkomitmen memberikan pelayanan perizinan yang cepat, transparan, dan profesional.
+          </p>
         </div>
 
-        <Card className="overflow-hidden rounded-3xl border-none shadow-lg">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Left Content - Main Info */}
-            <CardContent className="lg:col-span-2 p-8">
-              <div className="mb-6">
-                <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-6">
-                  <Image
-                    src="https://perizinan.kotabogor.go.id/portal_22/uploads/crud/Mekanisme_Alur_Perizinan.png"
-                    alt="Mekanisme Alur Perizinan"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h2 className="text-2xl font-bold text-foreground mb-4">VISI</h2>
-                    <p className="text-lg leading-relaxed text-muted-foreground">
-                      Terwujudnya Pelayanan Publik yang Transparan, Akuntabel dan Berbasis Teknologi Informasi dan Komunikasi.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h2 className="text-2xl font-bold text-foreground mb-4">MISI</h2>
-                    <p className="text-lg leading-relaxed text-muted-foreground">
-                      Terwujudnya kemudahan berinvestasi.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h2 className="text-2xl font-bold text-foreground mb-4">MOTTO</h2>
-                    <div className="bg-primary/10 p-6 rounded-xl">
-                      <p className="text-2xl font-bold text-primary text-center">
-                        SMART
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left Content - Main Info */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Visi Misi Card */}
+            <Card className="border shadow-sm rounded-2xl overflow-hidden">
+              <CardContent className="p-8">
+                <div className="space-y-8">
+                  {/* Visi */}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 rounded-full bg-blue-600" />
+                      <h2 className="text-2xl font-bold text-gray-900">VISI</h2>
+                    </div>
+                    <div className="bg-blue-50 border border-blue-100 rounded-xl p-6">
+                      <p className="text-lg leading-relaxed text-gray-700">
+                        Terwujudnya Pelayanan Publik yang Transparan, Akuntabel dan Berbasis Teknologi Informasi dan Komunikasi.
                       </p>
-                      <p className="text-lg text-center text-muted-foreground mt-2">
+                    </div>
+                  </div>
+
+                  {/* Misi */}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 rounded-full bg-green-600" />
+                      <h2 className="text-2xl font-bold text-gray-900">MISI</h2>
+                    </div>
+                    <div className="bg-green-50 border border-green-100 rounded-xl p-6">
+                      <p className="text-lg leading-relaxed text-gray-700">
+                        Terwujudnya kemudahan berinvestasi.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Motto */}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 rounded-full bg-orange-600" />
+                      <h2 className="text-2xl font-bold text-gray-900">MOTTO</h2>
+                    </div>
+                    <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-100 rounded-xl p-8 text-center">
+                      <p className="text-3xl font-bold text-orange-600 mb-2">SMART</p>
+                      <p className="text-lg text-gray-700">
                         (Sederhana, Mudah, Akuntabel, Ramah, dan Tepat Waktu)
                       </p>
                     </div>
                   </div>
                 </div>
-              </div>
-            </CardContent>
+              </CardContent>
+            </Card>
 
-            {/* Right Sidebar - Navigation */}
-            <div className="lg:col-span-1 p-6">
-              <Card className="border-none shadow-sm">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-6">Tentang</h3>
-                  <ScrollArea className="h-[400px]">
-                    <ul className="space-y-3">
-                      <li>
-                        <a 
-                          href="https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/1"
-                          className="flex items-center p-3 rounded-lg hover:bg-primary/10 transition-colors group"
-                        >
-                          <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
-                          <span className="text-muted-foreground group-hover:text-foreground font-medium">
-                            Kami
-                          </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a 
-                          href="https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/2"
-                          className="flex items-center p-3 rounded-lg hover:bg-primary/10 transition-colors group"
-                        >
-                          <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
-                          <span className="text-muted-foreground group-hover:text-foreground font-medium">
-                            Tugas Pokok Dan Fungsi
-                          </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a 
-                          href="https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/3"
-                          className="flex items-center p-3 rounded-lg hover:bg-primary/10 transition-colors group"
-                        >
-                          <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
-                          <span className="text-muted-foreground group-hover:text-foreground font-medium">
-                            Struktur Organisasi
-                          </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a 
-                          href="https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/4"
-                          className="flex items-center p-3 rounded-lg hover:bg-primary/10 transition-colors group"
-                        >
-                          <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
-                          <span className="text-muted-foreground group-hover:text-foreground font-medium">
-                            Penilaian/Penghargaan
-                          </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a 
-                          href="https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/5"
-                          className="flex items-center p-3 rounded-lg hover:bg-primary/10 transition-colors group"
-                        >
-                          <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
-                          <span className="text-muted-foreground group-hover:text-foreground font-medium">
-                            Perencanaan dan Pelaporan
-                          </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a 
-                          href="https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/6"
-                          className="flex items-center p-3 rounded-lg hover:bg-primary/10 transition-colors group"
-                        >
-                          <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
-                          <span className="text-muted-foreground group-hover:text-foreground font-medium">
-                            Maklumat Pelayanan
-                          </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
+            {/* Alur Perizinan Image */}
+            <Card className="border shadow-sm rounded-2xl overflow-hidden">
+              <CardContent className="p-0">
+                <div className="relative w-full h-64 md:h-80">
+                  <Image
+                    src="https://perizinan.kotabogor.go.id/portal_22/uploads/crud/Mekanisme_Alur_Perizinan.png"
+                    alt="Mekanisme Alur Perizinan"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Mekanisme Alur Perizinan</h3>
+                  <p className="text-gray-600">Lihat proses alur perizinan di DPMPTSP Kota Bogor</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
-              {/* Contact Info */}
-              <Card className="border-none shadow-sm mt-6">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
+          {/* Right Sidebar */}
+          <div className="space-y-6">
+            {/* Menu Tentang */}
+            <Card className="border shadow-sm rounded-2xl overflow-hidden">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">Menu Tentang</h3>
+                <ScrollArea className="h-[400px] pr-4">
+                  <ul className="space-y-2">
+                    {menuItems.map((item) => (
+                      <li key={item.id}>
+                        <a 
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-between p-4 rounded-lg hover:bg-gray-50 transition-colors group border border-transparent hover:border-gray-200"
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="w-2 h-2 rounded-full bg-blue-600 group-hover:scale-125 transition-transform" />
+                            <span className="text-gray-700 group-hover:text-gray-900 font-medium">
+                              {item.title}
+                            </span>
+                          </div>
+                          <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollArea>
+              </CardContent>
+            </Card>
+
+            {/* Contact Info */}
+            <Card className="border shadow-sm rounded-2xl overflow-hidden">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="relative w-16 h-16">
                     <Image
                       src="https://perizinan.kotabogor.go.id/portal_22/themes/portal/images/web/pemkot.png"
                       alt="Logo Pemkot Bogor"
-                      width={70}
-                      height={70}
-                      className="mr-4"
+                      fill
+                      className="object-contain"
+                      sizes="64px"
                     />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-lg">DPMPTSP KOTA BOGOR</h4>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-blue-600 mt-0.5" />
                     <div>
-                      <h4 className="font-bold text-foreground">DPMPTSP KOTA BOGOR</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Jl. Kapten Muslihat No. 21 Kota Bogor
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        perizinan@kotabogor.go.id
-                      </p>
+                      <p className="text-sm font-medium text-gray-900">Alamat</p>
+                      <p className="text-sm text-gray-600">Jl. Kapten Muslihat No. 21 Kota Bogor</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-blue-600" />
+                    <div>
+                      <p className="text-sm font-medium text-gray-900">Email</p>
+                      <p className="text-sm text-gray-600">perizinan@kotabogor.go.id</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-blue-600" />
+                    <div>
+                      <p className="text-sm font-medium text-gray-900">Telepon</p>
+                      <p className="text-sm text-gray-600">(0251) 832-XXXX</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-5 h-5 text-blue-600" />
+                    <div>
+                      <p className="text-sm font-medium text-gray-900">Jam Operasional</p>
+                      <p className="text-sm text-gray-600">Senin - Jumat, 08:00 - 16:00 WIB</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
-        </Card>
+        </div>
       </div>
     </section>
   );
-}
+}   

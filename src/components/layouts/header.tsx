@@ -11,6 +11,16 @@ const nav = [
     href: "/",
   },
   {
+    label: "Tentang",
+    children: [
+      { label: "Kami", href: "/tentang/kami" },
+      { label: "Pokok dan Fungsi", href: "/" },
+      { label: "Struktur Organisasi", href: "/" },
+      { label: "Penilaian", href: "/" },
+      { label: "Perencanaan dan Pelaporan", href: "/" },
+    ],
+  },
+  {
     label: "Layanan",
     children: [
       { label: "Perizinan Online", href: "/" },

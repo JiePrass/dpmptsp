@@ -64,19 +64,24 @@ const sideNews: NewsItem[] = [
 export default function BeritaSection() {
   return (
     <section className="py-16">
-        <h2 className="mx-5 text-2xl font-bold text-foreground">
-          Berita Terbaru
+      <div className="mb-10 text-center">
+        <h2 className="mb-4 text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+          Berita & Informasi Terbaru
         </h2>
+        <p className="mx-10  max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          Informasi terkini seputar pelayanan perizinan, pembaruan sistem, dan
+          kegiatan DPMPTSP Kota Bogor
+        </p>
+      </div>
       <div className="container mx-auto grid grid-cols-1 gap-3 px-4 lg:grid-cols-3">
-        
         {/* Berita Utama */}
         <Card className="lg:col-span-2 rounded-xl overflow-hidden border-none shadow-lg">
-          <div className="relative h-64 md:h-72 w-full">
+          <div className="relative rounded-xl h-64 md:h-72 w-full">
             <Image
               src={mainNews.image}
               alt={mainNews.title}
               fill
-              className="object-cover"
+              className="object-cover rounded-xl"
               priority
             />
           </div>

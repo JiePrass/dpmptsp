@@ -22,14 +22,14 @@ export default function SambutanSection() {
                         {/* Right Content */}
                         <CardContent className="md:col-span-2 p-8">
                             <div className="mb-4">
-                                <h2 className="text-2xl font-bold text-foreground">
+                                <h2 className="text-3xl font-bold text-foreground">
                                     Sambutan Kepala Badan
                                 </h2>
                                 <div className="mt-2 h-1 w-10 rounded-full bg-primary" />
                             </div>
 
                             <ScrollArea className="h-60 pr-4">
-                                <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+                                <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
                                     <p>
                                         Assalamu`alaikum Warahmatullahi Wabarakatuh.
                                     </p>
