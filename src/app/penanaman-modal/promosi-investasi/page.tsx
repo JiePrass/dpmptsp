@@ -58,7 +58,7 @@ export default function PromosiInvestasiPage() {
     return (
         <main className="bg-background max-w-7xl container mx-auto px-6">
             {/* ================= HEADER ================= */}
-            <div className="mt-10 py-16 container max-w-7xl mx-auto px-6">
+            <div className="mt-10 py-16 container">
                 <Breadcrumb className="mb-4">
                     <BreadcrumbList>
                         <BreadcrumbItem>
