@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChevronRight, Users, UserCheck, Award, Briefcase, Building } from "lucide-react";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export default function StrukturOrganisasiPage() {
   const sidebarItems = [
@@ -14,23 +15,23 @@ export default function StrukturOrganisasiPage() {
   ];
 
   const pejabatStruktural = [
-    { 
-      id: 1, 
-      name: "H. EKO PRABOWO, AP.,M.Si.", 
+    {
+      id: 1,
+      name: "H. EKO PRABOWO, AP.,M.Si.",
       position: "Plt. Kepala DPMPTSP",
       image: "https://perizinan.kotabogor.go.id/portal_22/uploads/crud/eko.JPG",
       level: "pimpinan"
     },
-    { 
-      id: 2, 
-      name: "CECEP ZAKARIA, S.IP., M.Si.", 
+    {
+      id: 2,
+      name: "CECEP ZAKARIA, S.IP., M.Si.",
       position: "Sekretaris DPMPTSP",
       image: "https://perizinan.kotabogor.go.id/portal_22/uploads/crud/cecep_zakaria.jpeg",
       level: "sekretaris"
     },
-    { 
-      id: 3, 
-      name: "ELIS KARTIKASARI, S.Sos.", 
+    {
+      id: 3,
+      name: "ELIS KARTIKASARI, S.Sos.",
       position: "Kasubag Umum dan Kepegawaian",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/ibuelis.jpg",
       level: "kepala-bagian"
@@ -38,142 +39,142 @@ export default function StrukturOrganisasiPage() {
   ];
 
   const pejabatFungsional = [
-    { 
-      id: 1, 
-      name: "R.BENI ISKANDAR,S.H.,M.M.", 
+    {
+      id: 1,
+      name: "R.BENI ISKANDAR,S.H.,M.M.",
       position: "PENATA PERIZINAN AHLI MADYA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakbeni.png",
       category: "perizinan"
     },
-    { 
-      id: 2, 
-      name: "DWI AANG KUNAIFI, S.STP, M.Si.", 
+    {
+      id: 2,
+      name: "DWI AANG KUNAIFI, S.STP, M.Si.",
       position: "PENATA PERIZINAN AHLI MADYA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakaang.png",
       category: "perizinan"
     },
-    { 
-      id: 3, 
-      name: "IDA BAGUS MADE ANDIKA, S.Pt.M.M", 
+    {
+      id: 3,
+      name: "IDA BAGUS MADE ANDIKA, S.Pt.M.M",
       position: "PENATA PERIZINAN AHLI MADYA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakidabagus.png",
       category: "perizinan"
     },
-    { 
-      id: 4, 
-      name: "AGUS SUHARJANTO, S.T., M.T.", 
+    {
+      id: 4,
+      name: "AGUS SUHARJANTO, S.T., M.T.",
       position: "PENATA PERIZINAN AHLI MADYA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakaguss.png",
       category: "perizinan"
     },
-    { 
-      id: 5, 
-      name: "HERMAN RUSLI, S.T., M.M.", 
+    {
+      id: 5,
+      name: "HERMAN RUSLI, S.T., M.M.",
       position: "PENATA KELOLA PENANAMAN MODAL AHLI MADYA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakherman.png",
       category: "modal"
     },
-    { 
-      id: 6, 
-      name: "SUGENG RULYADI, S.Kom, M.Si", 
+    {
+      id: 6,
+      name: "SUGENG RULYADI, S.Kom, M.Si",
       position: "PENATA KELOLA PENANAMAN MODAL AHLI MADYA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/paksugeng.png",
       category: "modal"
     },
-    { 
-      id: 7, 
-      name: "ERAYANTI DEWI, S.IP", 
+    {
+      id: 7,
+      name: "ERAYANTI DEWI, S.IP",
       position: "ANALIS KEUANGAN PEMERINTAH PUSAT DAN DAERAH MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/ibuerayanti.jpg",
       category: "keuangan"
     },
-    { 
-      id: 8, 
-      name: "LUCYANA MEILANI SIPAYUNG, SE", 
+    {
+      id: 8,
+      name: "LUCYANA MEILANI SIPAYUNG, SE",
       position: "PENATA KELOLA PENANAMAN MODAL MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/ibulucy.png",
       category: "modal"
     },
-    { 
-      id: 9, 
-      name: "MOHAMMAD ZAELANI, SE, M.Si.", 
+    {
+      id: 9,
+      name: "MOHAMMAD ZAELANI, SE, M.Si.",
       position: "PENATA KELOLA PENANAMAN MODAL MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakzailani.png",
       category: "modal"
     },
-    { 
-      id: 10, 
-      name: "SITI MAESAROH, SE", 
+    {
+      id: 10,
+      name: "SITI MAESAROH, SE",
       position: "PENATA KELOLA PENANAMAN MODAL MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/ibuekamaess.png",
       category: "modal"
     },
-    { 
-      id: 11, 
-      name: "AGUS MUHAMMMAD FALAK, S.E.", 
+    {
+      id: 11,
+      name: "AGUS MUHAMMMAD FALAK, S.E.",
       position: "PENATA PERIZINAN MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakagusm.png",
       category: "perizinan"
     },
-    { 
-      id: 12, 
-      name: "MAMAN SUDARMAN, S.E.,M.Si.", 
+    {
+      id: 12,
+      name: "MAMAN SUDARMAN, S.E.,M.Si.",
       position: "PENATA KELOLA PENANAMAN MODAL MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakmaman.png",
       category: "modal"
     },
-    { 
-      id: 13, 
-      name: "EKI PURWANDARI SRIYANTO, S.Pd., M.M.", 
+    {
+      id: 13,
+      name: "EKI PURWANDARI SRIYANTO, S.Pd., M.M.",
       position: "PENATA PERIZINAN MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/ibueki.png",
       category: "perizinan"
     },
-    { 
-      id: 14, 
-      name: "KISMIADI, ST, MT", 
+    {
+      id: 14,
+      name: "KISMIADI, ST, MT",
       position: "PENATA PERIZINAN MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakkismi.png",
       category: "perizinan"
     },
-    { 
-      id: 15, 
-      name: "DENNY ISMAIL MAULANI, S.T., M.Si.", 
+    {
+      id: 15,
+      name: "DENNY ISMAIL MAULANI, S.T., M.Si.",
       position: "PENATA PERIZINAN MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakdeni.png",
       category: "perizinan"
     },
-    { 
-      id: 16, 
-      name: "AGUNG SUKMAWIJAYA, S.H", 
+    {
+      id: 16,
+      name: "AGUNG SUKMAWIJAYA, S.H",
       position: "PENATA PERIZINAN MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakagung.png",
       category: "perizinan"
     },
-    { 
-      id: 17, 
-      name: "ALBETI KURNA, SE, MA.", 
+    {
+      id: 17,
+      name: "ALBETI KURNA, SE, MA.",
       position: "PENATA PERIZINAN MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/ibubeti.png",
       category: "perizinan"
     },
-    { 
-      id: 18, 
-      name: "DEWI ARDIANTI, S.SOS.", 
+    {
+      id: 18,
+      name: "DEWI ARDIANTI, S.SOS.",
       position: "PENATA PERIZINAN MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/ibudewi.png",
       category: "perizinan"
     },
-    { 
-      id: 19, 
-      name: "MUHAMAD IDIN SYAMSUDIN, S.SOS, MA.", 
+    {
+      id: 19,
+      name: "MUHAMAD IDIN SYAMSUDIN, S.SOS, MA.",
       position: "PENATA PERIZINAN MUDA",
       image: "https://perizinan.kotabogor.go.id/portal_22/assets/web/pakidin.png",
       category: "perizinan"
     },
-    { 
-      id: 20, 
-      name: "RUSMAN SETIAWAN S.E.", 
+    {
+      id: 20,
+      name: "RUSMAN SETIAWAN S.E.",
       position: "PENATA KELOLA PENANAMAN MODAL AHLI MUDA",
       image: "https://simpeg.kotabogor.go.id/simpeg/foto/3544.jpg",
       category: "modal"
@@ -199,17 +200,31 @@ export default function StrukturOrganisasiPage() {
         {/* Header Section */}
         <div className="mb-12 mt-10">
           {/* Breadcrumb */}
-          <div className="flex items-center text-sm text-gray-500 mb-4">
-            <a href="https://perizinan.kotabogor.go.id/portal_22/" className="hover:text-primary transition-colors">
-              Home
-            </a>
-            <ChevronRight className="w-4 h-4 mx-2" />
-            <a href="#" className="hover:text-primary transition-colors">
-              Tentang
-            </a>
-            <ChevronRight className="w-4 h-4 mx-2" />
-            <span className="text-gray-700 font-medium">Struktur Organisasi</span>
-          </div>
+          <Breadcrumb className="mb-4">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">
+                  Beranda
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+
+              <BreadcrumbSeparator />
+
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/tentang/kami">
+                  Tentang
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+
+              <BreadcrumbSeparator />
+
+              <BreadcrumbItem>
+                <BreadcrumbPage>
+                  Struktur dan Organisasi
+                </BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
             <div>
@@ -236,7 +251,7 @@ export default function StrukturOrganisasiPage() {
                 <Building className="w-6 h-6 text-primary" />
                 Struktur Organisasi DPMPTSP
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {strukturImages.map((image) => (
                   <Card key={image.id} className="border shadow-sm rounded-2xl overflow-hidden">
@@ -275,7 +290,7 @@ export default function StrukturOrganisasiPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {pejabatStruktural.map((pejabat) => (
                     <div key={pejabat.id} className="group">
-                      <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-6 text-center transition-all hover:shadow-md hover:border-primary/30">
+                      <div className="bg-linear-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-6 text-center transition-all hover:shadow-md hover:border-primary/30">
                         <div className="relative w-32 h-32 mx-auto mb-4">
                           <Image
                             src={pejabat.image}
@@ -289,8 +304,8 @@ export default function StrukturOrganisasiPage() {
                         <p className="text-primary font-medium mb-3">{pejabat.position}</p>
                         <div className="inline-flex items-center gap-1 text-sm text-gray-600">
                           <UserCheck className="w-4 h-4" />
-                          {pejabat.level === "pimpinan" ? "Pimpinan" : 
-                           pejabat.level === "sekretaris" ? "Sekretaris" : "Kepala Bagian"}
+                          {pejabat.level === "pimpinan" ? "Pimpinan" :
+                            pejabat.level === "sekretaris" ? "Sekretaris" : "Kepala Bagian"}
                         </div>
                       </div>
                     </div>
@@ -332,7 +347,7 @@ export default function StrukturOrganisasiPage() {
                   {pejabatFungsional.map((pejabat) => (
                     <div key={pejabat.id} className="border border-gray-200 rounded-xl p-4 hover:border-primary/30 hover:shadow-sm transition-all">
                       <div className="flex items-start gap-4">
-                        <div className="relative w-16 h-20 flex-shrink-0">
+                        <div className="relative w-16 h-20 shrink-0">
                           <Image
                             src={pejabat.image}
                             alt={pejabat.name}
@@ -347,15 +362,14 @@ export default function StrukturOrganisasiPage() {
                           </h3>
                           <p className="text-xs text-primary font-medium mb-2">{pejabat.position}</p>
                           <div className="flex items-center gap-1">
-                            <span className={`text-xs px-2 py-0.5 rounded-full ${
-                              pejabat.category === "perizinan" 
-                                ? "bg-blue-100 text-blue-700" 
-                                : pejabat.category === "modal"
+                            <span className={`text-xs px-2 py-0.5 rounded-full ${pejabat.category === "perizinan"
+                              ? "bg-blue-100 text-blue-700"
+                              : pejabat.category === "modal"
                                 ? "bg-green-100 text-green-700"
                                 : "bg-purple-100 text-purple-700"
-                            }`}>
+                              }`}>
                               {pejabat.category === "perizinan" ? "Perizinan" :
-                               pejabat.category === "modal" ? "Penanaman Modal" : "Keuangan"}
+                                pejabat.category === "modal" ? "Penanaman Modal" : "Keuangan"}
                             </span>
                           </div>
                         </div>
@@ -369,14 +383,14 @@ export default function StrukturOrganisasiPage() {
             {/* Info Box */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
               <CardContent className="p-6">
-                <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl p-6">
+                <div className="bg-linear-to-r from-primary/5 to-primary/10 rounded-xl p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
                     <Award className="w-5 h-5 text-primary" />
                     Tentang Struktur Organisasi
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    DPMPTSP Kota Bogor memiliki struktur organisasi yang terdiri dari pejabat struktural 
-                    dan fungsional yang bekerja bersama untuk memberikan pelayanan terbaik kepada masyarakat 
+                    DPMPTSP Kota Bogor memiliki struktur organisasi yang terdiri dari pejabat struktural
+                    dan fungsional yang bekerja bersama untuk memberikan pelayanan terbaik kepada masyarakat
                     dan investor.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -404,11 +418,11 @@ export default function StrukturOrganisasiPage() {
             <Card className="border shadow-sm rounded-2xl overflow-hidden top-6">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">Menu Tentang</h3>
-                <ScrollArea className="h-[400px] pr-4">
+                <ScrollArea className="h-100 pr-4">
                   <ul className="space-y-2">
                     {sidebarItems.map((item) => (
                       <li key={item.id}>
-                        <a 
+                        <a
                           href={item.href}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -465,13 +479,13 @@ export default function StrukturOrganisasiPage() {
                       </span>
                     </div>
                     <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-primary rounded-full" 
+                      <div
+                        className="h-full bg-primary rounded-full"
                         style={{ width: `${(pejabatFungsional.filter(p => p.category === "perizinan").length / pejabatFungsional.length) * 100}%` }}
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <div className="flex justify-between text-sm mb-1">
                       <span className="text-gray-700">Penanaman Modal</span>
@@ -480,13 +494,13 @@ export default function StrukturOrganisasiPage() {
                       </span>
                     </div>
                     <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-primary rounded-full" 
+                      <div
+                        className="h-full bg-primary rounded-full"
                         style={{ width: `${(pejabatFungsional.filter(p => p.category === "modal").length / pejabatFungsional.length) * 100}%` }}
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <div className="flex justify-between text-sm mb-1">
                       <span className="text-gray-700">Keuangan</span>
@@ -495,8 +509,8 @@ export default function StrukturOrganisasiPage() {
                       </span>
                     </div>
                     <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-primary rounded-full" 
+                      <div
+                        className="h-full bg-primary rounded-full"
                         style={{ width: `${(pejabatFungsional.filter(p => p.category === "keuangan").length / pejabatFungsional.length) * 100}%` }}
                       />
                     </div>
@@ -531,12 +545,12 @@ export default function StrukturOrganisasiPage() {
                     <p className="text-xs font-medium text-primary mb-1">TOTAL PEJABAT</p>
                     <p className="text-sm text-gray-700">{pejabatStruktural.length + pejabatFungsional.length} orang</p>
                   </div>
-                  
+
                   <div className="p-3 bg-primary/5 rounded-lg">
                     <p className="text-xs font-medium text-primary mb-1">STRUKTURAL</p>
                     <p className="text-sm text-gray-700">{pejabatStruktural.length} pejabat</p>
                   </div>
-                  
+
                   <div className="p-3 bg-primary/5 rounded-lg">
                     <p className="text-xs font-medium text-primary mb-1">FUNGSIONAL</p>
                     <p className="text-sm text-gray-700">{pejabatFungsional.length} pejabat</p>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChevronRight } from "lucide-react";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export default function TugasPokokFungsiPage() {
   const sidebarItems = [
@@ -49,29 +50,31 @@ export default function TugasPokokFungsiPage() {
   return (
     <section className="w-full py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-12 mt-10">
-          <div className="flex items-center text-sm text-gray-500 mb-4">
-            <a
-              href="https://perizinan.kotabogor.go.id/portal_22/"
-              className="hover:text-primary transition-colors"
-            >
-              Home
-            </a>
-            <ChevronRight className="w-4 h-4 mx-2" />
-            <a href="#" className="hover:text-primary transition-colors">
-              Tentang
-            </a>
-            <ChevronRight className="w-4 h-4 mx-2" />
-            <span className="text-gray-700 font-medium">
-              Tugas Pokok dan Fungsi
-            </span>
-          </div>
+        <Breadcrumb className="mb-4">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">
+                Beranda
+              </BreadcrumbLink>
+            </BreadcrumbItem>
 
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Tugas Pokok dan Fungsi
-          </h1>
-          <div className="w-24 h-1.5 bg-primary rounded-full mb-6" />
-        </div>
+            <BreadcrumbSeparator />
+
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/tentang/kami">
+                Tentang
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbSeparator />
+
+            <BreadcrumbItem>
+              <BreadcrumbPage>
+                Pokok dan Fungsi
+              </BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-3 space-y-8">
@@ -105,7 +108,7 @@ export default function TugasPokokFungsiPage() {
                       masyarakat dan investor.
                     </p>
 
-                    <div className="bg-gradient-to-r from-primary/5 to-primary/10 border-l-4 border-primary rounded-r-lg p-6 my-6">
+                    <div className="bg-linear-to-r from-primary/5 to-primary/10 border-l-4 border-primary rounded-r-lg p-6 my-6">
                       <h3 className="text-xl font-semibold text-gray-900 mb-4">
                         Tugas Pokok DPMPTSP Kota Bogor:
                       </h3>
@@ -113,7 +116,7 @@ export default function TugasPokokFungsiPage() {
                       <ol className="space-y-4">
                         {tugasPokok.map((item, index) => (
                           <li key={index} className="flex items-start gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">
+                            <div className="shrink-0 w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">
                               {index + 1}
                             </div>
                             <p className="text-gray-700">{item}</p>
@@ -184,7 +187,7 @@ export default function TugasPokokFungsiPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">
                   Menu Tentang
                 </h3>
-                <ScrollArea className="h-[500px] pr-4">
+                <ScrollArea className="h-125 pr-4">
                   <ul className="space-y-2">
                     {sidebarItems.map((item) => (
                       <li key={item.id}>
@@ -197,11 +200,10 @@ export default function TugasPokokFungsiPage() {
                           <div className="flex items-center gap-3">
                             <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform" />
                             <span
-                              className={`text-gray-700 group-hover:text-gray-900 font-medium ${
-                                item.id === 2
-                                  ? "text-primary font-semibold"
-                                  : ""
-                              }`}
+                              className={`text-gray-700 group-hover:text-gray-900 font-medium ${item.id === 2
+                                ? "text-primary font-semibold"
+                                : ""
+                                }`}
                             >
                               {item.title}
                             </span>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChevronRight, Download, FileText, Calendar, BarChart, FileCheck } from "lucide-react";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export default function PerencanaanPelaporanPage() {
   const sidebarItems = [
@@ -69,7 +70,7 @@ export default function PerencanaanPelaporanPage() {
   const years = ["2025", "2024", "2023", "2022", "2021", "2020", "2019-2024"];
 
   const getIconByType = (type: string) => {
-    switch(type) {
+    switch (type) {
       case "Laporan": return <BarChart className="w-4 h-4" />;
       case "Perencanaan": return <Calendar className="w-4 h-4" />;
       case "Kinerja": return <FileCheck className="w-4 h-4" />;
@@ -88,17 +89,32 @@ export default function PerencanaanPelaporanPage() {
         {/* Header Section */}
         <div className="mb-12 mt-10">
           {/* Breadcrumb */}
-          <div className="flex items-center text-sm text-gray-500 mb-4">
-            <a href="https://perizinan.kotabogor.go.id/portal_22/" className="hover:text-primary transition-colors">
-              Home
-            </a>
-            <ChevronRight className="w-4 h-4 mx-2" />
-            <a href="#" className="hover:text-primary transition-colors">
-              Tentang
-            </a>
-            <ChevronRight className="w-4 h-4 mx-2" />
-            <span className="text-gray-700 font-medium">Perencanaan dan Pelaporan</span>
-          </div>
+          <Breadcrumb className="mb-4">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">
+                  Beranda
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+
+              <BreadcrumbSeparator />
+
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/tentang/kami">
+                  Tentang
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+
+              <BreadcrumbSeparator />
+
+              <BreadcrumbItem>
+                <BreadcrumbPage>
+                  Perencanaan dan Pelaporan
+                </BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
             <div>
@@ -236,7 +252,7 @@ export default function PerencanaanPelaporanPage() {
                     Informasi Dokumen
                   </h3>
                   <p className="text-gray-600">
-                    Semua dokumen perencanaan dan pelaporan DPMPTSP Kota Bogor tersedia untuk publik 
+                    Semua dokumen perencanaan dan pelaporan DPMPTSP Kota Bogor tersedia untuk publik
                     dalam rangka transparansi dan akuntabilitas penyelenggaraan pemerintahan.
                   </p>
                   <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -268,11 +284,11 @@ export default function PerencanaanPelaporanPage() {
             <Card className="border shadow-sm rounded-2xl overflow-hidden top-6">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">Menu Tentang</h3>
-                <ScrollArea className="h-[400px] pr-4">
+                <ScrollArea className="h-100 pr-4">
                   <ul className="space-y-2">
                     {sidebarItems.map((item) => (
                       <li key={item.id}>
-                        <a 
+                        <a
                           href={item.href}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -361,12 +377,12 @@ export default function PerencanaanPelaporanPage() {
                     <p className="text-xs font-medium text-primary mb-1">INFORMASI DOKUMEN</p>
                     <p className="text-sm text-gray-700">Dokumen resmi DPMPTSP Kota Bogor</p>
                   </div>
-                  
+
                   <div className="p-3 bg-primary/5 rounded-lg">
                     <p className="text-xs font-medium text-primary mb-1">UPDATE TERKINI</p>
                     <p className="text-sm text-gray-700">Perencanaan dan Laporan 2025</p>
                   </div>
-                  
+
                   <div className="p-3 bg-primary/5 rounded-lg">
                     <p className="text-xs font-medium text-primary mb-1">FORMAT FILE</p>
                     <p className="text-sm text-gray-700">PDF (Portable Document Format)</p>
