@@ -112,7 +112,7 @@ export default function BeritaSection() {
         </div>
 
         {/* Other News */}
-        <div className="space-y-6">
+        <div className="space-y-6 md:space-y-8.5">
           {news.map((item) => (
             <div key={item.id} className="flex gap-4">
               <div className="relative w-28 h-28 shrink-0 overflow-hidden rounded-lg">

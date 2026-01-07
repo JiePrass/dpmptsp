@@ -27,12 +27,17 @@ const nav = [
   {
     label: "Layanan",
     children: [
-      { label: "Perizinan Online", href: "/layanan/perizinan-online" },
+      // { label: "Perizinan Online", href: "/layanan/perizinan-online" },
+      { label: "Perizinan Online", href: "/login" },
       { label: "Tracking Berkas", href: "/layanan/tracking-berkas" },
       {
         label: "Pencarian Perizinan (KBLI)",
-        href: "/layanan/pencarian-perizinan",
+        href: "/register",
       },
+      // {
+      //   label: "Pencarian Perizinan (KBLI)",
+      //   href: "/layanan/pencarian-perizinan",
+      // },
       { label: "Bantuan", href: "/layanan/bantuan" },
       { label: "Kunjungan", href: "/layanan/kunjungan" },
     ],
