@@ -6,7 +6,6 @@ import Image from "next/image";
 import {
   Search,
   ExternalLink,
-  Globe,
   FileCheck,
   ShieldCheck,
   Building,
@@ -151,14 +150,13 @@ export default function HeroSection() {
     : websiteShortcuts.slice(0, 6);
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 to-blue-900">
+    <section className="relative w-full min-h-screen overflow-hidden bg-linear-to-br from-gray-900 to-blue-900">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? "opacity-100 z-0" : "opacity-0 z-[-1]"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-0" : "opacity-0 z-[-1]"
+            }`}
         >
           <Image
             src={slide.src}
@@ -171,7 +169,7 @@ export default function HeroSection() {
         </div>
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40 z-10"></div>
+      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-black/40 z-10"></div>
 
       <div className="relative z-20 px-4 pt-24 pb-60 md:pt-32 md:pb-64">
         <div className="max-w-7xl mx-auto">
@@ -185,7 +183,7 @@ export default function HeroSection() {
             </Badge>
             <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
               Dinas Penanaman Modal
-              
+
               dan <br /> Pelayanan Terpadu Satu Pintu
             </h1>
             <p className="text-xl md:text-xl text-gray-200 mx-auto font-light">
@@ -297,9 +295,8 @@ export default function HeroSection() {
 
             {/* Footer Note */}
             <div
-              className={`mt-8 pt-6 border-t border-white/20 ${
-                showAllShortcuts ? "opacity-75" : ""
-              }`}
+              className={`mt-8 pt-6 border-t border-white/20 ${showAllShortcuts ? "opacity-75" : ""
+                }`}
             >
               <p className="text-center text-white/90 text-sm md:text-base">
                 <span className="text-white font-semibold">
@@ -332,11 +329,11 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-40 md:h-60 bg-gradient-to-t from-white via-white/80 to-transparent z-20 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-full h-40 md:h-60 bg-linear-to-t from-white via-white/80 to-transparent z-20 pointer-events-none"></div>
 
       <div className="absolute bottom-0 left-0 w-full h-48 md:h-72 z-20 pointer-events-none">
-        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-white/95 via-white/50 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-white/30 blur-sm opacity-80"></div>
+        <div className="absolute bottom-0 left-0 w-full h-full bg-linear-to-t from-white/95 via-white/50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-linear-to-t from-white to-white/30 blur-sm opacity-80"></div>
       </div>
     </section>
   );
