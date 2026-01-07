@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { MapPin, Phone, Mail, Clock, ChevronRight } from "lucide-react";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export default function TentangKamiSection() {
   const menuItems = [
@@ -42,20 +43,23 @@ export default function TentangKamiSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 mt-10">
           {/* Breadcrumb */}
-          <div className="flex items-center text-sm text-gray-500 mb-4">
-            <a
-              href="https://perizinan.kotabogor.go.id/portal_22/"
-              className="hover:text-primary transition-colors"
-            >
-              Home
-            </a>
-            <ChevronRight className="w-4 h-4 mx-2" />
-            <a href="#" className="hover:text-primary transition-colors">
-              Tentang
-            </a>
-            <ChevronRight className="w-4 h-4 mx-2" />
-            <span className="text-gray-700 font-medium">Tentang Kami</span>
-          </div>
+          <Breadcrumb className="mb-4">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">
+                  Beranda
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+
+              <BreadcrumbSeparator />
+
+              <BreadcrumbItem>
+                <BreadcrumbPage>
+                  Tentang Kami
+                </BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
 
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Tentang Kami
@@ -107,7 +111,7 @@ export default function TentangKamiSection() {
                         MOTTO
                       </h2>
                     </div>
-                    <div className="bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20 rounded-xl p-8 text-center">
+                    <div className="bg-linear-to-r from-primary/5 to-primary/10 border border-primary/20 rounded-xl p-8 text-center">
                       <p className="text-3xl font-bold text-primary mb-2">
                         SMART
                       </p>
@@ -152,7 +156,7 @@ export default function TentangKamiSection() {
                 <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">
                   Menu Tentang
                 </h3>
-                <ScrollArea className="h-[400px] pr-4">
+                <ScrollArea className="h-100 pr-4">
                   <ul className="space-y-2">
                     {menuItems.map((item) => (
                       <li key={item.id}>
