@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
       },{
         protocol: "https",
         hostname: "perizinan.kotabogor.go.id",
+      },{
+        protocol: "https",
+        hostname: "simpeg.kotabogor.go.id",
       },
     ],
   },
