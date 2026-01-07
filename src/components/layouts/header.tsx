@@ -17,7 +17,7 @@ const nav = [
       { label: "Pokok dan Fungsi", href: "/tentang/pokok-dan-fungsi" },
       { label: "Struktur Organisasi", href: "/tentang/struktur-organisasi" },
       { label: "Penilaian", href: "/tentang/penilaian" },
-      { label: "Perencanaan dan Pelaporan", href: "/tentang/perencanaan-dan-pelaporan" },
+      { label: "Perencanaan dan Pelaporan", href: "/tentang/perencanaan-dan-laporan" },
     ],
   },
   {

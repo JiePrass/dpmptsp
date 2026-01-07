@@ -73,13 +73,14 @@ const news: NewsItem[] = [
 
 export default function BeritaSection() {
   return (
-    <section className="py-16 px-6">
-      <div className="mb-10 text-center">
-        <h2 className="mb-4 text-2xl font-bold md:text-3xl">
+    <section className="py-16">
+      <div className="mb-10 text-center"> 
+        <h2 className="mb-4 px-10 text-3xl md:text-5xl font-bold tracking-tight text-foreground">
           Berita & Informasi Terbaru
         </h2>
-        <p className="text-lg text-muted-foreground">
-          Informasi terkini seputar pelayanan perizinan dan kegiatan DPMPTSP Kota Bogor
+        <p className="text-light leading-relaxed text-muted-foreground">
+          Informasi terkini seputar pelayanan perizinan, pembaruan sistem, dan
+          kegiatan DPMPTSP Kota Bogor
         </p>
       </div>
 

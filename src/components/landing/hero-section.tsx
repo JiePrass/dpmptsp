@@ -181,18 +181,14 @@ export default function HeroSection() {
               variant="secondary"
               className="mb-4 text-sm md:text-base px-4 py-1 bg-white/20 text-white border-none"
             >
-              Selamat datang di website
+              Selamat Datang di Website
             </Badge>
-            <h1 className="text-2xl lg:text-5xl font-bold text-white leading-tight mb-6">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-100 to-white">
-                Dinas Penanaman Modal
-              </span>
-              <br />
-              <span className="text-2xl md:text-5xl  font-bold">
-                dan Pelayanan Terpadu Satu Pintu
-              </span>
+            <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+              Dinas Penanaman Modal
+              
+              dan <br /> Pelayanan Terpadu Satu Pintu
             </h1>
-            <p className="text-xl md:text-xl text-gray-200 max-w-3xl mx-auto font-light">
+            <p className="text-xl md:text-xl text-gray-200 mx-auto font-light">
               Melayani masyarakat dengan profesional, transparan, dan akuntabel
             </p>
           </div>
