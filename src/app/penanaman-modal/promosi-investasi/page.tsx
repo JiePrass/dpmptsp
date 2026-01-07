@@ -98,7 +98,7 @@ export default function PromosiInvestasiPage() {
             </div>
 
             {/* ================= CONTENT ================= */}
-            <section className="container mx-auto pb-16">
+            <section className="container pb-16">
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
                     {/* ================= MAIN ================= */}
                     <div className="lg:col-span-8">
