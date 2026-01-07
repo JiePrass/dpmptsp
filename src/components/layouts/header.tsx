@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const nav = [
   {
@@ -55,9 +56,20 @@ const nav = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState<number | null>(null);
   const [desktopDropdown, setDesktopDropdown] = useState<number | null>(null);
+
+  const isActive = (href?: string) => {
+    if (!href) return false;
+
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(href + "/");
+  };
 
   return (
     <>
@@ -85,7 +97,13 @@ export default function Header() {
                   onMouseLeave={() => setDesktopDropdown(null)}
                 >
                   {/* Trigger */}
-                  <button className="flex items-center gap-1 py-2">
+                  <button
+                    className={`flex items-center gap-1 py-2 transition-colors
+    ${item.children?.some((c) => isActive(c.href))
+                        ? "text-primary font-medium"
+                        : "text-gray-700 hover:text-primary"
+                      }`}
+                  >
                     {item.label}
                     <ChevronDown size={16} />
                   </button>
@@ -104,7 +122,11 @@ export default function Header() {
                         <Link
                           key={child.label}
                           href={child.href}
-                          className="block px-4 py-2 hover:bg-gray-100"
+                          className={`block px-4 py-2 transition-colors
+    ${isActive(child.href)
+                              ? "border-l-4 border-primary bg-primary/5 text-primary font-medium"
+                              : "border-l-4 border-transparent hover:bg-gray-100"
+                            }`}
                         >
                           {child.label}
                         </Link>
@@ -113,9 +135,18 @@ export default function Header() {
                   </div>
                 </div>
               ) : (
-                <Link key={item.label} href={item.href} className="py-2">
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`py-2 transition-colors
+    ${isActive(item.href)
+                      ? "text-primary font-medium"
+                      : "text-gray-700 hover:text-primary"
+                    }`}
+                >
                   {item.label}
                 </Link>
+
               )
             )}
           </nav>
@@ -183,7 +214,7 @@ export default function Header() {
                   className={`ml-2 mt-2 flex flex-col gap-2 text-sm overflow-hidden
             transition-all duration-200 ease-out
             ${mobileDropdown === idx
-                      ? "max-h-40 opacity-100 translate-y-0"
+                      ? "opacity-100 translate-y-0"
                       : "max-h-0 opacity-0 -translate-y-1"
                     }`}
                 >
@@ -191,7 +222,11 @@ export default function Header() {
                     <Link
                       key={child.label}
                       href={child.href}
-                      className="py-1"
+                      className={`py-1 pl-2 border-l-4 transition-colors
+    ${isActive(child.href)
+                          ? "border-primary text-primary font-medium"
+                          : "border-transparent"
+                        }`}
                       onClick={() => {
                         setMobileOpen(false);
                         setMobileDropdown(null);
