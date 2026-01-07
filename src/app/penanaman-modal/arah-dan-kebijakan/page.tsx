@@ -31,6 +31,7 @@ export default function PenanamanModalPage() {
                             <BreadcrumbItem>
                                 <BreadcrumbPage>Penanaman Modal</BreadcrumbPage>
                             </BreadcrumbItem>
+                            <BreadcrumbSeparator />
                             <BreadcrumbItem>
                                 <BreadcrumbPage>Arah dan Kebijakan</BreadcrumbPage>
                             </BreadcrumbItem>

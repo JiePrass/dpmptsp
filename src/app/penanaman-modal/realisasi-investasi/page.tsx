@@ -68,6 +68,7 @@ export default function RealisasiInvestasiPage() {
                         <BreadcrumbItem>
                             <BreadcrumbLink href="/penanaman-modal/arah-dan-kebijakan">Penanaman Modal</BreadcrumbLink>
                         </BreadcrumbItem>
+                        <BreadcrumbSeparator />
                         <BreadcrumbItem>
                             <BreadcrumbPage>Realisasi Investasi</BreadcrumbPage>
                         </BreadcrumbItem>

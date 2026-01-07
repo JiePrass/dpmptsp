@@ -57,7 +57,7 @@ const nav = [
   {
     label: "Informasi",
     children: [
-      { label: "Informasi Perizinan", href: "/informasi/perizinan" },
+      { label: "Informasi Perizinan", href: "/informasi/perizinan/" },
       { label: "Informasi Publik", href: "/informasi/publik" },
     ],
   },
@@ -114,11 +114,10 @@ export default function Header() {
                   {/* Trigger */}
                   <button
                     className={`flex items-center gap-1 py-2 transition-colors
-    ${
-      item.children?.some((c) => isActive(c.href))
-        ? "text-primary font-medium"
-        : "text-gray-700 hover:text-primary"
-    }`}
+    ${item.children?.some((c) => isActive(c.href))
+                        ? "text-primary font-medium"
+                        : "text-gray-700 hover:text-primary"
+                      }`}
                   >
                     {item.label}
                     <ChevronDown size={16} />
@@ -127,11 +126,10 @@ export default function Header() {
                   {/* Dropdown */}
                   <div
                     className={`absolute right-0 top-full pt-2 hover:cursor-pointer transition-all duration-200 ease-out
-    ${
-      desktopDropdown === idx
-        ? "opacity-100 translate-y-0 visible"
-        : "opacity-0 -translate-y-2 invisible"
-    }`}
+    ${desktopDropdown === idx
+                        ? "opacity-100 translate-y-0 visible"
+                        : "opacity-0 -translate-y-2 invisible"
+                      }`}
                   >
                     <div className="w-56 rounded-md border bg-white shadow-md">
                       {item.children.map((child) => (
@@ -139,11 +137,10 @@ export default function Header() {
                           key={child.label}
                           href={child.href}
                           className={`block px-4 py-2 transition-colors
-    ${
-      isActive(child.href)
-        ? "border-l-4 border-primary bg-primary/5 text-primary font-medium"
-        : "border-l-4 border-transparent hover:bg-gray-100"
-    }`}
+    ${isActive(child.href)
+                              ? "border-l-4 border-primary bg-primary/5 text-primary font-medium"
+                              : "border-l-4 border-transparent hover:bg-gray-100"
+                            }`}
                         >
                           {child.label}
                         </Link>
@@ -156,11 +153,10 @@ export default function Header() {
                   key={item.label}
                   href={item.href}
                   className={`py-2 transition-colors
-    ${
-      isActive(item.href)
-        ? "text-primary font-medium"
-        : "text-gray-700 hover:text-primary"
-    }`}
+    ${isActive(item.href)
+                      ? "text-primary font-medium"
+                      : "text-gray-700 hover:text-primary"
+                    }`}
                 >
                   {item.label}
                 </Link>
@@ -220,9 +216,8 @@ export default function Header() {
                   {item.label}
                   <ChevronDown
                     size={16}
-                    className={`transition-transform duration-200 ${
-                      mobileDropdown === idx ? "rotate-180" : ""
-                    }`}
+                    className={`transition-transform duration-200 ${mobileDropdown === idx ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
@@ -230,22 +225,20 @@ export default function Header() {
                 <div
                   className={`ml-2 mt-2 flex flex-col gap-2 text-sm overflow-hidden
             transition-all duration-200 ease-out
-            ${
-              mobileDropdown === idx
-                ? "opacity-100 translate-y-0"
-                : "max-h-0 opacity-0 -translate-y-1"
-            }`}
+            ${mobileDropdown === idx
+                      ? "opacity-100 translate-y-0"
+                      : "max-h-0 opacity-0 -translate-y-1"
+                    }`}
                 >
                   {item.children.map((child) => (
                     <Link
                       key={child.label}
                       href={child.href}
                       className={`py-1 pl-2 border-l-4 transition-colors
-    ${
-      isActive(child.href)
-        ? "border-primary text-primary font-medium"
-        : "border-transparent"
-    }`}
+    ${isActive(child.href)
+                          ? "border-primary text-primary font-medium"
+                          : "border-transparent"
+                        }`}
                       onClick={() => {
                         setMobileOpen(false);
                         setMobileDropdown(null);
