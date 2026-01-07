@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 type NewsItem = {
   id: number;
@@ -73,9 +72,9 @@ const news: NewsItem[] = [
 
 export default function BeritaSection() {
   return (
-    <section className="py-16">
-      <div className="mb-10 text-center"> 
-        <h2 className="mb-4 px-10 text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+    <section className="py-16 px-6 mx-auto container">
+      <div className="mb-10 text-center">
+        <h2 className="mb-4 text-3xl md:text-5xl font-bold tracking-tight text-foreground">
           Berita & Informasi Terbaru
         </h2>
         <p className="text-light leading-relaxed text-muted-foreground">
@@ -84,7 +83,7 @@ export default function BeritaSection() {
         </p>
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 gap-6 px-4 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Main News */}
         <div className="lg:col-span-2">
           <div className="relative aspect-video overflow-hidden rounded-lg">
@@ -116,7 +115,7 @@ export default function BeritaSection() {
         <div className="space-y-6">
           {news.map((item) => (
             <div key={item.id} className="flex gap-4">
-              <div className="relative w-28 h-28 flex-shrink-0 overflow-hidden rounded-lg">
+              <div className="relative w-28 h-28 shrink-0 overflow-hidden rounded-lg">
                 <Image
                   src={item.image}
                   alt={item.title}
