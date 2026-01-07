@@ -23,7 +23,7 @@ export default function SambutanSection() {
                         <CardContent className="md:col-span-2 p-8">
                             <div className="mb-4">
                                 <h2 className="text-3xl font-bold text-foreground">
-                                    Sambutan Kepala Badan
+                                    Sambutan Kepala Dinas
                                 </h2>
                                 <div className="mt-2 h-1 w-10 rounded-full bg-primary" />
                             </div>
@@ -37,12 +37,7 @@ export default function SambutanSection() {
                                         Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu Kota Bogor terus berkomitmen untuk meningkatkan kualitas pelayanan publik dan menciptakan iklim investasi yang kondusif. Kami memahami betul pentingnya inovasi dan perbaikan berkelanjutan dalam memberikan pelayanan yang lebih baik kepada masyarakat dan dunia usaha. Kami berharap dapat memperkuat kerjasama dengan berbagai pihak serta terbuka untuk mendengar masukan dan saran dari semua masyarakat agar kami dapat terus beradaptasi dan berinovasi sesuai dengan kebutuhan dan perkembangan terkini.
                                     </p>
                                     <p>
-                                        Website ini hadir sebagai wujud komitmen kami dalam
-                                        meningkatkan transparansi, akuntabilitas, dan aksesibilitas
-                                        informasi publik terkait pengelolaan keuangan dan aset
-                                        daerah. Melalui platform digital ini, kami berupaya
-                                        menyajikan informasi yang akurat, terkini, dan bermanfaat
-                                        bagi masyarakat luas.
+                                        Website ini hadir sebagai wujud komitmen kami dalam meningkatkan kualitas pelayanan publik di bidang penanaman modal dan perizinan. Melalui platform digital ini, DPMPTSP berupaya menyediakan informasi yang transparan, akurat, dan mudah diakses terkait layanan perizinan, penanaman modal, serta kebijakan yang mendukung iklim usaha di Kota Bogor, guna memberikan kemudahan dan kepastian layanan bagi masyarakat dan pelaku usaha.
                                     </p>
                                 </div>
                             </ScrollArea>
