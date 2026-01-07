@@ -57,15 +57,15 @@ const nav = [
   {
     label: "Informasi",
     children: [
-      { label: "Informasi Perizinan", href: "/informasi/perizinan" }, // folder ini belum ada, bisa dibuat jika diperlukan
-      { label: "Informasi Publik", href: "/informasi/publik" }, // folder ini belum ada, bisa dibuat jika diperlukan
+      { label: "Informasi Perizinan", href: "/informasi/perizinan" },
+      { label: "Informasi Publik", href: "/informasi/publik" },
     ],
   },
   {
     label: "Berita & Galeri",
     children: [
-      { label: "Berita", href: "/berita" }, // folder ini belum ada, bisa dibuat
-      { label: "Galeri", href: "/galeri" }, // folder ini belum ada, bisa dibuat
+      { label: "Berita", href: "/berita" },
+      { label: "Galeri", href: "/galeri" },
     ],
   },
 ];
