@@ -6,12 +6,15 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "images.unsplash.com",
-      },{
+        pathname: "/**",
+      }, {
         protocol: "https",
         hostname: "perizinan.kotabogor.go.id",
-      },{
+        pathname: "/**",
+      }, {
         protocol: "https",
         hostname: "simpeg.kotabogor.go.id",
+        pathname: "/**",
       },
     ],
   },
