@@ -22,7 +22,7 @@ export default function SambutanSection() {
                         {/* Right Content */}
                         <CardContent className="md:col-span-2 p-8">
                             <div className="mb-4">
-                                <h2 className="text-3xl font-bold text-foreground">
+                                <h2 className="text-3xl md:text-5xl font-bold text-foreground">
                                     Sambutan Kepala Badan
                                 </h2>
                                 <div className="mt-2 h-1 w-10 rounded-full bg-primary" />
