@@ -51,7 +51,7 @@ export default function FAQSection() {
     return (
         <section
             id="faq"
-            className="container mx-auto px-6 pb-32 flex justify-center"
+            className="container mx-auto px-6 py-32 flex justify-center"
         >
 
             <div className="md:max-w-3xl w-full">
