@@ -1,18 +1,11 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { ChevronRight, Users, UserCheck, Award, Briefcase, Building } from "lucide-react";
+import Sidebar from "@/components/layouts/sidebar";
+import { ChevronRight, Users, UserCheck, Award, Briefcase, Building, } from "lucide-react";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export default function StrukturOrganisasiPage() {
-  const sidebarItems = [
-    { id: 1, title: "Kami", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/1" },
-    { id: 2, title: "Tugas Pokok Dan Fungsi", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/2" },
-    { id: 3, title: "Struktur Organisasi", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/3" },
-    { id: 4, title: "Penilaian/Penghargaan", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/4" },
-    { id: 5, title: "Perencanaan dan Pelaporan", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/5" },
-    { id: 6, title: "Maklumat Pelayanan", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/6" },
-  ];
 
   const pejabatStruktural = [
     {
@@ -414,35 +407,8 @@ export default function StrukturOrganisasiPage() {
 
           {/* Sidebar */}
           <div className="space-y-6">
-            {/* Menu Tentang */}
-            <Card className="border shadow-sm rounded-2xl overflow-hidden top-6">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">Menu Tentang</h3>
-                <ScrollArea className="h-100 pr-4">
-                  <ul className="space-y-2">
-                    {sidebarItems.map((item) => (
-                      <li key={item.id}>
-                        <a
-                          href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between p-4 rounded-lg hover:bg-primary/5 transition-colors group border border-transparent hover:border-primary/20"
-                        >
-                          <div className="flex items-center gap-3">
-                            <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform" />
-                            <span className={`text-gray-700 group-hover:text-gray-900 font-medium ${item.id === 3 ? 'text-primary font-semibold' : ''}`}>
-                              {item.title}
-                            </span>
-                          </div>
-                          <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary" />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </ScrollArea>
-              </CardContent>
-            </Card>
-
+            
+         <Sidebar type="tentang" activeId={4} />
             {/* Kategori Pejabat */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
               <CardContent className="p-6">
