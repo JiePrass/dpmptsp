@@ -49,8 +49,8 @@ const nav = [
   {
     label: "Berita & Galeri",
     children: [
-      { label: "Berita", href: "/" },
-      { label: "Galeri", href: "/" },
+      { label: "Berita", href: "/berita" },
+      { label: "Galeri", href: "/galeri" },
     ],
   },
 ];
