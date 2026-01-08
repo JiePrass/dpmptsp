@@ -25,18 +25,17 @@ import {
   Grid,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 const slides = [
   { src: "/images/hersec.jpg", alt: "Gedung pemerintahan modern" },
 ];
 
-// Warna konsisten berdasarkan tema biru pemerintah
 const websiteShortcuts = [
   {
     title: "Perizinan Online",
-    url: "https://perizinan.kotabogor.go.id/izin2/index.php/account/login",
+    url: "/login/",
     icon: FileCheck,
-
     description: "Ajukan perizinan",
   },
   {
@@ -59,55 +58,55 @@ const websiteShortcuts = [
   },
   {
     title: "Jenis & Syarat",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/i/2",
+    url: "/informasi/perizinan/jenis-dan-syarat",
     icon: FileText,
     description: "Informasi persyaratan",
   },
   {
     title: "Survey Persepsi",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/ipu/5/1",
+    url: "/informasi/publik/",
     icon: ClipboardCheck,
     description: "SPAK",
   },
   {
     title: "Info Perizinan",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/i/1",
+    url: "/informasi/perizinan/",
     icon: Eye,
     description: "Informasi lengkap",
   },
   {
     title: "Tracking Berkas",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/2",
+    url: "/layanan/tracking-berkas",
     icon: Search,
     description: "Lacak berkas",
   },
   {
     title: "Regulasi",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/i/3",
+    url: "/informasi/perizinan/peraturan-dan-regulasi/",
     icon: BookOpen,
     description: "Peraturan terkait",
   },
   {
     title: "Kunjungan",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/6",
+    url: "/layanan/kunjungan/",
     icon: Users,
     description: "Data kunjungan",
   },
   {
     title: "Bantuan",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/5",
+    url: "/layanan/bantuan",
     icon: HelpCircle,
     description: "Pusat bantuan",
   },
   {
     title: "Realisasi Investasi",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/p/2",
+    url: "/penanaman-modal/realisasi-investasi/",
     icon: TrendingUp,
     description: "Data investasi",
   },
   {
     title: "Promosi Daerah",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/landing/index_umkm",
+    url: "/penanaman-modal/promosi-investasi/",
     icon: Megaphone,
     description: "UMKM & Promosi",
   },
@@ -125,7 +124,7 @@ const websiteShortcuts = [
   },
   {
     title: "PPID",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/7",
+    url: "/layanan/",
     icon: MessageCircle,
     description: "Informasi Publik",
   },
@@ -215,7 +214,7 @@ export default function HeroSection() {
               {shortcutsToShow.map((item, index) => {
                 const IconComponent = item.icon;
                 return (
-                  <a
+                  <Link
                     key={index}
                     href={item.url}
                     target="_blank"
@@ -258,7 +257,7 @@ export default function HeroSection() {
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 );
               })}
             </div>

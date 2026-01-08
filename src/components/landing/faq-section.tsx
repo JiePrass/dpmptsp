@@ -1,43 +1,28 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 const faqs = [
     {
         question: "Apa itu DPMPTSP Kota Bogor?",
-        answer:
-            "DPMPTSP Kota Bogor adalah perangkat daerah yang menyelenggarakan pelayanan perizinan dan non-perizinan serta fasilitasi penanaman modal secara terpadu.",
+        answer: "DPMPTSP Kota Bogor adalah perangkat daerah yang menyelenggarakan pelayanan perizinan dan non-perizinan serta fasilitasi penanaman modal secara terpadu.",
     },
     {
         question: "Apakah pengurusan perizinan harus datang langsung ke kantor?",
-        answer:
-            "Sebagian besar layanan perizinan dapat dilakukan secara online melalui sistem OSS dan layanan digital DPMPTSP Kota Bogor. Kunjungan langsung hanya diperlukan untuk layanan tertentu.",
+        answer: "Sebagian besar layanan perizinan dapat dilakukan secara online melalui sistem OSS dan layanan digital DPMPTSP Kota Bogor.",
     },
     {
         question: "Bagaimana cara mengajukan perizinan secara online?",
-        answer:
-            "Pemohon dapat mengajukan perizinan melalui sistem OSS atau portal layanan DPMPTSP Kota Bogor dengan melengkapi data dan dokumen yang dipersyaratkan.",
+        answer: "Pemohon dapat mengajukan perizinan melalui sistem OSS atau portal layanan DPMPTSP Kota Bogor dengan melengkapi data yang dipersyaratkan.",
     },
     {
         question: "Bagaimana cara mengecek status permohonan perizinan?",
-        answer:
-            "Status permohonan dapat dipantau melalui fitur tracking berkas pada sistem OSS atau layanan online DPMPTSP menggunakan nomor registrasi permohonan.",
+        answer: "Status permohonan dapat dipantau melalui fitur tracking berkas pada sistem OSS atau layanan online DPMPTSP.",
     },
     {
         question: "Berapa lama proses penerbitan izin?",
-        answer:
-            "Waktu penyelesaian izin berbeda-beda sesuai jenis layanan dan standar pelayanan yang berlaku. Informasi estimasi waktu tersedia pada masing-masing layanan perizinan.",
-    },
-    {
-        question: "Apakah layanan DPMPTSP dipungut biaya?",
-        answer:
-            "Sebagian besar layanan perizinan tidak dipungut biaya. Jika terdapat retribusi, hal tersebut akan diinformasikan secara transparan sesuai ketentuan peraturan daerah.",
-    },
-    {
-        question: "Bagaimana cara menyampaikan pengaduan atau konsultasi?",
-        answer:
-            "Masyarakat dapat menyampaikan pengaduan atau melakukan konsultasi melalui kanal resmi DPMPTSP Kota Bogor atau melalui sistem pengaduan yang telah disediakan.",
+        answer: "Waktu penyelesaian izin berbeda-beda sesuai jenis layanan dan standar pelayanan yang berlaku.",
     },
 ]
 
@@ -49,55 +34,52 @@ export default function FAQSection() {
     }
 
     return (
-        <section
-            id="faq"
-            className="container mx-auto px-6  py-10 md:py-20 flex justify-center"
-        >
+        <section id="faq" className="container mx-auto px-6 py-10 md:py-24">
+            <div className="flex flex-col gap-8 md:flex-row md:gap-24 items-start">
 
-            <div className="md:max-w-3xl w-full">
-                {/* Header */}
-                <div className="flex flex-col text-center mb-12 space-y-4">
-                    <h2 className="text-3xl md:text-5xl font-bold">
-                        Pertanyaan yang Sering Diajukan
+                {/* BAGIAN KIRI: STICKY HEADER */}
+                <div className="md:w-1/3 md:sticky md:top-24">
+                    <h2 className="text-4xl md:text-6xl font-bold text-[#1e293b] mb-6">
+                        FAQs
                     </h2>
-                    <p className="font-light md:px-32 text-muted-foreground">
-                        Informasi umum seputar layanan perizinan dan penanaman modal
-                        DPMPTSP Kota Bogor.
+                    <p className="text-gray-500 leading-relaxed max-w-sm">
+                        Temukan jawaban atas pertanyaan umum Anda tentang layanan dan produk DPMPTSP Kota Bogor.
                     </p>
                 </div>
 
-                {/* FAQ List */}
-                <div className="space-y-4">
+                {/* BAGIAN KANAN: LIST FAQ */}
+                <div className="md:w-2/3 w-full space-y-4">
                     {faqs.map((faq, index) => {
                         const isOpen = index === activeIndex
                         const answerId = `faq-answer-${index}`
 
                         return (
-                            <div key={index} className="bg-white rounded-md">
-                                {/* Question */}
+                            <div
+                                key={index}
+                                className={`border rounded-xl transition-all duration-200 ${isOpen ? "border-primary ring-1 ring-primary" : "border-gray-200"
+                                    }`}
+                            >
                                 <button
                                     onClick={() => toggleFAQ(index)}
-                                    className="w-full flex items-center justify-between px-5 py-4 text-left text-base md:text-lg font-medium transition-colors"
+                                    className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors"
                                     aria-expanded={isOpen}
                                     aria-controls={answerId}
                                 >
-                                    {faq.question}
-                                    {isOpen ? (
-                                        <ChevronUp className="w-5 h-5 transition-transform" />
-                                    ) : (
-                                        <ChevronDown className="w-5 h-5 transition-transform" />
-                                    )}
+                                    <span className="text-base md:text-lg font-semibold text-[#1e293b]">
+                                        {faq.question}
+                                    </span>
+                                    <ChevronDown
+                                        className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${isOpen ? "rotate-180 text-primary" : ""
+                                            }`}
+                                    />
                                 </button>
 
                                 <div
                                     id={answerId}
-                                    className={`px-5 overflow-hidden transition-all duration-300 ease-out
-                    ${isOpen
-                                            ? "max-h-60 opacity-100 pb-4"
-                                            : "max-h-0 opacity-0 pb-0"
+                                    className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-125 pb-6 opacity-100" : "max-h-0 opacity-0"
                                         }`}
                                 >
-                                    <p className="text-sm md:text-base text-gray-600">
+                                    <p className="text-gray-600 leading-relaxed">
                                         {faq.answer}
                                     </p>
                                 </div>
@@ -105,6 +87,7 @@ export default function FAQSection() {
                         )
                     })}
                 </div>
+
             </div>
         </section>
     )

@@ -57,7 +57,7 @@ export default function InformasiPerizinanPage() {
                             </BreadcrumbItem>
                             <BreadcrumbSeparator />
                             <BreadcrumbItem>
-                                <BreadcrumbLink href="/informasi-perizinan">Informasi Perizinan</BreadcrumbLink>
+                                <BreadcrumbLink href="/informasi/perizinan">Informasi Perizinan</BreadcrumbLink>
                             </BreadcrumbItem>
                             <BreadcrumbSeparator />
                             <BreadcrumbItem>

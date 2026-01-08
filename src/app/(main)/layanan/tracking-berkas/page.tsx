@@ -82,6 +82,7 @@ export default function TrackingBerkasSection() {
   const [isLoading, setIsLoading] = useState(false);
   const [trackingResult, setTrackingResult] = useState<null | {
     success: boolean;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     data: any[];
     message: string;
   }>(null);
@@ -209,11 +210,10 @@ export default function TrackingBerkasSection() {
                     </div>
                   ) : trackingResult ? (
                     <div
-                      className={`p-6 rounded-xl border ${
-                        trackingResult.success
+                      className={`p-6 rounded-xl border ${trackingResult.success
                           ? "bg-blue-50 border-blue-200"
                           : "bg-red-50 border-red-200"
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-3 mb-4">
                         {trackingResult.success ? (
@@ -222,11 +222,10 @@ export default function TrackingBerkasSection() {
                           <AlertCircle className="w-6 h-6 text-red-600" />
                         )}
                         <h3
-                          className={`text-lg font-semibold ${
-                            trackingResult.success
+                          className={`text-lg font-semibold ${trackingResult.success
                               ? "text-green-700"
                               : "text-red-700"
-                          }`}
+                            }`}
                         >
                           {trackingResult.message}
                         </h3>
@@ -246,14 +245,13 @@ export default function TrackingBerkasSection() {
                                 {trackingResult.data.map((item, index) => (
                                   <div key={item.id} className="relative">
                                     <div
-                                      className={`absolute -left-12 top-0 w-12 h-12 rounded-full flex items-center justify-center border-4 border-white ${
-                                        index === trackingResult.data.length - 1
+                                      className={`absolute -left-12 top-0 w-12 h-12 rounded-full flex items-center justify-center border-4 border-white ${index === trackingResult.data.length - 1
                                           ? "bg-green-500"
                                           : "bg-blue-500"
-                                      }`}
+                                        }`}
                                     >
                                       {index ===
-                                      trackingResult.data.length - 1 ? (
+                                        trackingResult.data.length - 1 ? (
                                         <CheckCircle className="w-5 h-5 text-white" />
                                       ) : (
                                         <Clock className="w-5 h-5 text-white" />
