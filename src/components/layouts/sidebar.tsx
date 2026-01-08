@@ -1,8 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChevronRight } from "lucide-react";
-
 interface SidebarItem {
   id: number;
   title: string;
@@ -10,68 +9,68 @@ interface SidebarItem {
 }
 
 interface SidebarProps {
-  type: "tentang" | "layanan"; // pilih menu
   activeId?: number;
 }
 
-export default function Sidebar({ type, activeId }: SidebarProps) {
-  // Data menu Tentang
-  const TENTANG_ITEMS: SidebarItem[] = [
-    { id: 1, title: "Kami", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/1" },
-    { id: 2, title: "Tugas Pokok Dan Fungsi", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/2" },
-    { id: 3, title: "Struktur Organisasi", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/3" },
-    { id: 4, title: "Penilaian/Penghargaan", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/4" },
-    { id: 5, title: "Perencanaan dan Pelaporan", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/5" },
-    { id: 6, title: "Maklumat Pelayanan", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/t/6" },
-  ];
-
-  // Data menu Layanan
+export default function SidebarLayanan({ activeId }: SidebarProps) {
   const LAYANAN_ITEMS: SidebarItem[] = [
-    { id: 1, title: "Perizinan Online", href: "https://perizinan.kotabogor.go.id/izin2" },
-    { id: 2, title: "Tracking Berkas", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/2" },
-    { id: 3, title: "Pencarian Perizinan (KBLI)", href: "https://oss.go.id/informasi/kbli-berbasis-risiko" },
-    { id: 4, title: "Bantuan", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/5" },
-    { id: 5, title: "Kunjungan", href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/6" },
+    { id: 1, title: "Layanan", href: "/layanan" },
+    { id: 2, title: "Perizinan Online", href: "/login" },
+    { id: 3, title: "Tracking Berkas", href: "/layanan/tracking-berkas" },
+    { id: 4, title: "Pencarian Perizinan", href: "/login" },
+    { id: 5, title: "Bantuan", href: "/layanan/bantuan" },
+    { id: 6, title: "Kunjungan", href: "/layanan/kunjungan" },
   ];
-
-  const items = type === "tentang" ? TENTANG_ITEMS : LAYANAN_ITEMS;
-  const title = type === "tentang" ? "Menu Tentang" : "Layanan Lainnya";
 
   return (
     <div className="space-y-6">
       <Card className="border shadow-sm rounded-2xl overflow-hidden">
         <CardContent>
           <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 pb-3 border-b">
-            {title}
+            Layanan Lainnya
           </h3>
+
           <ul className="space-y-2">
-            {items.map((item) => {
+            {LAYANAN_ITEMS.map((item) => {
               const isActive = item.id === activeId;
+
               return (
                 <li key={item.id}>
-                  <a
+                  <Link
                     href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center justify-between p-3 rounded-lg transition-colors group border border-transparent ${isActive
-                      ? "bg-primary/10 border-primary/20"
-                      : "hover:bg-primary/5 hover:border-primary/20"
-                      }`}
+                    className={`flex items-center justify-between p-3 rounded-lg transition-colors group border ${
+                      isActive
+                        ? "bg-primary/10 border-primary/20"
+                        : "border-transparent hover:bg-primary/5 hover:border-primary/20"
+                    }`}
                   >
                     <div className="flex items-center gap-3">
-                      <div
-                        className={`w-2 h-2 rounded-full transition-transform ${isActive ? "bg-primary scale-125" : "bg-gray-300 group-hover:bg-primary group-hover:scale-125"
-                          }`}
+                      <span
+                        className={`w-2 h-2 rounded-full transition-transform ${
+                          isActive
+                            ? "bg-primary scale-125"
+                            : "bg-gray-300 group-hover:bg-primary group-hover:scale-125"
+                        }`}
                       />
                       <span
-                        className={`text-sm font-medium ${isActive ? "text-primary font-semibold" : "text-gray-700 group-hover:text-gray-900"
-                          }`}
+                        className={`text-sm md:text-base ${
+                          isActive
+                            ? "text-primary font-semibold"
+                            : "text-gray-700 font-medium group-hover:text-gray-900"
+                        }`}
                       >
                         {item.title}
                       </span>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary" />
-                  </a>
+
+                    <ChevronRight
+                      className={`w-4 h-4 ${
+                        isActive
+                          ? "text-primary"
+                          : "text-gray-400 group-hover:text-primary"
+                      }`}
+                    />
+                  </Link>
                 </li>
               );
             })}
@@ -98,6 +97,7 @@ export default function Sidebar({ type, activeId }: SidebarProps) {
               </p>
             </div>
           </div>
+
           <div className="space-y-3 text-sm">
             <InfoItem label="ALAMAT" value="Jl. Kapten Muslihat No. 21 Kota Bogor" />
             <InfoItem label="EMAIL" value="perizinan@kotabogor.go.id" />

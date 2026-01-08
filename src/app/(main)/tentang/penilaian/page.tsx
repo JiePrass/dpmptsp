@@ -13,6 +13,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Image from "next/image";
+import { TentangMenu } from "@/components/shared/TentangSidebar";
 
 export default function PenghargaanPage() {
   const sidebarItems = [
@@ -171,7 +172,6 @@ export default function PenghargaanPage() {
     );
   };
 
-  // Data kartu penghargaan
   const penghargaanCards = [
     {
       id: 1,
@@ -248,7 +248,7 @@ export default function PenghargaanPage() {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink
-                  href="/tentang"
+                  href="kami"
                   className="text-gray-600 hover:text-primary"
                 >
                   Tentang
@@ -263,22 +263,21 @@ export default function PenghargaanPage() {
             </BreadcrumbList>
           </Breadcrumb>
 
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Penghargaan dan Prestasi DPMPTSP Kota Bogor
           </h1>
           <div className="w-24 h-1.5 bg-primary rounded-full mb-6" />
 
           <p className="text-gray-600 mt-6 max-w-3xl">
-           Berikut adalah berbagai penghargaan dan prestasi yang telah
-                  diraih oleh Dinas Penanaman Modal dan Pelayanan Terpadu Satu
-                  Pintu (DPMPTSP) Kota Bogor dalam memberikan pelayanan terbaik
-                  kepada masyarakat dan investor.
+            Berikut adalah berbagai penghargaan dan prestasi yang telah diraih
+            oleh Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu
+            (DPMPTSP) Kota Bogor dalam memberikan pelayanan terbaik kepada
+            masyarakat dan investor.
           </p>
-
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 md:gap-8">
-          <div className="lg:col-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="lg:col-span-2">
             <Card className="border shadow-sm rounded-2xl overflow-hidden mb-6 md:mb-8">
               <CardContent className="p-4 md:p-8">
                 {/* Layout Grid Interaktif */}
@@ -317,58 +316,9 @@ export default function PenghargaanPage() {
             </Card>
           </div>
 
-          {/* Sidebar */}
           <div className="space-y-6">
-            {/* Menu Tentang */}
-            <Card className="border shadow-sm rounded-2xl overflow-hidden top-6">
-              <CardContent className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 md:mb-6 pb-3 border-b">
-                  Menu Tentang
-                </h3>
-                <ScrollArea className="h-[350px] md:h-[400px] pr-2 md:pr-4">
-                  <ul className="space-y-1 md:space-y-2">
-                    {sidebarItems.map((item) => (
-                      <li key={item.id}>
-                        <a
-                          href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between p-3 md:p-4 rounded-lg hover:bg-primary/5 transition-colors group border border-transparent hover:border-primary/20"
-                        >
-                          <div className="flex items-center gap-2 md:gap-3">
-                            <div
-                              className={`
-                              w-2 h-2 rounded-full transition-transform
-                              ${
-                                item.id === 4
-                                  ? "bg-primary scale-125"
-                                  : "bg-gray-300 group-hover:bg-primary group-hover:scale-125"
-                              }
-                            `}
-                            />
-                            <span
-                              className={`
-                              text-sm md:text-base transition-colors
-                              ${
-                                item.id === 4
-                                  ? "text-primary font-semibold"
-                                  : "text-gray-700 group-hover:text-gray-900 font-medium"
-                              }
-                            `}
-                            >
-                              {item.title}
-                            </span>
-                          </div>
-                          <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary flex-shrink-0" />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </ScrollArea>
-              </CardContent>
-            </Card>
+            <TentangMenu activeId={4} />
 
-            {/* Info Kontak */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
               <CardContent className="p-4 md:p-6">
                 <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">

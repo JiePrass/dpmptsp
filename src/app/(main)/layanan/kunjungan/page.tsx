@@ -419,7 +419,7 @@ export default function KunjunganSection() {
             )}
           </div>
 
-          <Sidebar type="layanan" activeId={5} />
+          <Sidebar activeId={6} />
         </div>
       </div>
     </section>

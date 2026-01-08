@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock, ChevronRight } from "lucide-react";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { TentangMenu } from "@/components/shared/TentangSidebar";
 
 export default function TentangKamiSection() {
   const menuItems = [
@@ -152,34 +153,7 @@ export default function TentangKamiSection() {
           </div>
 
           <div className="space-y-6">
-            <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent>
-                <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">
-                  Menu Tentang
-                </h3>
-                <ul className="space-y-4">
-                  {menuItems.map((item) => (
-                    <li key={item.id}>
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between p-4 rounded-lg hover:bg-primary/5 transition-colors group border border-primary/20"
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform" />
-                          <span className="text-gray-700 group-hover:text-gray-900 font-medium">
-                            {item.title}
-                          </span>
-                        </div>
-                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary" />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-
+            <TentangMenu activeId={1} />
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
               <CardContent>
                 <div className="flex items-start gap-4 mb-6">

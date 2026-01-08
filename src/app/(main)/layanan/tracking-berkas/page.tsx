@@ -20,6 +20,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import Sidebar from "@/components/layouts/sidebar";
 
 const layananItems = [
   {
@@ -353,33 +354,7 @@ export default function TrackingBerkasSection() {
           </div>
 
           <div className="space-y-6">
-            <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">
-                  Layanan Lainnya
-                </h3>
-                <div className="space-y-2">
-                  {layananItems.map((item) => (
-                    <a
-                      key={item.id}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between p-4 rounded-lg hover:bg-blue-50 transition-colors group border border-transparent hover:border-blue-200"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-blue-600 group-hover:scale-125 transition-transform" />
-                        <span className="text-gray-700 group-hover:text-gray-900 font-medium">
-                          {item.title}
-                        </span>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
-                    </a>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
+            <Sidebar activeId={3} />
           </div>
         </div>
       </div>
