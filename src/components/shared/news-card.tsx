@@ -68,7 +68,7 @@ export default function NewsCard({ data }: NewsCardProps) {
                 {/* Action */}
                 <Link
                     href={`/berita/${data.id}`}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-green-700 hover:underline"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
                 >
                     Baca Selengkapnya
                     <ArrowRight className="h-4 w-4" />

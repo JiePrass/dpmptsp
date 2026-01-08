@@ -21,7 +21,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
-// Mock data untuk layanan sidebar
 const layananItems = [
   {
     id: 1,

@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+
 import { Card, CardContent } from "@/components/ui/card";
+
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -10,12 +12,14 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+
 import { ChevronRight } from "lucide-react";
 
 const informasiPerizinanLinks = [

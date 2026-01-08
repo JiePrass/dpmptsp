@@ -28,6 +28,7 @@ const nav = [
     label: "Layanan",
     children: [
       // { label: "Perizinan Online", href: "/layanan/perizinan-online" },
+      { label: "Layanan", href: "/layanan" },
       { label: "Perizinan Online", href: "/login" },
       { label: "Tracking Berkas", href: "/layanan/tracking-berkas" },
       {
