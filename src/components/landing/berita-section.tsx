@@ -85,8 +85,8 @@ export default function BeritaSection() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {/* Main News */}
-        <div className="lg:col-span-2">
-          <div className="relative aspect-video overflow-hidden rounded-lg">
+        <div className="lg:col-span-2 rounded-xl border border-gray-300">
+          <div className="relative aspect-video overflow-hidden rounded-t-xl">
             <Image
               src={mainNews.image}
               alt={mainNews.title}
@@ -95,7 +95,7 @@ export default function BeritaSection() {
             />
           </div>
 
-          <div className="py-4">
+          <div className="p-8">
             <p className="text-sm text-muted-foreground mb-1">
               {mainNews.category}
             </p>
@@ -112,10 +112,10 @@ export default function BeritaSection() {
         </div>
 
         {/* Other News */}
-        <div className="space-y-6 md:space-y-8.5">
+        <div className="space-y-6 md:space-y-8">
           {news.map((item) => (
-            <div key={item.id} className="flex gap-4">
-              <div className="relative w-28 h-28 shrink-0 overflow-hidden rounded-lg">
+            <div key={item.id} className="flex gap-4 border border-gray-300 rounded-xl">
+              <div className="relative w-28 h-28 shrink-0 overflow-hidden rounded-l-xl">
                 <Image
                   src={item.image}
                   alt={item.title}

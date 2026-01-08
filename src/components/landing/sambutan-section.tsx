@@ -4,7 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function SambutanSection() {
     return (
-        <section className="w-full py-16">
+        <section className="w-full pb-16">
             <div className="container mx-auto px-4">
                 <Card className="overflow-hidden rounded-3xl border-none">
                     <div className="grid grid-cols-1 md:grid-cols-3">
