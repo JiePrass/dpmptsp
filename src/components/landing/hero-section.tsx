@@ -152,9 +152,8 @@ export default function HeroSection() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? "opacity-100 z-0" : "opacity-0 z-[-1]"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-0" : "opacity-0 z-[-1]"
+            }`}
         >
           <Image
             src={slide.src}
@@ -169,7 +168,7 @@ export default function HeroSection() {
 
       <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-black/40 z-10"></div>
 
-      <div className="relative z-20 px-4 pb-20 pt-10 md:pb-64">
+      <div className="relative z-20 px-4 pb-20 pt-16 md:pb-64">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mt-20  mb-6 md:mb-12 px-4">
             <Badge
@@ -296,9 +295,8 @@ export default function HeroSection() {
 
             {/* Footer Note */}
             <div
-              className={`mt-8 pt-6 border-t border-white/20 ${
-                showAllShortcuts ? "opacity-75" : ""
-              }`}
+              className={`mt-8 pt-6 border-t border-white/20 ${showAllShortcuts ? "opacity-75" : ""
+                }`}
             >
               <p className="text-center text-white/90 text-sm md:text-base">
                 <span className="text-white font-semibold">

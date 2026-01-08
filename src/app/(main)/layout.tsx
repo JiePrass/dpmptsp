@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Footer from "@/components/layouts/footer";
 import Header from "@/components/layouts/header";
+import FloatingButton from "@/components/shared/floating-button";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <FloatingButton />
         <Footer />
       </body>
     </html>
