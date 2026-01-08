@@ -152,8 +152,9 @@ export default function HeroSection() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-0" : "opacity-0 z-[-1]"
-            }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            index === currentSlide ? "opacity-100 z-0" : "opacity-0 z-[-1]"
+          }`}
         >
           <Image
             src={slide.src}
@@ -178,9 +179,7 @@ export default function HeroSection() {
               Selamat Datang di Website
             </Badge>
             <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
-              Dinas Penanaman Modal
-
-              dan <br /> Pelayanan Terpadu Satu Pintu
+              Dinas Penanaman Modal dan <br /> Pelayanan Terpadu Satu Pintu
             </h1>
             <p className="text-xl md:text-xl text-gray-200 mx-auto font-light">
               Melayani masyarakat dengan profesional, transparan, dan akuntabel
@@ -223,7 +222,7 @@ export default function HeroSection() {
                     onMouseLeave={() => setIsHovered(null)}
                   >
                     <div
-                      className="h-full rounded-2xl overflow-hidden bg-primary shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-white/20 hover:border-white/40"
+                      className="relative h-full rounded-2xl overflow-hidden bg-primary shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-white/20 hover:border-white/40"
                       style={{
                         opacity: isHovered === index ? 0.95 : 1,
                         transform:
@@ -250,8 +249,14 @@ export default function HeroSection() {
                           )}
                         </div>
 
-                        {/* External Link Indicator */}
-                        <div className="mt-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                        <div
+                          className="
+    absolute top-3 right-3
+    opacity-0 scale-90
+    group-hover:opacity-100 group-hover:scale-100
+    transition-all duration-300
+  "
+                        >
                           <ExternalLink className="w-4 h-4 text-white/80 group-hover:text-white" />
                         </div>
                       </div>
@@ -291,8 +296,9 @@ export default function HeroSection() {
 
             {/* Footer Note */}
             <div
-              className={`mt-8 pt-6 border-t border-white/20 ${showAllShortcuts ? "opacity-75" : ""
-                }`}
+              className={`mt-8 pt-6 border-t border-white/20 ${
+                showAllShortcuts ? "opacity-75" : ""
+              }`}
             >
               <p className="text-center text-white/90 text-sm md:text-base">
                 <span className="text-white font-semibold">
