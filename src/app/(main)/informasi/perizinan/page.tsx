@@ -49,7 +49,6 @@ export default function InformasiPerizinanPage() {
     return (
         <section className="w-full py-16 bg-white">
             <div className="max-w-7xl mx-auto px-6">
-                {/* Header */}
                 <div className="mb-12 mt-10">
                     <Breadcrumb className="mb-4">
                         <BreadcrumbList>
@@ -79,11 +78,9 @@ export default function InformasiPerizinanPage() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Konten Utama */}
                     <div className="lg:col-span-2 space-y-8">
                         <Card className="border shadow-sm rounded-2xl">
                             <CardContent className="p-8 space-y-8">
-                                {/* Dokumen */}
                                 <div className="space-y-4">
                                     <h2 className="text-2xl font-bold text-gray-900">
                                         Dokumen yang Perlu Dipersiapkan
@@ -110,7 +107,6 @@ export default function InformasiPerizinanPage() {
                                     </div>
                                 </div>
 
-                                {/* Perbedaan Akun */}
                                 <div className="space-y-4">
                                     <h2 className="text-2xl font-bold text-gray-900">
                                         Perbedaan Akun
@@ -124,7 +120,6 @@ export default function InformasiPerizinanPage() {
                                     </p>
                                 </div>
 
-                                {/* Cara Daftar */}
                                 <div className="space-y-4">
                                     <h2 className="text-2xl font-bold text-gray-900">
                                         Cara Mendaftar Akun
@@ -150,7 +145,6 @@ export default function InformasiPerizinanPage() {
                         </Card>
                     </div>
 
-                    {/* Sidebar Kanan */}
                     <div className="space-y-6">
                         <Card className="border shadow-sm rounded-2xl">
                             <CardContent className="p-6">

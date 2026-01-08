@@ -85,7 +85,6 @@ export default function BantuanSection() {
     <section className="w-full py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 mt-10">
-          {/* Breadcrumb */}
           <Breadcrumb className="mb-4">
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -120,12 +119,10 @@ export default function BantuanSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Main Content */}
           <div className="lg:col-span-3">
             {!isSubmitted ? (
               <Card className="border shadow-sm rounded-2xl overflow-hidden">
                 <CardContent className="p-8">
-                  {/* Form Header */}
                   <div className="mb-8">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-3 bg-blue-100 rounded-xl">
@@ -142,9 +139,7 @@ export default function BantuanSection() {
                     </div>
                   </div>
 
-                  {/* Form */}
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Personal Information */}
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
                         Informasi Pribadi
@@ -276,7 +271,6 @@ export default function BantuanSection() {
                       </div>
                     </div>
 
-                    {/* Complaint Content */}
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-gray-900 border-b pb-2 flex items-center gap-2">
                         <MessageSquare className="w-5 h-5" />
@@ -298,7 +292,6 @@ export default function BantuanSection() {
                       </div>
                     </div>
 
-                    {/* Submit Button */}
                     <div className="pt-4">
                       <Button
                         type="submit"
@@ -337,7 +330,6 @@ export default function BantuanSection() {
                       Pengaduan Anda telah berhasil dikirim. Tim kami akan segera meninjau dan memberikan respon melalui email atau telepon yang Anda berikan.
                     </p>
 
-                    {/* Submitted Data Summary */}
                     <div className="bg-gray-50 rounded-xl p-6 max-w-2xl mx-auto text-left">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4">
                         Data Pengaduan Anda:
@@ -382,7 +374,6 @@ export default function BantuanSection() {
               </Card>
             )}
 
-            {/* Komunikasi Masyarakat Section */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden mt-8">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
@@ -407,7 +398,6 @@ export default function BantuanSection() {
             </Card>
           </div>
 
-          {/* Sidebar menggunakan komponen Sidebar */}
           <Sidebar type="layanan" activeId={4} />
         </div>
       </div>

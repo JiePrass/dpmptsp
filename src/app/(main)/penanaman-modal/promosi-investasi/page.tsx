@@ -52,12 +52,10 @@ const documents = [
     { id: 12, title: "Peta Potensi Investasi Tahun 2022" },
 ]
 
-/* ================= PAGE ================= */
 
 export default function PromosiInvestasiPage() {
     return (
         <main className="bg-background max-w-7xl container mx-auto px-6">
-            {/* ================= HEADER ================= */}
             <div className="mt-10 py-16 container">
                 <Breadcrumb className="mb-4">
                     <BreadcrumbList>
@@ -97,12 +95,10 @@ export default function PromosiInvestasiPage() {
                 </p>
             </div>
 
-            {/* ================= CONTENT ================= */}
-            <section className="container pb-16">
+            <section className="container mx-auto pb-16">
+                {/* ================= CONTENT ================= */}
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-                    {/* ================= MAIN ================= */}
                     <div className="lg:col-span-8">
-                        {/* ===== TABLE ===== */}
                         <Card>
                             <CardHeader>
                                 <CardTitle>Daftar Dokumen Promosi Investasi</CardTitle>
@@ -147,7 +143,6 @@ export default function PromosiInvestasiPage() {
                             </CardContent>
                         </Card>
 
-                        {/* ===== CATATAN ===== */}
                         <div className="rounded-xl border bg-muted p-6 text-sm">
                             <div className="flex items-start gap-3">
                                 <Info className="mt-0.5 h-5 w-5 text-muted-foreground" />
@@ -160,7 +155,6 @@ export default function PromosiInvestasiPage() {
                         </div>
                     </div>
 
-                    {/* ================= SIDEBAR ================= */}
                     <aside className="lg:col-span-4 space-y-6">
                         <Card>
                             <CardHeader>

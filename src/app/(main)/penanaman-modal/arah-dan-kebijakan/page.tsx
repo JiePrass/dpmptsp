@@ -20,7 +20,6 @@ export default function PenanamanModalPage() {
     return (
         <section className="w-full py-16 bg-white">
             <div className="max-w-7xl mx-auto px-6">
-                {/* ===== HEADER ===== */}
                 <div className="mb-12 mt-10">
                     <Breadcrumb className="mb-4">
                         <BreadcrumbList>
@@ -59,9 +58,7 @@ export default function PenanamanModalPage() {
                     </p>
                 </div>
 
-                {/* ===== CONTENT ===== */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                    {/* KONTEN UTAMA */}
                     <div className="lg:col-span-2 space-y-10">
                         <section>
                             <h2 className="text-2xl font-bold text-gray-900 mb-4">
@@ -131,7 +128,6 @@ export default function PenanamanModalPage() {
                         </section>
                     </div>
 
-                    {/* SIDEBAR ACCORDION */}
                     <aside className="space-y-6">
                         <div className="border rounded-2xl p-6 shadow-sm">
                             <div className="flex items-center gap-2 mb-4">

@@ -44,9 +44,8 @@ export default async function NewsDetail({ params }: NewsPageProps) {
 
 
   return (
-    <section className="w-full py-8 md:py-16 bg-background">
+    <section className="w-full py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Breadcrumb */}
         <div className="mb-12 mt-10">
           <Breadcrumb className="mb-4">
             <BreadcrumbList>
@@ -64,7 +63,7 @@ export default async function NewsDetail({ params }: NewsPageProps) {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbPage className="text-gray-900 font-medium">
-                  {news.title.length > 40 ? `${news.title.substring(0, 40)}...` : news.title}
+                  Detail Berita
                 </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
@@ -72,9 +71,7 @@ export default async function NewsDetail({ params }: NewsPageProps) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Content */}
           <div className="lg:col-span-2">
-            {/* Back Button */}
             <div className="mb-6">
               <Link href="/berita">
                 <Button variant="ghost" className="gap-2 text-gray-600 hover:text-primary">
@@ -84,9 +81,7 @@ export default async function NewsDetail({ params }: NewsPageProps) {
               </Link>
             </div>
 
-            {/* Article Header */}
             <article className="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-8">
-              {/* Category & Meta */}
               <div className="mb-6">
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
                   <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -106,13 +101,11 @@ export default async function NewsDetail({ params }: NewsPageProps) {
                   </div>
                 </div>
 
-                {/* Title */}
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                   {news.title}
                 </h1>
               </div>
 
-              {/* Featured Image */}
               <div className="relative h-64 md:h-96 w-full mb-8 rounded-xl overflow-hidden shadow-lg">
                 <Image
                   src={news.image}
@@ -125,7 +118,6 @@ export default async function NewsDetail({ params }: NewsPageProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
 
-              {/* Article Content */}
               <div className="prose prose-lg max-w-none">
                 <div className="text-lg text-gray-700 mb-6 leading-relaxed">
                   {news.excerpt}
@@ -133,7 +125,6 @@ export default async function NewsDetail({ params }: NewsPageProps) {
                 
                 <Separator className="my-8" />
                 
-                {/* More Content */}
                 <div className="space-y-6 text-gray-700">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
@@ -160,7 +151,6 @@ export default async function NewsDetail({ params }: NewsPageProps) {
                 </div>
               </div>
 
-              {/* Share Section */}
               <div className="mt-10 pt-8 border-t">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
@@ -188,7 +178,6 @@ export default async function NewsDetail({ params }: NewsPageProps) {
               </div>
             </article>
 
-            {/* Related News */}
             {relatedNews.length > 0 && (
               <div className="mt-12">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -203,9 +192,7 @@ export default async function NewsDetail({ params }: NewsPageProps) {
             )}
           </div>
 
-          {/* Sidebar */}
           <div className="space-y-6">
-            {/* Latest News */}
             <Card className="rounded-2xl shadow-sm top-24">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-6">
@@ -243,7 +230,6 @@ export default async function NewsDetail({ params }: NewsPageProps) {
               </CardContent>
             </Card>
 
-            {/* Categories */}
             <Card className="rounded-2xl shadow-sm">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-6">
@@ -270,8 +256,6 @@ export default async function NewsDetail({ params }: NewsPageProps) {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Official Info */}
             <Card className="rounded-2xl shadow-sm">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
@@ -317,7 +301,6 @@ export default async function NewsDetail({ params }: NewsPageProps) {
           </div>
         </div>
 
-        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

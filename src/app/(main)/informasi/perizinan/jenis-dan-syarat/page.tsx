@@ -180,7 +180,6 @@ export default function JenisDanSyaratPage() {
     return (
         <section className="w-full py-16 bg-background">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                {/* Header */}
                 <div className="mb-12 mt-10">
                     <Breadcrumb className="mb-4">
                         <BreadcrumbList>
@@ -219,7 +218,6 @@ export default function JenisDanSyaratPage() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Konten Utama */}
                     <div className="lg:col-span-2 space-y-6">
                         <Card className="border border-gray-200 shadow-sm rounded-xl overflow-hidden">
                             <CardContent className="p-6 space-y-6">
@@ -350,7 +348,6 @@ export default function JenisDanSyaratPage() {
                             </CardContent>
                         </Card>
 
-                        {/* Informasi Tambahan */}
                         <Card className="border border-gray-200 shadow-sm rounded-xl">
                             <CardContent className="p-6">
                                 <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
@@ -379,7 +376,6 @@ export default function JenisDanSyaratPage() {
                         </Card>
                     </div>
 
-                    {/* Sidebar */}
                     <div className="space-y-6">
                         <Card className="border border-gray-200 shadow-sm rounded-xl">
                             <CardContent className="p-6">
@@ -408,7 +404,6 @@ export default function JenisDanSyaratPage() {
                             </CardContent>
                         </Card>
 
-                        {/* Quick Links */}
                         <Card className="border border-gray-200 shadow-sm rounded-xl">
                             <CardContent className="p-6">
                                 <h3 className="text-xl font-bold text-gray-900 mb-6 pb-3 border-b">
@@ -440,7 +435,6 @@ export default function JenisDanSyaratPage() {
                 </div>
             </div>
 
-            {/* Modal Persyaratan */}
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
                     <DialogHeader>

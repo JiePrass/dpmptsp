@@ -57,7 +57,6 @@ const investmentData = [
 export default function RealisasiInvestasiPage() {
     return (
         <main className="bg-background  max-w-7xl container mx-auto px-6">
-            {/* ================= HEADER ================= */}
             <div className="mt-10 py-16">
                 <Breadcrumb className="mb-4">
                     <BreadcrumbList>
@@ -95,12 +94,9 @@ export default function RealisasiInvestasiPage() {
                 </p>
             </div>
 
-            {/* ================= CONTENT ================= */}
             <section className="container mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-                    {/* ================= MAIN ================= */}
                     <div className="lg:col-span-8 space-y-10">
-                        {/* ===== CHART ===== */}
                         <Card>
                             <CardHeader>
                                 <CardTitle>Grafik Realisasi Investasi</CardTitle>
@@ -144,7 +140,6 @@ export default function RealisasiInvestasiPage() {
                             </CardContent>
                         </Card>
 
-                        {/* ===== INSIGHT ===== */}
                         <div className="rounded-xl border bg-card p-6">
                             <h2 className="text-xl font-semibold">
                                 Analisis & Insight Investasi
@@ -170,7 +165,6 @@ export default function RealisasiInvestasiPage() {
                             </ul>
                         </div>
 
-                        {/* ===== CATATAN ===== */}
                         <div className="rounded-xl border bg-muted p-6 text-sm">
                             <div className="flex items-start gap-3">
                                 <Info className="mt-0.5 h-5 w-5 text-muted-foreground" />
@@ -182,7 +176,6 @@ export default function RealisasiInvestasiPage() {
                         </div>
                     </div>
 
-                    {/* ================= SIDEBAR ================= */}
                     <aside className="lg:col-span-4 space-y-6">
                         <div className="rounded-xl border bg-card p-6">
                             <h3 className="mb-4 text-lg font-semibold">

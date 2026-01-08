@@ -71,7 +71,6 @@ export default function KunjunganSection() {
     <section className="w-full py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 mt-10">
-          {/* Breadcrumb */}
           <Breadcrumb className="mb-4">
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -101,9 +100,7 @@ export default function KunjunganSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Main Content */}
           <div className="lg:col-span-3">
-            {/* Informasi Penting */}
             <Card className="border border-yellow-200 shadow-sm rounded-2xl overflow-hidden mb-8 bg-yellow-50">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
@@ -137,7 +134,6 @@ export default function KunjunganSection() {
             {!isSubmitted ? (
               <Card className="border shadow-sm rounded-2xl overflow-hidden">
                 <CardContent className="p-8">
-                  {/* Form Header */}
                   <div className="mb-8">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-3 bg-blue-100 rounded-xl">
@@ -154,9 +150,7 @@ export default function KunjunganSection() {
                     </div>
                   </div>
 
-                  {/* Form */}
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Informasi Kunjungan */}
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
                         Informasi Kunjungan
@@ -309,7 +303,6 @@ export default function KunjunganSection() {
                       </div>
                     </div>
 
-                    {/* Submit Button */}
                     <div className="pt-4">
                       <Button
                         type="submit"
@@ -345,7 +338,6 @@ export default function KunjunganSection() {
                       Terima Kasih
                     </h2>
 
-                    {/* Informasi Setelah Pengajuan */}
                     <div className="bg-blue-50 rounded-xl p-6 mb-6 border border-blue-200 text-left">
                       <h4 className="font-semibold text-blue-800 mb-4 text-lg">
                         ⚠️ Informasi Penting
@@ -365,7 +357,6 @@ export default function KunjunganSection() {
                       </div>
                     </div>
 
-                    {/* Data yang Dikirim */}
                     <div className="bg-gray-50 rounded-xl p-6 max-w-2xl mx-auto text-left mb-6">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">
                         Data Permohonan Anda:
@@ -428,7 +419,6 @@ export default function KunjunganSection() {
             )}
           </div>
 
-          {/* Sidebar menggunakan komponen Sidebar */}
           <Sidebar type="layanan" activeId={5} />
         </div>
       </div>

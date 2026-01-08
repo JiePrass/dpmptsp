@@ -107,7 +107,6 @@ export default function KunjunganSection() {
     <section className="w-full py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 mt-10">
-          {/* Breadcrumb */}
           <Breadcrumb className="mb-4">
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -131,11 +130,9 @@ export default function KunjunganSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Main Content */}
           <div className="lg:col-span-3">
             {!isSubmitted ? (
               <>
-                {/* Informasi Tambahan */}
                 <div className="mb-8">
                   <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
                     <div className="flex items-start">
@@ -154,10 +151,8 @@ export default function KunjunganSection() {
                   </div>
                 </div>
 
-                {/* Form */}
                 <Card className="border shadow-sm rounded-2xl overflow-hidden">
                   <CardContent className="p-8">
-                    {/* Form Header */}
                     <div className="mb-8">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 bg-blue-100 rounded-xl">
@@ -175,7 +170,6 @@ export default function KunjunganSection() {
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
-                      {/* Personal Information */}
                       <div className="space-y-4">
                         <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
                           Data Pribadi
@@ -275,7 +269,6 @@ export default function KunjunganSection() {
                         </div>
                       </div>
 
-                      {/* Informasi yang Dibutuhkan */}
                       <div className="space-y-4">
                         <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
                           Informasi yang Dibutuhkan
@@ -351,7 +344,6 @@ export default function KunjunganSection() {
                         </div>
                       </div>
 
-                      {/* File Upload */}
                       <div className="space-y-4">
                         <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
                           Dokumen Pendukung
@@ -394,7 +386,6 @@ export default function KunjunganSection() {
                         </div>
                       </div>
 
-                      {/* Submit Button */}
                       <div className="pt-4 flex justify-end">
                         <Button
                           type="submit"
@@ -510,7 +501,6 @@ export default function KunjunganSection() {
             )}
           </div>
 
-          {/* Sidebar */}
           <Sidebar type="layanan" activeId={5} />
         </div>
       </div>

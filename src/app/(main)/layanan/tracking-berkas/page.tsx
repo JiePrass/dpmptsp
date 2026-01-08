@@ -126,7 +126,6 @@ export default function TrackingBerkasSection() {
     <section className="w-full py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 mt-10">
-          {/* Breadcrumb */}
           <Breadcrumb className="mb-4">
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -156,11 +155,9 @@ export default function TrackingBerkasSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Main Content */}
           <div className="lg:col-span-3">
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
               <CardContent className="p-8">
-                {/* Search Section */}
                 <div className="mb-10">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border border-blue-200">
                     <div className="flex-1 w-full">
@@ -205,7 +202,6 @@ export default function TrackingBerkasSection() {
                   </div>
                 </div>
 
-                {/* Results Section */}
                 <div className="mt-8">
                   {isLoading ? (
                     <div className="space-y-4">
@@ -243,14 +239,11 @@ export default function TrackingBerkasSection() {
                             </h4>
 
                             <div className="relative">
-                              {/* Timeline line */}
                               <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-blue-200" />
 
-                              {/* Timeline items */}
                               <div className="space-y-8 ml-12">
                                 {trackingResult.data.map((item, index) => (
                                   <div key={item.id} className="relative">
-                                    {/* Timeline dot */}
                                     <div
                                       className={`absolute -left-12 top-0 w-12 h-12 rounded-full flex items-center justify-center border-4 border-white ${index === trackingResult.data.length - 1
                                           ? "bg-green-500"
@@ -283,7 +276,6 @@ export default function TrackingBerkasSection() {
                               </div>
                             </div>
 
-                            {/* Current Status Summary */}
                             <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200">
                               <div className="flex items-center gap-3 mb-3">
                                 <FileText className="w-6 h-6 text-green-600" />
@@ -327,7 +319,6 @@ export default function TrackingBerkasSection() {
                   )}
                 </div>
 
-                {/* Information Section */}
                 <div className="mt-12 pt-8 border-t border-gray-200">
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
                     Informasi Penting
@@ -361,9 +352,7 @@ export default function TrackingBerkasSection() {
             </Card>
           </div>
 
-          {/* Sidebar */}
           <div className="space-y-6">
-            {/* Layanan Menu */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">

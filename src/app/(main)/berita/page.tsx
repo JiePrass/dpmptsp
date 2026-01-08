@@ -34,7 +34,6 @@ export default function BeritaPage() {
     return (
         <section className="w-full py-16 bg-white">
             <div className="max-w-7xl mx-auto px-6">
-                {/* Header */}
                 <div className="mb-12 mt-10">
                     <Breadcrumb className="mb-4">
                         <BreadcrumbList>
@@ -68,9 +67,7 @@ export default function BeritaPage() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                    {/* Main Content */}
                     <div className="lg:col-span-3 space-y-8">
-                        {/* Statistik */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <Card className="rounded-2xl shadow-sm">
                                 <CardContent className="p-6 flex items-center justify-between">
@@ -113,7 +110,6 @@ export default function BeritaPage() {
                             </Card>
                         </div>
 
-                        {/* List Berita */}
                         <Card className="rounded-2xl shadow-sm">
                             <CardContent className="p-8">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -129,9 +125,7 @@ export default function BeritaPage() {
                         </Card>
                     </div>
 
-                    {/* Sidebar */}
                     <div className="space-y-6">
-                        {/* Kategori */}
                         <Card className="rounded-2xl shadow-sm">
                             <CardContent className="p-6">
                                 <h3 className="text-lg font-bold text-gray-900 mb-6">
@@ -161,7 +155,6 @@ export default function BeritaPage() {
                             </CardContent>
                         </Card>
 
-                        {/* Info */}
                         <Card className="rounded-2xl shadow-sm">
                             <CardContent className="p-6">
                                 <div className="flex items-start gap-4">

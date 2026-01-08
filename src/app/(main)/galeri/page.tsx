@@ -54,7 +54,6 @@ export default function GaleriPage() {
     return (
         <section className="w-full py-16 bg-white">
             <div className="max-w-7xl mx-auto px-6">
-                {/* ===== HEADER (IDENTIK DENGAN BERITA) ===== */}
                 <div className="mb-12 mt-10">
                     <Breadcrumb className="mb-4">
                         <BreadcrumbList>
@@ -88,7 +87,6 @@ export default function GaleriPage() {
                     </p>
                 </div>
 
-                {/* ===== GRID GALERI (PORTAL STYLE) ===== */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {galleries.map((item) => (
                         <div

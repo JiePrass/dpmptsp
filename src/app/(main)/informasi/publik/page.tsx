@@ -49,7 +49,6 @@ export default function InformasiPublikIKMPage() {
     return (
         <section className="w-full py-16 bg-white">
             <div className="max-w-7xl mx-auto px-6">
-                {/* Header */}
                 <div className="mb-12 mt-10">
                     <Breadcrumb className="mb-4">
                         <BreadcrumbList>
@@ -80,9 +79,7 @@ export default function InformasiPublikIKMPage() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Konten Utama */}
                     <div className="lg:col-span-2 space-y-8">
-                        {/* Tabel IKM */}
                         <h2 className="text-2xl font-bold text-gray-900 mb-6">
                             Tabel Indeks Kepuasan Masyarakat
                         </h2>
@@ -109,7 +106,6 @@ export default function InformasiPublikIKMPage() {
                             </table>
                         </div>
 
-                        {/* Ringkasan */}
                         <Card className="border shadow-sm rounded-2xl">
                             <CardContent className="p-8 space-y-3">
                                 <h2 className="text-2xl font-bold text-gray-900">
@@ -121,7 +117,6 @@ export default function InformasiPublikIKMPage() {
                             </CardContent>
                         </Card>
 
-                        {/* Grafik */}
                         <Card className="border shadow-sm rounded-2xl">
                             <CardContent className="p-8">
                                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -142,7 +137,6 @@ export default function InformasiPublikIKMPage() {
                         </Card>
                     </div>
 
-                    {/* Sidebar */}
                     <div className="space-y-6">
                         <Card className="border shadow-sm rounded-2xl">
                             <CardContent className="p-6">

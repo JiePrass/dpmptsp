@@ -42,7 +42,6 @@ export default function TentangKamiSection() {
     <section className="w-full py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12 mt-10">
-          {/* Breadcrumb */}
           <Breadcrumb className="mb-4">
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -90,7 +89,6 @@ export default function TentangKamiSection() {
                     </div>
                   </div>
 
-                  {/* Misi */}
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="w-3 h-3 rounded-full bg-primary" />
@@ -103,7 +101,6 @@ export default function TentangKamiSection() {
                     </div>
                   </div>
 
-                  {/* Motto */}
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="w-3 h-3 rounded-full bg-primary" />
@@ -124,7 +121,6 @@ export default function TentangKamiSection() {
               </CardContent>
             </Card>
 
-            {/* Alur Perizinan Image */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
               <CardContent className="p-0">
                 <div className="relative w-full h-64 md:h-80">
@@ -148,9 +144,7 @@ export default function TentangKamiSection() {
             </Card>
           </div>
 
-          {/* Right Sidebar */}
           <div className="space-y-6">
-            {/* Menu Tentang */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">
@@ -181,7 +175,6 @@ export default function TentangKamiSection() {
               </CardContent>
             </Card>
 
-            {/* Contact Info */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4 mb-6">
