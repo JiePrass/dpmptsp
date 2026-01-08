@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChevronRight } from "lucide-react";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
@@ -76,10 +75,10 @@ export default function TugasPokokFungsiPage() {
           </BreadcrumbList>
         </Breadcrumb>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-3 space-y-8">
-            <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2 space-y-8">
+            <Card className="border shadow-sm rounded-2xl overflow-hidden p-0">
+              <CardContent>
                 <div className="relative w-full h-96">
                   <Image
                     src="https://perizinan.kotabogor.go.id/portal_22/uploads/crud/alur.jpg"
@@ -94,7 +93,7 @@ export default function TugasPokokFungsiPage() {
             </Card>
 
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-8">
+              <CardContent>
                 <div className="prose prose-lg max-w-none">
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">
                     Tugas Pokok DPMPTSP Kota Bogor
@@ -182,43 +181,41 @@ export default function TugasPokokFungsiPage() {
           </div>
 
           <div className="space-y-6">
-            <Card className="border shadow-sm rounded-2xl overflow-hidden top-6">
-              <CardContent className="p-6">
+            <Card className="border shadow-sm rounded-2xl">
+              <CardContent>
                 <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">
                   Menu Tentang
                 </h3>
-                <ScrollArea className="h-125 pr-4">
-                  <ul className="space-y-2">
-                    {sidebarItems.map((item) => (
-                      <li key={item.id}>
-                        <a
-                          href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between p-4 rounded-lg hover:bg-primary/5 transition-colors group border border-transparent hover:border-primary/20"
-                        >
-                          <div className="flex items-center gap-3">
-                            <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform" />
-                            <span
-                              className={`text-gray-700 group-hover:text-gray-900 font-medium ${item.id === 2
-                                ? "text-primary font-semibold"
-                                : ""
-                                }`}
-                            >
-                              {item.title}
-                            </span>
-                          </div>
-                          <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary" />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </ScrollArea>
+                <ul className="space-y-2">
+                  {sidebarItems.map((item) => (
+                    <li key={item.id}>
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between p-4 rounded-lg hover:bg-primary/5 transition-colors group border border-primary/20"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform" />
+                          <span
+                            className={`text-gray-700 group-hover:text-gray-900 font-medium ${item.id === 2
+                              ? "text-primary font-semibold"
+                              : ""
+                              }`}
+                          >
+                            {item.title}
+                          </span>
+                        </div>
+                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
 
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-6">
+              <CardContent>
                 <div className="flex items-start gap-4 mb-6">
                   <div className="relative w-16 h-16">
                     <Image

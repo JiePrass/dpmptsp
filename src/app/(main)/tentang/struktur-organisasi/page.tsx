@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import Sidebar from "@/components/layouts/sidebar";
 import { ChevronRight, Users, UserCheck, Award, Briefcase, Building, } from "lucide-react";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
@@ -235,20 +234,15 @@ export default function StrukturOrganisasiPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
-          <div className="lg:col-span-3 space-y-8">
+          <div className="lg:col-span-2 space-y-8">
             {/* Struktur Organisasi Images */}
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <Building className="w-6 h-6 text-primary" />
-                Struktur Organisasi DPMPTSP
-              </h2>
-
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {strukturImages.map((image) => (
                   <Card key={image.id} className="border shadow-sm rounded-2xl overflow-hidden">
-                    <CardContent className="p-0">
+                    <CardContent>
                       <div className="relative w-full h-64">
                         <Image
                           src={image.src}
@@ -269,7 +263,7 @@ export default function StrukturOrganisasiPage() {
 
             {/* Pejabat Struktural */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-8">
+              <CardContent>
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
                     <Building className="w-6 h-6 text-primary" />
@@ -309,7 +303,7 @@ export default function StrukturOrganisasiPage() {
 
             {/* Pejabat Fungsional */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-8">
+              <CardContent>
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
                     <Users className="w-6 h-6 text-primary" />
@@ -375,7 +369,7 @@ export default function StrukturOrganisasiPage() {
 
             {/* Info Box */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-6">
+              <CardContent>
                 <div className="bg-linear-to-r from-primary/5 to-primary/10 rounded-xl p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
                     <Award className="w-5 h-5 text-primary" />
@@ -407,11 +401,11 @@ export default function StrukturOrganisasiPage() {
 
           {/* Sidebar */}
           <div className="space-y-6">
-            
-         <Sidebar type="tentang" activeId={4} />
+
+            <Sidebar type="tentang" activeId={4} />
             {/* Kategori Pejabat */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-6">
+              <CardContent>
                 <h3 className="text-lg font-bold text-gray-900 mb-6">Kategori Pejabat</h3>
                 <div className="space-y-3">
                   {categories.map((cat) => (
@@ -434,7 +428,7 @@ export default function StrukturOrganisasiPage() {
 
             {/* Quick Stats */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-6">
+              <CardContent>
                 <h3 className="text-lg font-bold text-gray-900 mb-6">Statistik Pejabat</h3>
                 <div className="space-y-4">
                   <div>
@@ -487,7 +481,7 @@ export default function StrukturOrganisasiPage() {
 
             {/* Contact Info */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-6">
+              <CardContent>
                 <div className="flex items-start gap-4 mb-6">
                   <div className="relative w-16 h-16">
                     <Image

@@ -40,55 +40,50 @@ export default function Sidebar({ type, activeId }: SidebarProps) {
   return (
     <div className="space-y-6">
       <Card className="border shadow-sm rounded-2xl overflow-hidden">
-        <CardContent className="p-4 md:p-6">
+        <CardContent>
           <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 pb-3 border-b">
             {title}
           </h3>
-          <ScrollArea className="h-[350px] pr-4">
-            <ul className="space-y-2">
-              {items.map((item) => {
-                const isActive = item.id === activeId;
-                return (
-                  <li key={item.id}>
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center justify-between p-3 rounded-lg transition-colors group border border-transparent ${
-                        isActive
-                          ? "bg-primary/10 border-primary/20"
-                          : "hover:bg-primary/5 hover:border-primary/20"
+          <ul className="space-y-2">
+            {items.map((item) => {
+              const isActive = item.id === activeId;
+              return (
+                <li key={item.id}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center justify-between p-3 rounded-lg transition-colors group border border-transparent ${isActive
+                      ? "bg-primary/10 border-primary/20"
+                      : "hover:bg-primary/5 hover:border-primary/20"
                       }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className={`w-2 h-2 rounded-full transition-transform ${
-                            isActive ? "bg-primary scale-125" : "bg-gray-300 group-hover:bg-primary group-hover:scale-125"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`w-2 h-2 rounded-full transition-transform ${isActive ? "bg-primary scale-125" : "bg-gray-300 group-hover:bg-primary group-hover:scale-125"
                           }`}
-                        />
-                        <span
-                          className={`text-sm font-medium ${
-                            isActive ? "text-primary font-semibold" : "text-gray-700 group-hover:text-gray-900"
+                      />
+                      <span
+                        className={`text-sm font-medium ${isActive ? "text-primary font-semibold" : "text-gray-700 group-hover:text-gray-900"
                           }`}
-                        >
-                          {item.title}
-                        </span>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary" />
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </ScrollArea>
+                      >
+                        {item.title}
+                      </span>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary" />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </CardContent>
       </Card>
 
       {/* Info Kontak */}
       <Card className="border shadow-sm rounded-2xl overflow-hidden">
-        <CardContent className="p-4 md:p-6">
+        <CardContent>
           <div className="flex items-start gap-4 mb-6">
-            <div className="relative w-14 h-14 flex-shrink-0">
+            <div className="relative w-14 h-14 shrink-0">
               <Image
                 src="https://perizinan.kotabogor.go.id/portal_22/themes/portal/images/web/pemkot.png"
                 alt="Logo Pemkot Bogor"
