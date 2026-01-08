@@ -20,6 +20,7 @@ import {
     XAxis,
     YAxis,
 } from "recharts";
+import InformasiPengaduanSidebar from "@/components/shared/InformasiPengaduanSidebar";
 
 const ikmTable = [
     { no: 1, indikator: "Kesesuaian persyaratan pelayanan", nilai: 85.94, kategori: "B - BAIK" },
@@ -138,34 +139,7 @@ export default function InformasiPublikIKMPage() {
                     </div>
 
                     <div className="space-y-6">
-                        <Card className="border shadow-sm rounded-2xl">
-                            <CardContent className="p-6">
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                                    Informasi Publik
-                                </h3>
-                                <ul className="space-y-2">
-                                    {
-                                        [
-                                            "Indeks Kepuasan Masyarakat",
-                                            "Realisasi Retribusi",
-                                            "Layanan Perizinan",
-                                            "Informasi dan Pengaduan",
-                                        ].map((item, index) => (
-                                            <li key={index}>
-                                                <Link
-                                                    href="#"
-                                                    className="flex items-center justify-between p-3 rounded-lg border hover:bg-primary/5"
-                                                >
-                                                    <span className="text-gray-700 font-medium">
-                                                        {item}
-                                                    </span>
-                                                    <ChevronRight className="w-4 h-4 text-gray-400" />
-                                                </Link>
-                                            </li>
-                                        ))}
-                                </ul>
-                            </CardContent>
-                        </Card>
+                       <InformasiPengaduanSidebar activeMenu="Indeks Kepuasan Masyarakat" />
                     </div>
                 </div>
             </div>
