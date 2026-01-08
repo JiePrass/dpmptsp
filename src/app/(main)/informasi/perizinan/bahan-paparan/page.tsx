@@ -106,7 +106,7 @@ export default function BahanPaparanPage() {
                     {/* Konten */}
                     <div className="lg:col-span-2">
                         <Card className="border shadow-sm rounded-2xl">
-                            <CardContent className="p-6">
+                            <CardContent>
                                 <Table>
                                     <TableHeader>
                                         <TableRow className="bg-primary/5">
@@ -148,30 +148,31 @@ export default function BahanPaparanPage() {
                     </div>
 
                     {/* Sidebar */}
-                    <div>
-                        <Card className="border shadow-sm rounded-2xl">
-                            <CardContent className="p-6">
-                                <h3 className="text-xl font-bold mb-4">
-                                    Informasi Perizinan
-                                </h3>
-                                <ul className="space-y-2">
-                                    {informasiPerizinanLinks.map((item, i) => (
-                                        <li key={i}>
-                                            <Link
-                                                href={item.href}
-                                                className="flex items-center justify-between p-3 border rounded-lg hover:bg-primary/5 transition-colors"
-                                            >
-                                                <span className="font-medium text-gray-700">
+                    <Card className="border shadow-sm rounded-2xl overflow-hidden">
+                        <CardContent>
+                            <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">
+                                Informasi Lainnya
+                            </h3>
+                            <ul className="space-y-4">
+                                {informasiPerizinanLinks.map((item, i) => (
+                                    <li key={i}>
+                                        <Link
+                                            href={item.href}
+                                            className="flex items-center justify-between p-4 rounded-lg hover:bg-primary/5 transition-colors group border border-primary/20"
+                                        >
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform" />
+                                                <span className="text-gray-700 group-hover:text-gray-900 font-medium">
                                                     {item.label}
                                                 </span>
-                                                <ChevronRight className="w-4 h-4 text-gray-400" />
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </CardContent>
-                        </Card>
-                    </div>
+                                            </div>
+                                            <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary" />
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </CardContent>
+                    </Card>
                 </div>
             </div>
         </section>

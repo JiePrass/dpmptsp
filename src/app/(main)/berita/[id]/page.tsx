@@ -36,11 +36,11 @@ export default async function NewsDetail({ params }: NewsPageProps) {
 
   // Format date for structured data
   const formatDate = (dateString?: string) => {
-  if (!dateString) return '';
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) return '';
-  return date.toISOString().split('T')[0];
-};
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return '';
+    return date.toISOString().split('T')[0];
+  };
 
 
   return (
@@ -88,7 +88,7 @@ export default async function NewsDetail({ params }: NewsPageProps) {
                     <Tag className="w-4 h-4" />
                     {news.category}
                   </span>
-                  
+
                   <div className="flex items-center gap-4 text-gray-500 text-sm">
                     <div className="flex items-center gap-2">
                       <User className="w-4 h-4" />
@@ -115,37 +115,37 @@ export default async function NewsDetail({ params }: NewsPageProps) {
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
               </div>
 
               <div className="prose prose-lg max-w-none">
                 <div className="text-lg text-gray-700 mb-6 leading-relaxed">
                   {news.excerpt}
                 </div>
-                
+
                 <Separator className="my-8" />
-                
+
                 <div className="space-y-6 text-gray-700">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </p>
-                  
+
                   <p>
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
                     culpa qui officia deserunt mollit anim id est laborum.
                   </p>
-                  
+
                   <blockquote className="border-l-4 border-primary pl-6 italic text-gray-600 my-8">
-                    "Ini adalah kutipan penting dari berita yang memberikan penekanan pada poin tertentu 
+                    "Ini adalah kutipan penting dari berita yang memberikan penekanan pada poin tertentu
                     dalam konten."
                   </blockquote>
-                  
+
                   <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
-                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi 
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
                     architecto beatae vitae dicta sunt explicabo.
                   </p>
                 </div>
@@ -170,7 +170,7 @@ export default async function NewsDetail({ params }: NewsPageProps) {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="text-sm text-gray-500">
                     Dipublikasikan pada {news.time}
                   </div>
@@ -194,19 +194,19 @@ export default async function NewsDetail({ params }: NewsPageProps) {
 
           <div className="space-y-6">
             <Card className="rounded-2xl shadow-sm top-24">
-              <CardContent className="p-6">
+              <CardContent>
                 <h3 className="text-lg font-bold text-gray-900 mb-6">
                   Berita Terbaru
                 </h3>
                 <div className="space-y-4">
                   {newsData.slice(0, 5).map((item) => (
-                    <Link 
-                      key={item.id} 
+                    <Link
+                      key={item.id}
                       href={`/berita/${item.id}`}
                       className="block group"
                     >
                       <div className="flex gap-3 p-3 rounded-lg hover:bg-primary/5 transition">
-                        <div className="relative w-16 h-16 flex-shrink-0 rounded overflow-hidden">
+                        <div className="relative w-16 h-16 shrink-0 rounded overflow-hidden">
                           <Image
                             src={item.image}
                             alt={item.title}
@@ -231,7 +231,7 @@ export default async function NewsDetail({ params }: NewsPageProps) {
             </Card>
 
             <Card className="rounded-2xl shadow-sm">
-              <CardContent className="p-6">
+              <CardContent>
                 <h3 className="text-lg font-bold text-gray-900 mb-6">
                   Kategori
                 </h3>
@@ -257,9 +257,9 @@ export default async function NewsDetail({ params }: NewsPageProps) {
               </CardContent>
             </Card>
             <Card className="rounded-2xl shadow-sm">
-              <CardContent className="p-6">
+              <CardContent>
                 <div className="flex items-start gap-4">
-                  <div className="relative w-16 h-16 flex-shrink-0">
+                  <div className="relative w-16 h-16 shrink-0">
                     <Image
                       src="https://perizinan.kotabogor.go.id/portal_22/themes/portal/images/web/pemkot.png"
                       alt="Pemkot Bogor"
@@ -286,7 +286,7 @@ export default async function NewsDetail({ params }: NewsPageProps) {
                       Berita bersumber langsung dari DPMPTSP Kota Bogor
                     </p>
                   </div>
-                  
+
                   <div className="p-3 bg-gray-50 rounded-lg">
                     <p className="text-xs font-medium text-gray-600 mb-1">
                       VERIFIKASI

@@ -15,6 +15,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { BriefcaseBusiness, Layers } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function PenanamanModalPage() {
     return (
@@ -60,72 +61,76 @@ export default function PenanamanModalPage() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
                     <div className="lg:col-span-2 space-y-10">
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                                Arah Kebijakan Penanaman Modal
-                            </h2>
-                            <ul className="list-disc pl-6 space-y-3 text-gray-700">
-                                <li>Perbaikan iklim penanaman modal.</li>
-                                <li>Penguatan kelembagaan penanaman modal.</li>
-                                <li>
-                                    Layanan perizinan yang pasti, transparan, dan berbasis
-                                    elektronik (online).
-                                </li>
-                                <li>
-                                    Pelimpahan wewenang Walikota kepada penyelenggara PTSP.
-                                </li>
-                                <li>
-                                    Peningkatan koordinasi antar SKPD dalam pelayanan perizinan.
-                                </li>
-                            </ul>
-                        </section>
+                        <Card className="border shadow-sm rounded-2xl">
+                            <CardContent className="space-y-8">
+                                <section>
+                                    <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                                        Arah Kebijakan Penanaman Modal
+                                    </h2>
+                                    <ul className="list-disc pl-6 space-y-3 text-gray-700">
+                                        <li>Perbaikan iklim penanaman modal.</li>
+                                        <li>Penguatan kelembagaan penanaman modal.</li>
+                                        <li>
+                                            Layanan perizinan yang pasti, transparan, dan berbasis
+                                            elektronik (online).
+                                        </li>
+                                        <li>
+                                            Pelimpahan wewenang Walikota kepada penyelenggara PTSP.
+                                        </li>
+                                        <li>
+                                            Peningkatan koordinasi antar SKPD dalam pelayanan perizinan.
+                                        </li>
+                                    </ul>
+                                </section>
 
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                                Persebaran Penanaman Modal
-                            </h2>
-                            <p className="text-gray-700">
-                                Persebaran penanaman modal diarahkan berdasarkan Wilayah
-                                Pengembangan (WP) serta kesesuaian rencana tata ruang wilayah.
-                            </p>
-                        </section>
+                                <section>
+                                    <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                                        Persebaran Penanaman Modal
+                                    </h2>
+                                    <p className="text-gray-700">
+                                        Persebaran penanaman modal diarahkan berdasarkan Wilayah
+                                        Pengembangan (WP) serta kesesuaian rencana tata ruang wilayah.
+                                    </p>
+                                </section>
 
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                                Fokus Pengembangan
-                            </h2>
-                            <ul className="list-disc pl-6 space-y-3 text-gray-700">
-                                <li>
-                                    <strong>Infrastruktur:</strong> jalan, air bersih, pengolahan
-                                    sampah, telekomunikasi, dan listrik.
-                                </li>
-                                <li>
-                                    <strong>Jasa & Perdagangan:</strong> pariwisata, pendidikan,
-                                    keuangan, perbankan, dan jasa informasi.
-                                </li>
-                            </ul>
-                        </section>
+                                <section>
+                                    <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                                        Fokus Pengembangan
+                                    </h2>
+                                    <ul className="list-disc pl-6 space-y-3 text-gray-700">
+                                        <li>
+                                            <strong>Infrastruktur:</strong> jalan, air bersih, pengolahan
+                                            sampah, telekomunikasi, dan listrik.
+                                        </li>
+                                        <li>
+                                            <strong>Jasa & Perdagangan:</strong> pariwisata, pendidikan,
+                                            keuangan, perbankan, dan jasa informasi.
+                                        </li>
+                                    </ul>
+                                </section>
 
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                                Penanaman Modal Berwawasan Lingkungan
-                            </h2>
-                            <ul className="list-disc pl-6 space-y-3 text-gray-700">
-                                <li>Pengurangan emisi dan pengelolaan limbah.</li>
-                                <li>Peningkatan proses produksi ramah lingkungan.</li>
-                                <li>Pengembangan wilayah berbasis daya dukung lingkungan.</li>
-                            </ul>
-                        </section>
+                                <section>
+                                    <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                                        Penanaman Modal Berwawasan Lingkungan
+                                    </h2>
+                                    <ul className="list-disc pl-6 space-y-3 text-gray-700">
+                                        <li>Pengurangan emisi dan pengelolaan limbah.</li>
+                                        <li>Peningkatan proses produksi ramah lingkungan.</li>
+                                        <li>Pengembangan wilayah berbasis daya dukung lingkungan.</li>
+                                    </ul>
+                                </section>
 
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                                Pemberdayaan UMKM
-                            </h2>
-                            <p className="text-gray-700">
-                                Melalui kemitraan setara, terbuka, dan saling menguntungkan untuk
-                                meningkatkan skala usaha secara berkelanjutan.
-                            </p>
-                        </section>
+                                <section>
+                                    <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                                        Pemberdayaan UMKM
+                                    </h2>
+                                    <p className="text-gray-700">
+                                        Melalui kemitraan setara, terbuka, dan saling menguntungkan untuk
+                                        meningkatkan skala usaha secara berkelanjutan.
+                                    </p>
+                                </section>
+                            </CardContent>
+                        </Card>
                     </div>
 
                     <aside className="space-y-6">

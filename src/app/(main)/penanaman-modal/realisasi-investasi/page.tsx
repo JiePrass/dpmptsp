@@ -97,7 +97,7 @@ export default function RealisasiInvestasiPage() {
             <section className="container mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
                     <div className="lg:col-span-8 space-y-10">
-                        <Card>
+                        <Card className="border">
                             <CardHeader>
                                 <CardTitle>Grafik Realisasi Investasi</CardTitle>
                                 <p className="text-sm text-muted-foreground">

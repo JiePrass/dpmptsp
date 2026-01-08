@@ -139,7 +139,7 @@ export default function TentangKamiSection() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
-                <div className="p-6">
+                <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     Mekanisme Alur Perizinan
                   </h3>
@@ -153,7 +153,7 @@ export default function TentangKamiSection() {
 
           <div className="space-y-6">
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-6">
+              <CardContent>
                 <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">
                   Menu Tentang
                 </h3>
@@ -181,7 +181,7 @@ export default function TentangKamiSection() {
             </Card>
 
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-6">
+              <CardContent>
                 <div className="flex items-start gap-4 mb-6">
                   <div className="relative w-16 h-16">
                     <Image

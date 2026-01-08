@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -10,7 +9,6 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronRight } from "lucide-react";
 import {
     Bar,
     BarChart,
@@ -108,7 +106,7 @@ export default function InformasiPublikIKMPage() {
                         </div>
 
                         <Card className="border shadow-sm rounded-2xl">
-                            <CardContent className="p-8 space-y-3">
+                            <CardContent className="space-y-3">
                                 <h2 className="text-2xl font-bold text-gray-900">
                                     Keterangan
                                 </h2>
@@ -119,7 +117,7 @@ export default function InformasiPublikIKMPage() {
                         </Card>
 
                         <Card className="border shadow-sm rounded-2xl">
-                            <CardContent className="p-8">
+                            <CardContent>
                                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                                     Grafik Indeks Kepuasan
                                 </h2>
@@ -139,7 +137,7 @@ export default function InformasiPublikIKMPage() {
                     </div>
 
                     <div className="space-y-6">
-                       <InformasiPengaduanSidebar activeMenu="Indeks Kepuasan Masyarakat" />
+                        <InformasiPengaduanSidebar activeMenu="Indeks Kepuasan Masyarakat" />
                     </div>
                 </div>
             </div>
