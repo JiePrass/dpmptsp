@@ -97,14 +97,15 @@ export default function Header() {
       <header className="fixed top-0 left-0 w-full bg-white border-b z-30">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo Image */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/images/main-logo.png"
+              src="/images/pemkot-bogor.png"
               alt="DPMPTSP Logo"
-              width={120}
+              width={64}
               height={40}
               priority
             />
+            <h1 className="text-2xl font-bold">DPMPTSP Kota Bogor</h1>
           </Link>
 
           {/* Desktop Navigation */}
