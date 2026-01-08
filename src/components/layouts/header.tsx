@@ -96,29 +96,41 @@ export default function Header() {
     <>
       <header className="fixed top-0 left-0 w-full bg-white border-b z-30">
         {/* --- SUB HEADER / TOP BAR --- */}
-        <div className="hidden md:block bg-gray-50 border-b">
+        <div className="hidden md:block bg-primary border-b">
           <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between text-xs text-gray-600">
             {/* Kiri: Kontak */}
             <div className="flex items-center gap-6">
-              <a href="tel:081234567890" className="flex items-center gap-1.5 hover:text-primary transition-colors">
-                <Phone size={14} className="text-primary" />
+              <a
+                href="tel:081234567890"
+                className="flex items-center gap-1.5 text-background transition-colors"
+              >
+                <Phone size={14} className="text-background" />
                 <span>Hotline: 0812-3456-7890 </span>
               </a>
-              <a href="mailto:dpmptsp@kotabogor.go.id" className="flex items-center gap-1.5 hover:text-primary transition-colors">
-                <Mail size={14} className="text-primary" />
+              <a
+                href="mailto:dpmptsp@kotabogor.go.id"
+                className="flex items-center gap-1.5 text-background transition-colors"
+              >
+                <Mail size={14} className="text-background" />
                 <span>dpmptsp@kotabogor.go.id</span>
               </a>
             </div>
 
             {/* Kanan: Auth Buttons */}
             <div className="flex items-center gap-4">
-              <Link href="/login" className="hover:text-primary font-medium transition-colors">
+              <Link
+                href="/login"
+                className="text-background font-medium transition-colors"
+              >
                 Masuk
               </Link>
               <span className="text-gray-300">|</span>
               <Link
                 href="/register"
-                className="bg-primary text-white px-3 py-1 rounded-md hover:bg-primary/90 transition-all flex items-center gap-1"
+                className="bg-background text-primary px-3 py-1 rounded-md
+             hover:bg-primary hover:text-background
+             transition-colors duration-200
+             flex items-center gap-1"
               >
                 Daftar
               </Link>
@@ -136,7 +148,10 @@ export default function Header() {
               height={32}
               priority
             />
-            <h1 className="text-lg font-bold leading-tight">DPMPTSP<br /> KOTA BOGOR</h1>
+            <h1 className="text-lg font-bold leading-tight">
+              DPMPTSP
+              <br /> KOTA BOGOR
+            </h1>
           </Link>
 
           {/* Desktop Navigation */}
@@ -151,10 +166,11 @@ export default function Header() {
                 >
                   <button
                     className={`flex items-center gap-1 py-2 text-sm transition-colors
-                    ${item.children?.some((c) => isActive(c.href))
+                    ${
+                      item.children?.some((c) => isActive(c.href))
                         ? "text-primary font-semibold"
                         : "text-gray-700 hover:text-primary font-medium"
-                      }`}
+                    }`}
                   >
                     {item.label}
                     <ChevronDown size={14} />
@@ -162,7 +178,11 @@ export default function Header() {
 
                   <div
                     className={`absolute right-0 top-full pt-2 transition-all duration-200 ease-out
-                    ${desktopDropdown === idx ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"}`}
+                    ${
+                      desktopDropdown === idx
+                        ? "opacity-100 translate-y-0 visible"
+                        : "opacity-0 -translate-y-2 invisible"
+                    }`}
                   >
                     <div className="w-56 rounded-md border bg-white shadow-lg overflow-hidden">
                       {item.children.map((child) => (
@@ -170,10 +190,11 @@ export default function Header() {
                           key={child.label}
                           href={child.href}
                           className={`block px-4 py-2.5 text-sm transition-colors
-                          ${isActive(child.href)
+                          ${
+                            isActive(child.href)
                               ? "bg-primary/5 text-primary font-medium border-l-4 border-primary"
                               : "hover:bg-gray-50 border-l-4 border-transparent"
-                            }`}
+                          }`}
                         >
                           {child.label}
                         </Link>
@@ -186,10 +207,11 @@ export default function Header() {
                   key={item.label}
                   href={item.href}
                   className={`py-2 text-sm transition-colors
-                  ${isActive(item.href)
+                  ${
+                    isActive(item.href)
                       ? "text-primary font-semibold"
                       : "text-gray-700 hover:text-primary font-medium"
-                    }`}
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -245,8 +267,9 @@ export default function Header() {
                   {item.label}
                   <ChevronDown
                     size={16}
-                    className={`transition-transform duration-200 ${mobileDropdown === idx ? "rotate-180" : ""
-                      }`}
+                    className={`transition-transform duration-200 ${
+                      mobileDropdown === idx ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
 
@@ -254,20 +277,22 @@ export default function Header() {
                 <div
                   className={`ml-2 mt-2 flex flex-col gap-2 text-sm overflow-hidden
             transition-all duration-200 ease-out
-            ${mobileDropdown === idx
-                      ? "opacity-100 translate-y-0"
-                      : "max-h-0 opacity-0 -translate-y-1"
-                    }`}
+            ${
+              mobileDropdown === idx
+                ? "opacity-100 translate-y-0"
+                : "max-h-0 opacity-0 -translate-y-1"
+            }`}
                 >
                   {item.children.map((child) => (
                     <Link
                       key={child.label}
                       href={child.href}
                       className={`py-1 pl-2 border-l-4 transition-colors
-    ${isActive(child.href)
-                          ? "border-primary text-primary font-medium"
-                          : "border-transparent"
-                        }`}
+    ${
+      isActive(child.href)
+        ? "border-primary text-primary font-medium"
+        : "border-transparent"
+    }`}
                       onClick={() => {
                         setMobileOpen(false);
                         setMobileDropdown(null);
