@@ -6,15 +6,11 @@ import SambutanSection from "@/components/landing/sambutan-section";
 
 export default function Home() {
   return (
-    <>
-      
-      <div className="flex min-h-screen flex-col font-sans bg-white dark:bg-black">
-        <HeroSection />
-        <SambutanSection />
-        <BeritaSection />
-        <FAQSection />
-      </div>
-      
-    </>
+    <div className="flex min-h-screen flex-col font-sans bg-white dark:bg-black">
+      <HeroSection />
+      <SambutanSection />
+      <BeritaSection />
+      <FAQSection />
+    </div>
   );
 }

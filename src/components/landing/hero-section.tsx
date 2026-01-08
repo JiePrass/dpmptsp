@@ -25,16 +25,16 @@ import {
   Grid,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 const slides = [
   { src: "/images/hersec.jpg", alt: "Gedung pemerintahan modern" },
 ];
 
-// Warna konsisten berdasarkan tema biru pemerintah
 const websiteShortcuts = [
   {
     title: "Perizinan Online",
-    url: "https://perizinan.kotabogor.go.id/izin2/index.php/account/login",
+    url: "/login/",
     icon: FileCheck,
     description: "Ajukan perizinan",
   },
@@ -58,7 +58,7 @@ const websiteShortcuts = [
   },
   {
     title: "Jenis & Syarat",
-    url: "/informai/perizinan/jenis-dan-syarat",
+    url: "/informasi/perizinan/jenis-dan-syarat",
     icon: FileText,
     description: "Informasi persyaratan",
   },
@@ -124,7 +124,7 @@ const websiteShortcuts = [
   },
   {
     title: "PPID",
-    url: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/7",
+    url: "/layanan/",
     icon: MessageCircle,
     description: "Informasi Publik",
   },
@@ -216,7 +216,7 @@ export default function HeroSection() {
               {shortcutsToShow.map((item, index) => {
                 const IconComponent = item.icon;
                 return (
-                  <a
+                  <Link
                     key={index}
                     href={item.url}
                     target="_blank"
@@ -259,7 +259,7 @@ export default function HeroSection() {
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 );
               })}
             </div>
