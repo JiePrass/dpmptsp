@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const nav = [
@@ -95,21 +95,52 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 w-full bg-white border-b z-30">
+        {/* --- SUB HEADER / TOP BAR --- */}
+        <div className="hidden md:block bg-gray-50 border-b">
+          <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between text-xs text-gray-600">
+            {/* Kiri: Kontak */}
+            <div className="flex items-center gap-6">
+              <a href="tel:081234567890" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+                <Phone size={14} className="text-primary" />
+                <span>Hotline: 0812-3456-7890 </span>
+              </a>
+              <a href="mailto:dpmptsp@kotabogor.go.id" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+                <Mail size={14} className="text-primary" />
+                <span>dpmptsp@kotabogor.go.id</span>
+              </a>
+            </div>
+
+            {/* Kanan: Auth Buttons */}
+            <div className="flex items-center gap-4">
+              <Link href="/login" className="hover:text-primary font-medium transition-colors">
+                Masuk
+              </Link>
+              <span className="text-gray-300">|</span>
+              <Link
+                href="/register"
+                className="bg-primary text-white px-3 py-1 rounded-md hover:bg-primary/90 transition-all flex items-center gap-1"
+              >
+                Daftar
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* --- MAIN NAV --- */}
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Logo Image */}
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/images/pemkot-bogor.png"
               alt="DPMPTSP Logo"
-              width={64}
-              height={40}
+              width={50} // Sedikit diperkecil karena ada top bar
+              height={32}
               priority
             />
-            <h1 className="text-xl font-bold">DPMPTSP Kota Bogor</h1>
+            <h1 className="text-lg font-bold leading-tight">DPMPTSP<br /> KOTA BOGOR</h1>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {nav.map((item, idx) =>
               item.children ? (
                 <div
@@ -118,35 +149,30 @@ export default function Header() {
                   onMouseEnter={() => setDesktopDropdown(idx)}
                   onMouseLeave={() => setDesktopDropdown(null)}
                 >
-                  {/* Trigger */}
                   <button
-                    className={`flex items-center gap-1 py-2 transition-colors
-    ${item.children?.some((c) => isActive(c.href))
-                        ? "text-primary font-medium"
-                        : "text-gray-700 hover:text-primary"
+                    className={`flex items-center gap-1 py-2 text-sm transition-colors
+                    ${item.children?.some((c) => isActive(c.href))
+                        ? "text-primary font-semibold"
+                        : "text-gray-700 hover:text-primary font-medium"
                       }`}
                   >
                     {item.label}
-                    <ChevronDown size={16} />
+                    <ChevronDown size={14} />
                   </button>
 
-                  {/* Dropdown */}
                   <div
-                    className={`absolute right-0 top-full pt-2 hover:cursor-pointer transition-all duration-200 ease-out
-    ${desktopDropdown === idx
-                        ? "opacity-100 translate-y-0 visible"
-                        : "opacity-0 -translate-y-2 invisible"
-                      }`}
+                    className={`absolute right-0 top-full pt-2 transition-all duration-200 ease-out
+                    ${desktopDropdown === idx ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"}`}
                   >
-                    <div className="w-56 rounded-md border bg-white shadow-md">
+                    <div className="w-56 rounded-md border bg-white shadow-lg overflow-hidden">
                       {item.children.map((child) => (
                         <Link
                           key={child.label}
                           href={child.href}
-                          className={`block px-4 py-2 transition-colors
-    ${isActive(child.href)
-                              ? "border-l-4 border-primary bg-primary/5 text-primary font-medium"
-                              : "border-l-4 border-transparent hover:bg-gray-100"
+                          className={`block px-4 py-2.5 text-sm transition-colors
+                          ${isActive(child.href)
+                              ? "bg-primary/5 text-primary font-medium border-l-4 border-primary"
+                              : "hover:bg-gray-50 border-l-4 border-transparent"
                             }`}
                         >
                           {child.label}
@@ -159,10 +185,10 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`py-2 transition-colors
-    ${isActive(item.href)
-                      ? "text-primary font-medium"
-                      : "text-gray-700 hover:text-primary"
+                  className={`py-2 text-sm transition-colors
+                  ${isActive(item.href)
+                      ? "text-primary font-semibold"
+                      : "text-gray-700 hover:text-primary font-medium"
                     }`}
                 >
                   {item.label}
@@ -172,11 +198,7 @@ export default function Header() {
           </nav>
 
           {/* Mobile Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setMobileOpen(true)}
-            aria-label="Open Menu"
-          >
+          <button className="md:hidden" onClick={() => setMobileOpen(true)}>
             <Menu size={28} />
           </button>
         </div>

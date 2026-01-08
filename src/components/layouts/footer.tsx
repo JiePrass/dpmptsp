@@ -26,7 +26,7 @@ export default function Footer() {
                             height={40}
                             priority
                         />
-                        <h1 className="text-xl font-bold">DPMPTSP<br></br> Kota Bogor</h1>
+                        <h1 className="text-xl font-bold">DPMPTSP<br /> KOTA BOGOR</h1>
                     </Link>
 
                     <p className="text-sm text-gray-600 leading-relaxed">
@@ -36,16 +36,16 @@ export default function Footer() {
                     </p>
 
                     <div className="flex gap-3">
-                        <Link href="#" className="p-2 rounded-full border hover:bg-gray-100">
+                        <Link href="https://www.facebook.com/dpmptsp.kota.bogor/" className="p-2 rounded-full border hover:bg-gray-100">
                             <Facebook size={16} />
                         </Link>
-                        <Link href="#" className="p-2 rounded-full border hover:bg-gray-100">
+                        <Link href="https://www.instagram.com/dpmptsp_kotabgr/" className="p-2 rounded-full border hover:bg-gray-100">
                             <Instagram size={16} />
                         </Link>
-                        <Link href="#" className="p-2 rounded-full border hover:bg-gray-100">
+                        <Link href="https://twitter.com/DPMPTSP_KotaBgr" className="p-2 rounded-full border hover:bg-gray-100">
                             <Twitter size={16} />
                         </Link>
-                        <Link href="#" className="p-2 rounded-full border hover:bg-gray-100">
+                        <Link href="https://www.youtube.com/channel/UCebMgEnWoeGoraGpxz42vEg" className="p-2 rounded-full border hover:bg-gray-100">
                             <Youtube size={16} />
                         </Link>
                     </div>
