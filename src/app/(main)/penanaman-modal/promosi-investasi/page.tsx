@@ -98,8 +98,8 @@ export default function PromosiInvestasiPage() {
             <section className="container mx-auto pb-16">
                 {/* ================= CONTENT ================= */}
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-                    <div className="lg:col-span-8">
-                        <Card>
+                    <div className="lg:col-span-8 space-y-10">
+                        <Card className="border">
                             <CardHeader>
                                 <CardTitle>Daftar Dokumen Promosi Investasi</CardTitle>
                                 <p className="text-sm text-muted-foreground">
@@ -156,7 +156,7 @@ export default function PromosiInvestasiPage() {
                     </div>
 
                     <aside className="lg:col-span-4 space-y-6">
-                        <Card>
+                        <Card className="border">
                             <CardHeader>
                                 <CardTitle>Informasi Dokumen</CardTitle>
                             </CardHeader>

@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import InformasiPengaduanSidebar from "@/components/shared/InformasiPengaduanSidebar";
 import {
     Breadcrumb,
@@ -12,7 +12,6 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronRight } from "lucide-react";
 import {
     Bar,
     BarChart,
@@ -31,16 +30,6 @@ interface LayananData {
     ditolak: number;
     selesai: number;
     lain_lain: number;
-}
-
-interface ChartGraph {
-    balloonText: string;
-    fillAlphas: number;
-    lineAlpha: number;
-    title: string;
-    type: string;
-    color: string;
-    valueField: string;
 }
 
 export default function LayananPerizinanPage() {
@@ -75,7 +64,7 @@ export default function LayananPerizinanPage() {
         try {
             // Simulasi API call delay
             await new Promise(resolve => setTimeout(resolve, 500));
-            
+
             // Untuk contoh, kita gunakan data statis yang dimodifikasi berdasarkan tahun
             const modifiedData = sampleData.map(item => ({
                 ...item,
@@ -85,9 +74,9 @@ export default function LayananPerizinanPage() {
                 selesai: item.selesai * (1 + (parseInt(year) - 2026) * 0.2),
                 lain_lain: item.lain_lain * (1 + (parseInt(year) - 2026) * 0.2)
             }));
-            
+
             setChartData(modifiedData);
-            
+
             // Hitung total statistik
             const totals = modifiedData.reduce((acc, item) => ({
                 diterima: acc.diterima + item.diterima,
@@ -96,7 +85,7 @@ export default function LayananPerizinanPage() {
                 selesai: acc.selesai + item.selesai,
                 lain_lain: acc.lain_lain + item.lain_lain
             }), { diterima: 0, diproses: 0, ditolak: 0, selesai: 0, lain_lain: 0 });
-            
+
             setTotalStats(totals);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -108,6 +97,7 @@ export default function LayananPerizinanPage() {
     // Effect untuk fetch data saat tahun berubah
     useEffect(() => {
         fetchLayananData(selectedYear);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedYear]);
 
     // Format tooltip
@@ -188,7 +178,7 @@ export default function LayananPerizinanPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <div className="lg:col-span-2 space-y-8">
                         <Card className="border shadow-sm rounded-2xl">
-                            <CardContent className="p-8">
+                            <CardContent>
                                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                                     Statistik Layanan Perizinan
                                 </h2>
@@ -263,7 +253,7 @@ export default function LayananPerizinanPage() {
                         </Card>
 
                         <Card className="border shadow-sm rounded-2xl">
-                            <CardContent className="p-8">
+                            <CardContent>
                                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                                     Tabel Detail Layanan Perizinan
                                 </h2>
@@ -306,7 +296,7 @@ export default function LayananPerizinanPage() {
 
                         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                             <Card className="bg-blue-50 border border-blue-100 rounded-2xl">
-                                <CardContent className="p-4 text-center">
+                                <CardContent className="text-center">
                                     <h3 className="text-sm font-medium text-blue-900 mb-1">Diterima</h3>
                                     <p className="text-2xl font-bold text-blue-700">
                                         {totalStats.diterima.toLocaleString()}
@@ -314,7 +304,7 @@ export default function LayananPerizinanPage() {
                                 </CardContent>
                             </Card>
                             <Card className="bg-yellow-50 border border-yellow-100 rounded-2xl">
-                                <CardContent className="p-4 text-center">
+                                <CardContent className="text-center">
                                     <h3 className="text-sm font-medium text-yellow-900 mb-1">Diproses</h3>
                                     <p className="text-2xl font-bold text-yellow-700">
                                         {totalStats.diproses.toLocaleString()}
@@ -322,7 +312,7 @@ export default function LayananPerizinanPage() {
                                 </CardContent>
                             </Card>
                             <Card className="bg-red-50 border border-red-100 rounded-2xl">
-                                <CardContent className="p-4 text-center">
+                                <CardContent className="text-center">
                                     <h3 className="text-sm font-medium text-red-900 mb-1">Ditolak</h3>
                                     <p className="text-2xl font-bold text-red-700">
                                         {totalStats.ditolak.toLocaleString()}
@@ -330,7 +320,7 @@ export default function LayananPerizinanPage() {
                                 </CardContent>
                             </Card>
                             <Card className="bg-green-50 border border-green-100 rounded-2xl">
-                                <CardContent className="p-4 text-center">
+                                <CardContent className="text-center">
                                     <h3 className="text-sm font-medium text-green-900 mb-1">Selesai</h3>
                                     <p className="text-2xl font-bold text-green-700">
                                         {totalStats.selesai.toLocaleString()}
@@ -338,7 +328,7 @@ export default function LayananPerizinanPage() {
                                 </CardContent>
                             </Card>
                             <Card className="bg-purple-50 border border-purple-100 rounded-2xl">
-                                <CardContent className="p-4 text-center">
+                                <CardContent className="text-center">
                                     <h3 className="text-sm font-medium text-purple-900 mb-1">Lain-lain</h3>
                                     <p className="text-2xl font-bold text-purple-700">
                                         {totalStats.lain_lain.toLocaleString()}

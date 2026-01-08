@@ -16,19 +16,7 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-type NewsItem = {
-    id: number;
-    title: string;
-    excerpt: string;
-    category: string;
-    author: string;
-    time: string;
-    image: string;
-};
-
 import { newsData, categories } from "@/lib/news";
-
-
 
 export default function BeritaPage() {
     return (
@@ -66,11 +54,11 @@ export default function BeritaPage() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                    <div className="lg:col-span-3 space-y-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div className="lg:col-span-2 space-y-8">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <Card className="rounded-2xl shadow-sm">
-                                <CardContent className="p-6 flex items-center justify-between">
+                                <CardContent className="flex items-center justify-between">
                                     <div>
                                         <p className="text-sm text-gray-500">Total Berita</p>
                                         <p className="text-3xl font-bold text-gray-900">
@@ -84,7 +72,7 @@ export default function BeritaPage() {
                             </Card>
 
                             <Card className="rounded-2xl shadow-sm">
-                                <CardContent className="p-6 flex items-center justify-between">
+                                <CardContent className="flex items-center justify-between">
                                     <div>
                                         <p className="text-sm text-gray-500">Kategori Aktif</p>
                                         <p className="text-3xl font-bold text-gray-900">
@@ -98,7 +86,7 @@ export default function BeritaPage() {
                             </Card>
 
                             <Card className="rounded-2xl shadow-sm">
-                                <CardContent className="p-6 flex items-center justify-between">
+                                <CardContent className="flex items-center justify-between">
                                     <div>
                                         <p className="text-sm text-gray-500">Update Terakhir</p>
                                         <p className="text-3xl font-bold text-gray-900">2026</p>
@@ -110,24 +98,21 @@ export default function BeritaPage() {
                             </Card>
                         </div>
 
-                        <Card className="rounded-2xl shadow-sm">
-                            <CardContent className="p-8">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                                    Berita Terbaru
-                                </h2>
 
-                                <div className="grid gap-6 md:grid-cols-2">
-                                    {newsData.map((item) => (
-                                        <NewsCard key={item.id} data={item} />
-                                    ))}
-                                </div>
-                            </CardContent>
-                        </Card>
+                        <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                            Berita Terbaru
+                        </h2>
+
+                        <div className="grid gap-6 md:grid-cols-2">
+                            {newsData.map((item) => (
+                                <NewsCard key={item.id} data={item} />
+                            ))}
+                        </div>
                     </div>
 
                     <div className="space-y-6">
                         <Card className="rounded-2xl shadow-sm">
-                            <CardContent className="p-6">
+                            <CardContent>
                                 <h3 className="text-lg font-bold text-gray-900 mb-6">
                                     Kategori Berita
                                 </h3>
@@ -156,7 +141,7 @@ export default function BeritaPage() {
                         </Card>
 
                         <Card className="rounded-2xl shadow-sm">
-                            <CardContent className="p-6">
+                            <CardContent>
                                 <div className="flex items-start gap-4">
                                     <div className="relative w-14 h-14">
                                         <Image
