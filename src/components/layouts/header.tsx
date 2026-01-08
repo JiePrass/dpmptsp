@@ -63,7 +63,7 @@ const nav = [
   {
     label: "Informasi",
     children: [
-      { label: "Informasi Perizinan", href: "/informasi/perizinan/" },
+      { label: "Informasi Perizinan", href: "/informasi/perizinan" },
       { label: "Informasi Publik", href: "/informasi/publik" },
     ],
   },
