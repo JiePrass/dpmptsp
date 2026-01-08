@@ -171,7 +171,7 @@ export default function HeroSection() {
 
       <div className="relative z-20 px-4 pb-20 pt-10 md:pb-64">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mt-20 mb-6 md:mb-12 px-4">
+          <div className="text-center mt-20  mb-6 md:mb-12 px-4">
             <Badge
               variant="secondary"
               className="mb-4 text-sm md:text-base px-4 py-1 bg-white/20 text-white border-none"
