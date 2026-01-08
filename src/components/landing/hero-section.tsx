@@ -168,10 +168,9 @@ export default function HeroSection() {
 
       <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-black/40 z-10"></div>
 
-      <div className="relative z-20 px-4 pt-24 pb-60 md:pt-32 md:pb-64">
+      <div className="relative z-20 px-4 pb-20 pt-10 md:pb-64">
         <div className="max-w-7xl mx-auto">
-          {/* Header Section */}
-          <div className="text-center mt-20 mb-12 px-4">
+          <div className="text-center mt-20 mb-6 md:mb-12 px-4">
             <Badge
               variant="secondary"
               className="mb-4 text-sm md:text-base px-4 py-1 bg-white/20 text-white border-none"
@@ -190,7 +189,7 @@ export default function HeroSection() {
 
           {/* Website Shortcuts Section */}
           <div className="bg-white/10 backdrop-blur-xl p-8  rounded-4xl border border-white/20 shadow-2xl shadow-black/30">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-4">
               <div>
                 <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
                   Akses Cepat Layanan
