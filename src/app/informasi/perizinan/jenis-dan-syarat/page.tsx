@@ -33,7 +33,6 @@ import {
     DialogFooter,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
 } from "@/components/ui/dialog";
 import {
     Accordion,
@@ -360,19 +359,19 @@ export default function JenisDanSyaratPage() {
                                 </h3>
                                 <ul className="space-y-3 text-gray-600">
                                     <li className="flex items-start">
-                                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 shrink-0" />
                                         <span>Semua layanan perizinan di DPMPTSP Kota Bogor tidak dikenakan biaya (GRATIS)</span>
                                     </li>
                                     <li className="flex items-start">
-                                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 shrink-0" />
                                         <span>Waktu penyelesaian dihitung sejak kelengkapan dokumen diterima</span>
                                     </li>
                                     <li className="flex items-start">
-                                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 shrink-0" />
                                         <span>Pastikan dokumen persyaratan sudah lengkap sebelum diajukan</span>
                                     </li>
                                     <li className="flex items-start">
-                                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 shrink-0" />
                                         <span>Untuk informasi lebih detail, silahkan hubungi kami di (0251) 1234567</span>
                                     </li>
                                 </ul>
@@ -393,8 +392,8 @@ export default function JenisDanSyaratPage() {
                                             <Link
                                                 href={item.href}
                                                 className={`flex items-center justify-between p-3 border rounded-lg transition-all hover:shadow-sm ${item.label === "Jenis dan Syarat"
-                                                        ? "border-primary bg-primary/5 text-primary"
-                                                        : "border-gray-200 hover:bg-gray-50 text-gray-700"
+                                                    ? "border-primary bg-primary/5 text-primary"
+                                                    : "border-gray-200 hover:bg-gray-50 text-gray-700"
                                                     }`}
                                             >
                                                 <div className="flex items-center">
@@ -469,7 +468,7 @@ export default function JenisDanSyaratPage() {
                                         <div className="pl-5 space-y-2">
                                             {persyaratan.items.map((item, index) => (
                                                 <div key={index} className="flex items-start py-2">
-                                                    <div className="w-6 h-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-800 font-medium text-sm mr-3 flex-shrink-0">
+                                                    <div className="w-6 h-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-800 font-medium text-sm mr-3 shrink-0">
                                                         {index + 1}
                                                     </div>
                                                     <p className="text-gray-700 leading-relaxed">{item}</p>
