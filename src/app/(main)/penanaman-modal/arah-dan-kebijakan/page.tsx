@@ -19,7 +19,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function PenanamanModalPage() {
     return (
-        <section className="w-full py-16 bg-white">
+        <section className="w-full py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-12 mt-10">
                     <Breadcrumb className="mb-4">
