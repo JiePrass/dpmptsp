@@ -15,40 +15,11 @@ import {
   Clock,
   CheckCircle,
   AlertCircle,
-  ChevronRight,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import Sidebar from "@/components/layouts/sidebar";
-
-const layananItems = [
-  {
-    id: 1,
-    title: "Perizinan Online",
-    href: "https://perizinan.kotabogor.go.id/izin2",
-  },
-  {
-    id: 2,
-    title: "Tracking Berkas",
-    href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/2",
-  },
-  {
-    id: 3,
-    title: "Pencarian Perizinan (KBLI)",
-    href: "https://oss.go.id/informasi/kbli-berbasis-risiko",
-  },
-  {
-    id: 4,
-    title: "Bantuan",
-    href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/5",
-  },
-  {
-    id: 5,
-    title: "Kunjungan",
-    href: "https://perizinan.kotabogor.go.id/portal_22/index.php/portal/page/l/6",
-  },
-];
 
 // Mock data untuk tracking status
 const mockTrackingData = [
@@ -146,7 +117,7 @@ export default function TrackingBerkasSection() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Tracking Berkas
           </h1>
-          <div className="w-24 h-1.5 bg-blue-600 rounded-full mb-6" />
+          <div className="w-24 h-1.5 bg-primary rounded-full mb-6" />
 
           <p className="text-gray-600 mt-6 max-w-3xl">
             Lacak status pengajuan perizinan Anda dengan mudah menggunakan ID
@@ -155,10 +126,10 @@ export default function TrackingBerkasSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
-              <CardContent className="p-8">
+              <CardContent>
                 <div className="mb-10">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border border-blue-200">
                     <div className="flex-1 w-full">
@@ -181,7 +152,7 @@ export default function TrackingBerkasSection() {
                         <Button
                           onClick={handleSearch}
                           disabled={isLoading}
-                          className="bg-blue-600 hover:bg-blue-700 text-white px-6"
+                          className="bg-primary hover:bg-blue-700 text-white px-6"
                         >
                           {isLoading ? (
                             <>
@@ -212,8 +183,8 @@ export default function TrackingBerkasSection() {
                   ) : trackingResult ? (
                     <div
                       className={`p-6 rounded-xl border ${trackingResult.success
-                          ? "bg-blue-50 border-blue-200"
-                          : "bg-red-50 border-red-200"
+                        ? "bg-blue-50 border-blue-200"
+                        : "bg-red-50 border-red-200"
                         }`}
                     >
                       <div className="flex items-center gap-3 mb-4">
@@ -224,8 +195,8 @@ export default function TrackingBerkasSection() {
                         )}
                         <h3
                           className={`text-lg font-semibold ${trackingResult.success
-                              ? "text-green-700"
-                              : "text-red-700"
+                            ? "text-green-700"
+                            : "text-red-700"
                             }`}
                         >
                           {trackingResult.message}
@@ -247,8 +218,8 @@ export default function TrackingBerkasSection() {
                                   <div key={item.id} className="relative">
                                     <div
                                       className={`absolute -left-12 top-0 w-12 h-12 rounded-full flex items-center justify-center border-4 border-white ${index === trackingResult.data.length - 1
-                                          ? "bg-green-500"
-                                          : "bg-blue-500"
+                                        ? "bg-green-500"
+                                        : "bg-blue-500"
                                         }`}
                                     >
                                       {index ===

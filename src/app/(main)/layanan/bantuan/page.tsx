@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import Image from "next/image";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -16,11 +15,9 @@ import {
   HelpCircle,
   Mail,
   Phone,
-  MapPin,
   User,
   Home,
   MessageSquare,
-  ChevronRight,
   Send,
   CheckCircle,
 } from "lucide-react";
@@ -128,7 +125,7 @@ export default function BantuanSection() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Layanan Bantuan
           </h1>
-          <div className="w-24 h-1.5 bg-blue-600 rounded-full mb-6" />
+          <div className="w-24 h-1.5 bg-primary rounded-full mb-6" />
 
           <p className="text-gray-600 mt-6 max-w-3xl">
             Hubungi kami jika Anda membutuhkan bantuan terkait perizinan. Tim
@@ -137,11 +134,11 @@ export default function BantuanSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
             {!isSubmitted ? (
               <Card className="border shadow-sm rounded-2xl overflow-hidden">
-                <CardContent className="p-8">
+                <CardContent>
                   <div className="mb-8">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-3 bg-blue-100 rounded-xl">
@@ -204,9 +201,8 @@ export default function BantuanSection() {
                             onChange={(e) =>
                               handleInputChange("email", e.target.value)
                             }
-                            className={`bg-white ${
-                              errors.email ? "border-red-500" : ""
-                            }`}
+                            className={`bg-white ${errors.email ? "border-red-500" : ""
+                              }`}
                             required
                           />
                           {errors.email && (
@@ -237,9 +233,8 @@ export default function BantuanSection() {
                             onChange={(e) =>
                               handleInputChange("telepon", e.target.value)
                             }
-                            className={`bg-white ${
-                              errors.telepon ? "border-red-500" : ""
-                            }`}
+                            className={`bg-white ${errors.telepon ? "border-red-500" : ""
+                              }`}
                             required
                           />
                           {errors.telepon && (
@@ -369,7 +364,7 @@ export default function BantuanSection() {
                       <Button
                         type="submit"
                         disabled={isLoading}
-                        className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg"
+                        className="w-full md:w-auto bg-primary hover:bg-blue-700 text-white px-8 py-6 text-lg"
                       >
                         {isLoading ? (
                           <>

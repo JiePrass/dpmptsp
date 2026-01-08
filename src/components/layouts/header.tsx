@@ -89,7 +89,7 @@ export default function Header() {
       return pathname === "/";
     }
 
-    return pathname === href || pathname.startsWith(href + "/");
+    return pathname === href;
   };
 
   return (
