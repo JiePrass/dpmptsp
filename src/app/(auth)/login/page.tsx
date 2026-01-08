@@ -18,7 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { AlertCircle, Eye, EyeOff, Lock, Mail } from "lucide-react";
+import { AlertCircle, Eye, EyeOff, Lock, Mail, ArrowLeft } from "lucide-react";
 
 declare global {
   interface Window {
@@ -115,7 +115,6 @@ export default function LoginPage() {
 
   return (
     <>
-      {/* LOAD reCAPTCHA v3 SCRIPT */}
       <Script
         src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
         strategy="afterInteractive"
@@ -123,6 +122,17 @@ export default function LoginPage() {
 
       <section className="min-h-screen bg-background py-16">
         <div className="max-w-md mx-auto px-6">
+          <div className="mb-6">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => router.push("/")}
+              className="group text-muted-foreground hover:text-primary transition-colors"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+              Kembali ke Beranda
+            </Button>
+          </div>
           <Card className="rounded-2xl shadow-sm">
             <CardHeader className="text-center">
               <Image
@@ -142,7 +152,6 @@ export default function LoginPage() {
 
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-5">
-                {/* EMAIL */}
                 <div>
                   <Label className="flex items-center gap-2">
                     <Mail className="w-4 h-4" /> Email
@@ -150,16 +159,13 @@ export default function LoginPage() {
                   <Input
                     type="email"
                     value={formData.email}
-                    onChange={(e) =>
-                      handleChange("email", e.target.value)
-                    }
+                    onChange={(e) => handleChange("email", e.target.value)}
                   />
                   {errors.email && (
                     <p className="text-xs text-red-500">{errors.email}</p>
                   )}
                 </div>
 
-                {/* PASSWORD */}
                 <div>
                   <Label className="flex items-center gap-2">
                     <Lock className="w-4 h-4" /> Password
@@ -168,9 +174,7 @@ export default function LoginPage() {
                     <Input
                       type={showPassword ? "text" : "password"}
                       value={formData.password}
-                      onChange={(e) =>
-                        handleChange("password", e.target.value)
-                      }
+                      onChange={(e) => handleChange("password", e.target.value)}
                     />
                     <button
                       type="button"
@@ -181,13 +185,10 @@ export default function LoginPage() {
                     </button>
                   </div>
                   {errors.password && (
-                    <p className="text-xs text-red-500">
-                      {errors.password}
-                    </p>
+                    <p className="text-xs text-red-500">{errors.password}</p>
                   )}
                 </div>
 
-                {/* CAPTCHA ERROR */}
                 {captchaError && (
                   <p className="text-xs text-red-600 flex items-center gap-2">
                     <AlertCircle className="w-4 h-4" />
@@ -195,7 +196,6 @@ export default function LoginPage() {
                   </p>
                 )}
 
-                {/* REMEMBER */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Checkbox
@@ -206,19 +206,12 @@ export default function LoginPage() {
                     />
                     <Label>Ingat saya</Label>
                   </div>
-                  <Link
-                    href="/lupa-password"
-                    className="text-sm text-blue-600"
-                  >
+                  <Link href="/lupa-password" className="text-sm text-blue-600">
                     Lupa password?
                   </Link>
                 </div>
 
-                <Button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full"
-                >
+                <Button type="submit" disabled={isLoading} className="w-full">
                   {isLoading ? "Memproses..." : "Masuk"}
                 </Button>
               </form>

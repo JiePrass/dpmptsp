@@ -136,7 +136,6 @@ export default function HeroSection() {
   const [isHovered, setIsHovered] = useState<number | null>(null);
   const [showAllShortcuts, setShowAllShortcuts] = useState(false);
 
-  // Auto slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -144,7 +143,6 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
-  // Tentukan berapa banyak shortcut yang ditampilkan
   const shortcutsToShow = showAllShortcuts
     ? websiteShortcuts
     : websiteShortcuts.slice(0, 6);

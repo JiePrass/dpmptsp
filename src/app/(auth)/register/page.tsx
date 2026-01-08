@@ -25,6 +25,7 @@ import {
   Phone,
   Building,
   IdCard,
+  ArrowLeft,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -138,6 +139,17 @@ export default function RegisterPage() {
     <section className="w-full py-12 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto px-6 mt-6">
         <div className="max-w-2xl mx-auto mt-10">
+          <div className="mb-6">
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              onClick={() => router.push("/")}
+              className="group text-muted-foreground hover:text-primary transition-colors"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+              Kembali ke Beranda
+            </Button>
+          </div>
           <Card className="border shadow-sm rounded-2xl overflow-hidden">
             <CardHeader className="text-center pb-2">
               <div className="mx-auto w-32 h-32 flex items-center justify-center">
@@ -160,7 +172,6 @@ export default function RegisterPage() {
 
             <CardContent className="pt-6">
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Nama Lengkap */}
                 <div className="space-y-2">
                   <Label
                     htmlFor="fullName"
@@ -187,7 +198,6 @@ export default function RegisterPage() {
                   )}
                 </div>
 
-                {/* Email dan Nomor Telepon */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label
@@ -244,7 +254,6 @@ export default function RegisterPage() {
                   </div>
                 </div>
 
-                {/* Nama Perusahaan dan NIK */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label
@@ -300,7 +309,6 @@ export default function RegisterPage() {
                   </div>
                 </div>
 
-                {/* Password dan Konfirmasi Password */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label
@@ -390,7 +398,6 @@ export default function RegisterPage() {
                   </div>
                 </div>
 
-                {/* Persetujuan */}
                 <div className="space-y-4 pt-2">
                   <div className="flex items-start space-x-2">
                     <Checkbox
@@ -456,7 +463,6 @@ export default function RegisterPage() {
                   )}
                 </div>
 
-                {/* Submit Button */}
                 <Button
                   type="submit"
                   disabled={isLoading}

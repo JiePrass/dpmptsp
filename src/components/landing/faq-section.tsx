@@ -89,7 +89,6 @@ export default function FAQSection() {
                                     )}
                                 </button>
 
-                                {/* Answer (Tailwind Animation) */}
                                 <div
                                     id={answerId}
                                     className={`px-5 overflow-hidden transition-all duration-300 ease-out
