@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import InformasiPengaduanSidebar from "@/components/shared/InformasiPengaduanSidebar";
 import {
     Breadcrumb,
@@ -12,7 +12,6 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronRight } from "lucide-react";
 import {
     Bar,
     BarChart,
@@ -90,14 +89,14 @@ export default function RealisasiRetribusiChart() {
         try {
             // Simulasi API call delay
             await new Promise(resolve => setTimeout(resolve, 500));
-            
+
             // Untuk contoh, kita gunakan data statis yang dimodifikasi berdasarkan tahun
             const modifiedData = sampleData.map(item => ({
                 ...item,
                 realisasi: item.realisasi * (1 + (parseInt(year) - 2024) * 0.1),
                 target: item.target * (1 + (parseInt(year) - 2024) * 0.1)
             }));
-            
+
             setChartData(modifiedData);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -183,7 +182,7 @@ export default function RealisasiRetribusiChart() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <div className="lg:col-span-2 space-y-8">
                         <Card className="border shadow-sm rounded-2xl">
-                            <CardContent className="p-8">
+                            <CardContent>
                                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                                     Grafik Target vs Realisasi Retribusi
                                 </h2>
@@ -248,7 +247,7 @@ export default function RealisasiRetribusiChart() {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <Card className="bg-blue-50 border border-blue-100 rounded-2xl">
-                                <CardContent className="p-6">
+                                <CardContent>
                                     <h3 className="text-sm font-medium text-blue-900 mb-1">Total Target {selectedYear}</h3>
                                     <p className="text-2xl font-bold text-blue-700">
                                         {formatRupiah(totalTarget)}
@@ -256,7 +255,7 @@ export default function RealisasiRetribusiChart() {
                                 </CardContent>
                             </Card>
                             <Card className="bg-green-50 border border-green-100 rounded-2xl">
-                                <CardContent className="p-6">
+                                <CardContent>
                                     <h3 className="text-sm font-medium text-green-900 mb-1">Total Realisasi {selectedYear}</h3>
                                     <p className="text-2xl font-bold text-green-700">
                                         {formatRupiah(totalRealisasi)}
@@ -264,7 +263,7 @@ export default function RealisasiRetribusiChart() {
                                 </CardContent>
                             </Card>
                             <Card className="bg-purple-50 border border-purple-100 rounded-2xl">
-                                <CardContent className="p-6">
+                                <CardContent>
                                     <h3 className="text-sm font-medium text-purple-900 mb-1">Pencapaian</h3>
                                     <p className="text-2xl font-bold text-purple-700">
                                         {pencapaian.toFixed(1)}%
@@ -274,7 +273,7 @@ export default function RealisasiRetribusiChart() {
                         </div>
 
                         <Card className="border shadow-sm rounded-2xl">
-                            <CardContent className="p-8 space-y-3">
+                            <CardContent className="space-y-3">
                                 <h2 className="text-2xl font-bold text-gray-900">
                                     Keterangan
                                 </h2>

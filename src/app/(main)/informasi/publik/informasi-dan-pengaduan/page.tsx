@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import InformasiPengaduanSidebar from "@/components/shared/InformasiPengaduanSidebar";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -12,7 +12,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronRight } from "lucide-react";
 import {
   Bar,
   BarChart,
@@ -233,6 +232,7 @@ export default function InformasiPengaduanPage() {
   // Effect untuk fetch data saat tahun berubah
   useEffect(() => {
     fetchPengaduanData(selectedYear);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedYear]);
 
   // Format tooltip untuk bar chart
@@ -328,7 +328,7 @@ export default function InformasiPengaduanPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-8">
             <Card className="border shadow-sm rounded-2xl">
-              <CardContent className="p-8">
+              <CardContent>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Grafik Pengaduan per Bulan
                 </h2>
@@ -405,7 +405,7 @@ export default function InformasiPengaduanPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card className="border shadow-sm rounded-2xl">
-                <CardContent className="p-8">
+                <CardContent>
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">
                     Distribusi Status Pengaduan
                   </h2>
@@ -440,7 +440,7 @@ export default function InformasiPengaduanPage() {
               </Card>
 
               <Card className="border shadow-sm rounded-2xl">
-                <CardContent className="p-8">
+                <CardContent>
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">
                     Statistik Pengaduan {selectedYear}
                   </h2>
@@ -491,7 +491,7 @@ export default function InformasiPengaduanPage() {
             </div>
 
             <Card className="border shadow-sm rounded-2xl">
-              <CardContent className="p-8">
+              <CardContent>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Tabel Detail Pengaduan per Bulan
                 </h2>
@@ -558,7 +558,7 @@ export default function InformasiPengaduanPage() {
           <div className="space-y-6">
             <InformasiPengaduanSidebar activeMenu="Informasi dan Pengaduan" />
             <Card className="border shadow-sm rounded-2xl">
-              <CardContent className="p-6">
+              <CardContent>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   Keterangan Status
                 </h3>
@@ -603,7 +603,7 @@ export default function InformasiPengaduanPage() {
             </Card>
 
             <Card className="border shadow-sm rounded-2xl">
-              <CardContent className="p-6">
+              <CardContent>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   Layanan Pengaduan
                 </h3>

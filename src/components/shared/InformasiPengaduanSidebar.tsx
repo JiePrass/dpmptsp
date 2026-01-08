@@ -15,7 +15,6 @@ interface InformasiPengaduanSidebarProps {
 }
 
 export default function InformasiPengaduanSidebar({
-  activeMenu = "Informasi dan Pengaduan",
 }: InformasiPengaduanSidebarProps) {
   const menuItems: MenuItem[] = [
     { name: "Indeks Kepuasan Masyarakat", href: "/informasi/publik" },
@@ -30,37 +29,35 @@ export default function InformasiPengaduanSidebar({
   return (
     <div className="space-y-6">
       {/* Informasi Publik */}
-      <Card className="border shadow-sm rounded-2xl">
-        <CardContent className="p-6">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">
+      <Card className="border shadow-sm rounded-2xl overflow-hidden">
+        <CardContent>
+          <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b">
             Informasi Publik
           </h3>
-          <ul className="space-y-2">
-            {menuItems.map((item, index) => {
-              const isActive = item.name === activeMenu;
-              return (
-                <li key={index}>
-                  <Link
-                    href={item.href}
-                    className={`flex items-center justify-between p-3 rounded-lg border hover:bg-primary/5 ${
-                      isActive ? "bg-primary/5 border-primary/20" : ""
-                    }`}
-                  >
-                    <span className="text-gray-700 font-medium">
+          <ul className="space-y-4">
+            {menuItems.map((item, i) => (
+              <li key={i}>
+                <Link
+                  href={item.href}
+                  className="flex items-center justify-between p-4 rounded-lg hover:bg-primary/5 transition-colors group border border-primary/20"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform" />
+                    <span className="text-gray-700 group-hover:text-gray-900 font-medium">
                       {item.name}
                     </span>
-                    <ChevronRight className="w-4 h-4 text-gray-400" />
-                  </Link>
-                </li>
-              );
-            })}
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-primary" />
+                </Link>
+              </li>
+            ))}
           </ul>
         </CardContent>
       </Card>
 
       {/* Keterangan Status */}
       <Card className="border shadow-sm rounded-2xl">
-        <CardContent className="p-6">
+        <CardContent>
           <h3 className="text-xl font-bold text-gray-900 mb-4">
             Keterangan Status
           </h3>
@@ -76,7 +73,7 @@ export default function InformasiPengaduanSidebar({
 
       {/* Layanan Pengaduan */}
       <Card className="border shadow-sm rounded-2xl">
-        <CardContent className="p-6">
+        <CardContent>
           <h3 className="text-xl font-bold text-gray-900 mb-4">
             Layanan Pengaduan
           </h3>
