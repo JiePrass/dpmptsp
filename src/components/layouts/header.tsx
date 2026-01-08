@@ -105,7 +105,7 @@ export default function Header() {
               height={40}
               priority
             />
-            <h1 className="text-2xl font-bold">DPMPTSP Kota Bogor</h1>
+            <h1 className="text-xl font-bold">DPMPTSP Kota Bogor</h1>
           </Link>
 
           {/* Desktop Navigation */}

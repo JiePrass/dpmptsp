@@ -18,14 +18,16 @@ export default function Footer() {
 
                 {/* Identitas */}
                 <div className="space-y-4">
-                    <div className="flex items-center">
+                    <Link href="/" className="flex items-center gap-2">
                         <Image
-                            src="/images/main-logo.png"
-                            alt="DPMPTSP Kota Bogor"
-                            width={144}
-                            height={48}
+                            src="/images/pemkot-bogor.png"
+                            alt="DPMPTSP Logo"
+                            width={64}
+                            height={40}
+                            priority
                         />
-                    </div>
+                        <h1 className="text-xl font-bold">DPMPTSP<br></br> Kota Bogor</h1>
+                    </Link>
 
                     <p className="text-sm text-gray-600 leading-relaxed">
                         Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu
