@@ -4,12 +4,36 @@ import { useState, type FormEvent } from "react";
 import Image from "next/image";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { HelpCircle, Mail, Phone, MapPin, User, Home, MessageSquare, ChevronRight, Send, CheckCircle } from "lucide-react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import {
+  HelpCircle,
+  Mail,
+  Phone,
+  MapPin,
+  User,
+  Home,
+  MessageSquare,
+  ChevronRight,
+  Send,
+  CheckCircle,
+} from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import Sidebar from "@/components/layouts/sidebar";
 
 // Mock data jenis izin
@@ -36,40 +60,40 @@ export default function BantuanSection() {
   const [errors, setErrors] = useState<Record<string, boolean>>({});
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
     // Clear error when user starts typing
     if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: false }));
+      setErrors((prev) => ({ ...prev, [field]: false }));
     }
   };
 
   const validateForm = () => {
     const newErrors: Record<string, boolean> = {};
-    
+
     // Required fields
     if (!formData.email.trim()) newErrors.email = true;
     if (!formData.telepon.trim()) newErrors.telepon = true;
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
 
     setIsLoading(true);
-    
+
     // Simulasi API call
     setTimeout(() => {
       setIsLoading(false);
       setIsSubmitted(true);
-      
+
       // Reset form setelah submit (kecuali data yang ditampilkan di success screen)
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
         nama: "",
         alamat: "",
@@ -88,21 +112,15 @@ export default function BantuanSection() {
           <Breadcrumb className="mb-4">
             <BreadcrumbList>
               <BreadcrumbItem>
-                <BreadcrumbLink href="/">
-                  Beranda
-                </BreadcrumbLink>
+                <BreadcrumbLink href="/">Beranda</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink href="/layanan">
-                  Layanan
-                </BreadcrumbLink>
+                <BreadcrumbLink href="/layanan">Layanan</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>
-                  Bantuan
-                </BreadcrumbPage>
+                <BreadcrumbPage>Bantuan</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -113,8 +131,9 @@ export default function BantuanSection() {
           <div className="w-24 h-1.5 bg-blue-600 rounded-full mb-6" />
 
           <p className="text-gray-600 mt-6 max-w-3xl">
-            Hubungi kami jika Anda membutuhkan bantuan terkait perizinan. 
-            Tim DPMPTSP Kota Bogor siap membantu menyelesaikan permasalahan yang Anda hadapi.
+            Hubungi kami jika Anda membutuhkan bantuan terkait perizinan. Tim
+            DPMPTSP Kota Bogor siap membantu menyelesaikan permasalahan yang
+            Anda hadapi.
           </p>
         </div>
 
@@ -133,7 +152,8 @@ export default function BantuanSection() {
                           Form Layanan Bantuan
                         </h2>
                         <p className="text-gray-600">
-                          Isi form di bawah ini untuk mengajukan bantuan atau pengaduan
+                          Isi form di bawah ini untuk mengajukan bantuan atau
+                          pengaduan
                         </p>
                       </div>
                     </div>
@@ -144,10 +164,13 @@ export default function BantuanSection() {
                       <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
                         Informasi Pribadi
                       </h3>
-                      
+
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <label htmlFor="nama" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                          <label
+                            htmlFor="nama"
+                            className="text-sm font-medium text-gray-700 flex items-center gap-2"
+                          >
                             <User className="w-4 h-4" />
                             Nama Lengkap
                           </label>
@@ -155,14 +178,21 @@ export default function BantuanSection() {
                             id="nama"
                             placeholder="Nama sesuai KTP"
                             value={formData.nama}
-                            onChange={(e) => handleInputChange("nama", e.target.value)}
+                            onChange={(e) =>
+                              handleInputChange("nama", e.target.value)
+                            }
                             className="bg-white"
                           />
-                          <p className="text-xs text-gray-500">Wajib diisi sesuai Kartu Tanda Penduduk</p>
+                          <p className="text-xs text-gray-500">
+                            Wajib diisi sesuai Kartu Tanda Penduduk
+                          </p>
                         </div>
 
                         <div className="space-y-2">
-                          <label htmlFor="email" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                          <label
+                            htmlFor="email"
+                            className="text-sm font-medium text-gray-700 flex items-center gap-2"
+                          >
                             <Mail className="w-4 h-4" />
                             Email *
                           </label>
@@ -171,22 +201,32 @@ export default function BantuanSection() {
                             type="email"
                             placeholder="email@contoh.com"
                             value={formData.email}
-                            onChange={(e) => handleInputChange("email", e.target.value)}
-                            className={`bg-white ${errors.email ? "border-red-500" : ""}`}
+                            onChange={(e) =>
+                              handleInputChange("email", e.target.value)
+                            }
+                            className={`bg-white ${
+                              errors.email ? "border-red-500" : ""
+                            }`}
                             required
                           />
                           {errors.email && (
-                            <p className="text-xs text-red-500">Email wajib diisi</p>
+                            <p className="text-xs text-red-500">
+                              Email wajib diisi
+                            </p>
                           )}
                           <p className="text-xs text-red-500">
-                            * Mohon alamat Email dipastikan benar, untuk memberikan balasan atas pengaduan Anda.
+                            * Mohon alamat Email dipastikan benar, untuk
+                            memberikan balasan atas pengaduan Anda.
                           </p>
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <label htmlFor="telepon" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                          <label
+                            htmlFor="telepon"
+                            className="text-sm font-medium text-gray-700 flex items-center gap-2"
+                          >
                             <Phone className="w-4 h-4" />
                             Telepon *
                           </label>
@@ -194,32 +234,47 @@ export default function BantuanSection() {
                             id="telepon"
                             placeholder="0812-3456-7890"
                             value={formData.telepon}
-                            onChange={(e) => handleInputChange("telepon", e.target.value)}
-                            className={`bg-white ${errors.telepon ? "border-red-500" : ""}`}
+                            onChange={(e) =>
+                              handleInputChange("telepon", e.target.value)
+                            }
+                            className={`bg-white ${
+                              errors.telepon ? "border-red-500" : ""
+                            }`}
                             required
                           />
                           {errors.telepon && (
-                            <p className="text-xs text-red-500">Telepon wajib diisi</p>
+                            <p className="text-xs text-red-500">
+                              Telepon wajib diisi
+                            </p>
                           )}
                           <p className="text-xs text-red-500">
-                            * Mohon Nomor Telepon dipastikan benar, untuk memberikan balasan atas pengaduan Anda.
+                            * Mohon Nomor Telepon dipastikan benar, untuk
+                            memberikan balasan atas pengaduan Anda.
                           </p>
                         </div>
 
                         <div className="space-y-2">
-                          <label htmlFor="jenis_izin" className="text-sm font-medium text-gray-700">
+                          <label
+                            htmlFor="jenis_izin"
+                            className="text-sm font-medium text-gray-700"
+                          >
                             Jenis Izin
                           </label>
                           <Select
                             value={formData.jenis_izin}
-                            onValueChange={(value) => handleInputChange("jenis_izin", value)}
+                            onValueChange={(value) =>
+                              handleInputChange("jenis_izin", value)
+                            }
                           >
                             <SelectTrigger className="bg-white">
                               <SelectValue placeholder="-- Pilih Izin --" />
                             </SelectTrigger>
                             <SelectContent>
                               {jenisIzinOptions.map((option) => (
-                                <SelectItem key={option.value} value={option.value}>
+                                <SelectItem
+                                  key={option.value}
+                                  value={option.value}
+                                >
                                   {option.label}
                                 </SelectItem>
                               ))}
@@ -229,7 +284,10 @@ export default function BantuanSection() {
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="alamat" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                        <label
+                          htmlFor="alamat"
+                          className="text-sm font-medium text-gray-700 flex items-center gap-2"
+                        >
                           <Home className="w-4 h-4" />
                           Alamat Lengkap
                         </label>
@@ -237,34 +295,46 @@ export default function BantuanSection() {
                           id="alamat"
                           placeholder="Alamat sesuai KTP"
                           value={formData.alamat}
-                          onChange={(e) => handleInputChange("alamat", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("alamat", e.target.value)
+                          }
                           className="bg-white"
                         />
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <label htmlFor="kelurahan" className="text-sm font-medium text-gray-700">
+                          <label
+                            htmlFor="kelurahan"
+                            className="text-sm font-medium text-gray-700"
+                          >
                             Kelurahan
                           </label>
                           <Input
                             id="kelurahan"
                             placeholder="Kelurahan"
                             value={formData.kelurahan}
-                            onChange={(e) => handleInputChange("kelurahan", e.target.value)}
+                            onChange={(e) =>
+                              handleInputChange("kelurahan", e.target.value)
+                            }
                             className="bg-white"
                           />
                         </div>
 
                         <div className="space-y-2">
-                          <label htmlFor="kecamatan" className="text-sm font-medium text-gray-700">
+                          <label
+                            htmlFor="kecamatan"
+                            className="text-sm font-medium text-gray-700"
+                          >
                             Kecamatan
                           </label>
                           <Input
                             id="kecamatan"
                             placeholder="Kecamatan"
                             value={formData.kecamatan}
-                            onChange={(e) => handleInputChange("kecamatan", e.target.value)}
+                            onChange={(e) =>
+                              handleInputChange("kecamatan", e.target.value)
+                            }
                             className="bg-white"
                           />
                         </div>
@@ -276,18 +346,21 @@ export default function BantuanSection() {
                         <MessageSquare className="w-5 h-5" />
                         Isi Pengaduan dan Informasi
                       </h3>
-                      
+
                       <div className="space-y-2">
                         <Textarea
                           id="isi"
                           placeholder="Tuliskan pengaduan atau permintaan bantuan Anda di sini..."
                           rows={6}
                           value={formData.isi}
-                          onChange={(e) => handleInputChange("isi", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("isi", e.target.value)
+                          }
                           className="bg-white min-h-[150px]"
                         />
                         <p className="text-sm text-gray-500">
-                          Jelaskan secara detail permasalahan yang Anda hadapi untuk mempermudah kami memberikan bantuan
+                          Jelaskan secara detail permasalahan yang Anda hadapi
+                          untuk mempermudah kami memberikan bantuan
                         </p>
                       </div>
                     </div>
@@ -322,27 +395,33 @@ export default function BantuanSection() {
                     <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
                       <CheckCircle className="w-10 h-10 text-green-600" />
                     </div>
-                    
+
                     <h2 className="text-2xl font-bold text-gray-900 mb-4">
                       Terima Kasih
                     </h2>
                     <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                      Pengaduan Anda telah berhasil dikirim. Tim kami akan segera meninjau dan memberikan respon melalui email atau telepon yang Anda berikan.
+                      Pengaduan Anda telah berhasil dikirim. Tim kami akan
+                      segera meninjau dan memberikan respon melalui email atau
+                      telepon yang Anda berikan.
                     </p>
 
                     <div className="bg-gray-50 rounded-xl p-6 max-w-2xl mx-auto text-left">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4">
                         Data Pengaduan Anda:
                       </h3>
-                      
+
                       <div className="space-y-4">
                         <div>
-                          <p className="text-sm font-medium text-gray-500">Email</p>
+                          <p className="text-sm font-medium text-gray-500">
+                            Email
+                          </p>
                           <p className="text-gray-900">{formData.email}</p>
                         </div>
-                        
+
                         <div>
-                          <p className="text-sm font-medium text-gray-500">Telepon</p>
+                          <p className="text-sm font-medium text-gray-500">
+                            Telepon
+                          </p>
                           <p className="text-gray-900">{formData.telepon}</p>
                         </div>
                       </div>
@@ -353,9 +432,10 @@ export default function BantuanSection() {
                         ⏱️ Proses Tindak Lanjut
                       </h4>
                       <p className="text-blue-700 text-sm">
-                        Selanjutnya data tersebut di atas akan Kami lakukan evaluasi. 
-                        Bila perlu akan menghubungi Anda, dan Anda tidak perlu membuat pengaduan baru. 
-                        Silahkan menunggu balasan dari Kami.
+                        Selanjutnya data tersebut di atas akan Kami lakukan
+                        evaluasi. Bila perlu akan menghubungi Anda, dan Anda
+                        tidak perlu membuat pengaduan baru. Silahkan menunggu
+                        balasan dari Kami.
                       </p>
                       <p className="text-blue-800 font-semibold mt-4">
                         Terima Kasih,
@@ -397,8 +477,7 @@ export default function BantuanSection() {
               </CardContent>
             </Card>
           </div>
-
-          <Sidebar type="layanan" activeId={4} />
+          <Sidebar activeId={5} />
         </div>
       </div>
     </section>

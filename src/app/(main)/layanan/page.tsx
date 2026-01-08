@@ -501,7 +501,7 @@ export default function KunjunganSection() {
             )}
           </div>
 
-          <Sidebar type="layanan" activeId={5} />
+          <Sidebar activeId={1} />
         </div>
       </div>
     </section>

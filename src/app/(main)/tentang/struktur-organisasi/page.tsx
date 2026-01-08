@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Sidebar from "@/components/layouts/sidebar";
 import { ChevronRight, Users, UserCheck, Award, Briefcase, Building, } from "lucide-react";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { TentangMenu } from "@/components/shared/TentangSidebar";
 
 export default function StrukturOrganisasiPage() {
 
@@ -402,7 +403,7 @@ export default function StrukturOrganisasiPage() {
           {/* Sidebar */}
           <div className="space-y-6">
 
-            <Sidebar type="tentang" activeId={4} />
+            <TentangMenu activeId={3} />
             {/* Kategori Pejabat */}
             <Card className="border shadow-sm rounded-2xl overflow-hidden">
               <CardContent>
