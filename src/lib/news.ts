@@ -1,12 +1,12 @@
-export type NewsItem = {
-    id: number;
-    title: string;
-    excerpt: string;
-    category: string;
-    author: string;
-    time: string;
-    image: string;
-};
+    export type NewsItem = {
+        id: number;
+        title: string;
+        excerpt: string;
+        category: string;
+        author: string;
+        time: string;
+        image: string;
+    };
 
 export const newsData: NewsItem[] = [
     {
