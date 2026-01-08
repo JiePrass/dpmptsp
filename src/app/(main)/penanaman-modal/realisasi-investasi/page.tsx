@@ -57,7 +57,7 @@ const investmentData = [
 export default function RealisasiInvestasiPage() {
     return (
         <main className="bg-background  max-w-7xl container mx-auto px-6">
-            <div className="mt-10 py-16">
+            <div className="mt-10 py-24">
                 <Breadcrumb className="mb-4">
                     <BreadcrumbList>
                         <BreadcrumbItem>

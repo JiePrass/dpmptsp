@@ -4,7 +4,7 @@ export default function SitemapPage() {
   return (
     <main className="bg-white">
       {/* Header */}
-      <section className="border-b border-gray-200 py-10">
+      <section className="border-b border-gray-200 pb-10 pt-20">
         <div className="max-w-screen-xl mx-auto px-4">
           <p className="text-sm text-gray-500">/ sitemap</p>
           <h1 className="text-4xl font-bold text-gray-900 mt-10">Peta Situs</h1>

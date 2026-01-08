@@ -178,7 +178,7 @@ export default function JenisDanSyaratPage() {
     };
 
     return (
-        <section className="w-full py-16 bg-background">
+        <section className="w-full py-24 bg-background">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="mb-12 mt-10">
                     <Breadcrumb className="mb-4">
