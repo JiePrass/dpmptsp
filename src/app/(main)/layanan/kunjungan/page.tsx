@@ -32,7 +32,7 @@ export default function KunjunganSection() {
 
   const validateForm = () => {
     const newErrors: Record<string, boolean> = {};
-    
+
     if (!formData.nama.trim()) newErrors.nama = true;
     if (!formData.tanggal.trim()) newErrors.tanggal = true;
     if (!formData.jumlah_anggota.trim()) newErrors.jumlah_anggota = true;
@@ -40,20 +40,20 @@ export default function KunjunganSection() {
     if (!formData.email.trim()) newErrors.email = true;
     if (!formData.keperluan.trim()) newErrors.keperluan = true;
     if (!formData.file_permohonan) newErrors.file_permohonan = true;
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
 
     setIsLoading(true);
-    
+
     // Simulasi API call
     setTimeout(() => {
       setIsLoading(false);
@@ -96,32 +96,32 @@ export default function KunjunganSection() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Kunjungan
           </h1>
-          <div className="w-24 h-1.5 bg-blue-600 rounded-full mb-6" />
+          <div className="w-24 h-1.5 bg-primary rounded-full mb-6" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
             <Card className="border border-yellow-200 shadow-sm rounded-2xl overflow-hidden mb-8 bg-yellow-50">
-              <CardContent className="p-6">
+              <CardContent>
                 <div className="flex items-start gap-3">
                   <div className="p-2 bg-yellow-100 rounded-lg mt-1">
                     <Clock className="w-5 h-5 text-yellow-600" />
                   </div>
                   <div className="space-y-2">
                     <p className="text-gray-800">
-                      Bagi OPD atau Perusahaan yang ingin melakukan kunjungan, silahkan isi formulir dibawah ini. 
+                      Bagi OPD atau Perusahaan yang ingin melakukan kunjungan, silahkan isi formulir dibawah ini.
                       <span className="font-bold text-red-600"> Kami hanya menerima kunjungan pada hari Selasa dan Kamis.</span>
                     </p>
                     <p className="font-bold text-gray-800">
-                      Kontak Konfirmasi ke WA : 081386173606 (Ibu Elis) dan WA : 0895333784728 (Ibu Waryanti) 
-                      <span className="text-blue-600"> CP tersebut khusus melayani konfirmasi kunjungan kerja (Dinas).</span>
+                      Kontak Konfirmasi ke WA : 081386173606 (Ibu Elis) dan WA : 0895333784728 (Ibu Waryanti)
+                      <span className="text-primary"> CP tersebut khusus melayani konfirmasi kunjungan kerja (Dinas).</span>
                     </p>
                     <p className="text-gray-800">
                       Selain informasi hal tersebut dapat diakses pada menu pengaduan, chat (live chat) atau zoom dengan mendaftar terlebih dahulu{" "}
-                      <a 
-                        href="https://bit.ly/dpmptspvirt" 
-                        target="_blank" 
-                        className="text-blue-600 hover:text-blue-800 font-medium underline"
+                      <a
+                        href="https://bit.ly/dpmptspvirt"
+                        target="_blank"
+                        className="text-primary hover:text-blue-800 font-medium underline"
                       >
                         disini
                       </a>.
@@ -133,11 +133,11 @@ export default function KunjunganSection() {
 
             {!isSubmitted ? (
               <Card className="border shadow-sm rounded-2xl overflow-hidden">
-                <CardContent className="p-8">
+                <CardContent>
                   <div className="mb-8">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-3 bg-blue-100 rounded-xl">
-                        <Building className="w-8 h-8 text-blue-600" />
+                        <Building className="w-8 h-8 text-primary" />
                       </div>
                       <div>
                         <h2 className="text-2xl font-bold text-gray-900">
@@ -155,7 +155,7 @@ export default function KunjunganSection() {
                       <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
                         Informasi Kunjungan
                       </h3>
-                      
+
                       <div className="grid grid-cols-1 gap-4">
                         <div className="space-y-2">
                           <label htmlFor="nama" className="text-sm font-medium text-gray-700 flex items-center gap-2">
@@ -307,7 +307,7 @@ export default function KunjunganSection() {
                       <Button
                         type="submit"
                         disabled={isLoading}
-                        className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-sm md:text-lg"
+                        className="w-full md:w-auto bg-primary hover:bg-blue-700 text-white px-8 py-6 text-sm md:text-lg"
                       >
                         {isLoading ? (
                           <>
@@ -333,7 +333,7 @@ export default function KunjunganSection() {
                     <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
                       <CheckCircle className="w-10 h-10 text-green-600" />
                     </div>
-                    
+
                     <h2 className="text-3xl font-bold text-gray-900 mb-6">
                       Terima Kasih
                     </h2>
@@ -347,7 +347,7 @@ export default function KunjunganSection() {
                           SETELAH pengajuan Kunjungan anda DISETUJUI anda akan dihubungi Via TELEPON.
                         </p>
                         <p>
-                          Jika anda TELAH dihubungi dan dalam waktu 2 x 24 jam belum mendapatkan konfirmasi hasil DISETUJUI 
+                          Jika anda TELAH dihubungi dan dalam waktu 2 x 24 jam belum mendapatkan konfirmasi hasil DISETUJUI
                           melalui SMS atau EMAIL anda bisa menghubungi Call Center Kami di{" "}
                           <span className="font-bold">(0251) 8356167</span>.
                         </p>
@@ -361,13 +361,13 @@ export default function KunjunganSection() {
                       <h3 className="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">
                         Data Permohonan Anda:
                       </h3>
-                      
+
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <p className="text-sm font-medium text-gray-500">Nama Lembaga/OPD</p>
                           <p className="text-gray-900 font-medium">{formData.nama}</p>
                         </div>
-                        
+
                         <div>
                           <p className="text-sm font-medium text-gray-500">Tanggal Kunjungan</p>
                           <p className="text-gray-900 font-medium">{formData.tanggal}</p>

@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import Image from "next/image";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { FileText, User, CreditCard, Home, Phone, Mail, HelpCircle, ChevronRight, Send, CheckCircle, Download, Upload } from "lucide-react";
+import { FileText, User, CreditCard, Home, Phone, Mail, HelpCircle, Send, CheckCircle, Download, Upload } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -44,11 +43,11 @@ export default function KunjunganSection() {
 
   const validateForm = () => {
     const newErrors: Record<string, boolean> = {};
-    
+
     // Required fields validation
-    const requiredFields = ['nama', 'ktp', 'alamat', 'telepon', 'email', 
+    const requiredFields = ['nama', 'ktp', 'alamat', 'telepon', 'email',
       'rincian_informasi', 'tujuan_pengguna', 'memperoleh_informasi', 'mendapatkan_salinan'];
-    
+
     requiredFields.forEach(field => {
       if (!formData[field as keyof typeof formData].trim()) {
         newErrors[field] = true;
@@ -70,18 +69,18 @@ export default function KunjunganSection() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
 
     setIsLoading(true);
-    
+
     // Simulasi API call
     setTimeout(() => {
       setIsLoading(false);
       setIsSubmitted(true);
-      
+
       // Reset form setelah submit
       setFormData({
         nama: "",
@@ -116,9 +115,9 @@ export default function KunjunganSection() {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink href="/layanan">
+                <BreadcrumbPage>
                   Layanan
-                </BreadcrumbLink>
+                </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -126,11 +125,11 @@ export default function KunjunganSection() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Layanan Kunjungan
           </h1>
-          <div className="w-24 h-1.5 bg-blue-600 rounded-full mb-6" />
+          <div className="w-24 h-1.5 bg-primary rounded-full mb-6" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
             {!isSubmitted ? (
               <>
                 <div className="mb-8">
@@ -152,7 +151,7 @@ export default function KunjunganSection() {
                 </div>
 
                 <Card className="border shadow-sm rounded-2xl overflow-hidden">
-                  <CardContent className="p-8">
+                  <CardContent>
                     <div className="mb-8">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 bg-blue-100 rounded-xl">
@@ -174,7 +173,7 @@ export default function KunjunganSection() {
                         <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
                           Data Pribadi
                         </h3>
-                        
+
                         <div className="grid grid-cols-1 gap-4">
                           <div className="space-y-2">
                             <label htmlFor="nama" className="text-sm font-medium text-gray-700 flex items-center gap-2">
@@ -273,7 +272,7 @@ export default function KunjunganSection() {
                         <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
                           Informasi yang Dibutuhkan
                         </h3>
-                        
+
                         <div className="space-y-4">
                           <div className="space-y-2">
                             <label htmlFor="rincian_informasi" className="text-sm font-medium text-gray-700">
@@ -348,7 +347,7 @@ export default function KunjunganSection() {
                         <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
                           Dokumen Pendukung
                         </h3>
-                        
+
                         <div className="space-y-2">
                           <label htmlFor="file_permohonan" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                             <Upload className="w-4 h-4" />
@@ -390,7 +389,7 @@ export default function KunjunganSection() {
                         <Button
                           type="submit"
                           disabled={isLoading}
-                          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg"
+                          className="bg-primary hover:bg-blue-700 text-white px-8 py-6 text-lg"
                         >
                           {isLoading ? (
                             <>
@@ -412,27 +411,27 @@ export default function KunjunganSection() {
             ) : (
               /* Success Screen */
               <Card className="border shadow-sm rounded-2xl overflow-hidden">
-                <CardContent className="p-8">
+                <CardContent>
                   <div className="text-center py-8">
                     <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
                       <CheckCircle className="w-10 h-10 text-green-600" />
                     </div>
-                    
+
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">
                       Terima Kasih
                     </h2>
-                    
+
                     <div className="max-w-3xl mx-auto">
                       <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-6">
                         <p className="text-gray-900 font-medium mb-4 text-lg">
                           <span className="text-red-600">SETELAH</span> pengajuan kunjungan anda <span className="text-green-600">DISETUJUI</span> anda akan dihubungi Via <span className="text-blue-600">TELEPON</span>.
                         </p>
-                        
+
                         <div className="text-left space-y-4">
                           <p className="text-gray-700">
                             Jika anda <span className="font-semibold">TELAH</span> dihubungi dan dalam waktu <span className="font-semibold">2 x 24 jam</span> belum mendapatkan konfirmasi hasil <span className="font-semibold">DISETUJUI</span> melalui SMS atau EMAIL anda bisa menghubungi:
                           </p>
-                          
+
                           <div className="bg-blue-50 border border-blue-100 rounded-lg p-4">
                             <div className="flex items-center gap-3">
                               <Phone className="w-6 h-6 text-blue-600" />
@@ -442,7 +441,7 @@ export default function KunjunganSection() {
                               </div>
                             </div>
                           </div>
-                          
+
                           <p className="text-gray-700 italic mt-4">
                             Atas Pengajuan Kunjungan anda dan perhatiannya kami ucapkan terima kasih.
                           </p>
@@ -453,7 +452,7 @@ export default function KunjunganSection() {
                         <h3 className="text-lg font-semibold text-gray-900 mb-4">
                           Data Permohonan Anda:
                         </h3>
-                        
+
                         <div className="bg-white border border-gray-200 rounded-xl p-6 max-w-2xl mx-auto text-left">
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
@@ -481,7 +480,7 @@ export default function KunjunganSection() {
                       <div className="mt-8 space-x-4">
                         <Button
                           onClick={resetForm}
-                          className="bg-blue-600 hover:bg-blue-700 text-white"
+                          className="bg-primary hover:bg-blue-700 text-white"
                         >
                           Ajukan Kunjungan Lainnya
                         </Button>

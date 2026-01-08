@@ -72,71 +72,73 @@ const news: NewsItem[] = [
 
 export default function BeritaSection() {
   return (
-    <section className="py-16 px-6 mx-auto container">
-      <div className="mb-10 text-center">
-        <h2 className="mb-4 text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-          Berita & Informasi Terbaru
-        </h2>
-        <p className="text-light leading-relaxed text-muted-foreground">
-          Informasi terkini seputar pelayanan perizinan, pembaruan sistem, dan
-          kegiatan DPMPTSP Kota Bogor
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {/* Main News */}
-        <div className="lg:col-span-2 rounded-xl border border-gray-300">
-          <div className="relative aspect-video overflow-hidden rounded-t-xl">
-            <Image
-              src={mainNews.image}
-              alt={mainNews.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div className="p-8">
-            <p className="text-sm text-muted-foreground mb-1">
-              {mainNews.category}
-            </p>
-            <h3 className="text-2xl font-semibold leading-tight">
-              {mainNews.title}
-            </h3>
-            <p className="text-xs text-muted-foreground mt-2">
-              {mainNews.author} • {mainNews.time}
-            </p>
-            <p className="mt-3 text-muted-foreground line-clamp-3">
-              {mainNews.excerpt}
-            </p>
-          </div>
+    <section className="bg-gray-50">
+      <div className="py-16 px-6 mx-auto container ">
+        <div className="mb-10 text-center">
+          <h2 className="mb-4 text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+            Berita & Informasi Terbaru
+          </h2>
+          <p className="text-light leading-relaxed text-muted-foreground">
+            Informasi terkini seputar pelayanan perizinan, pembaruan sistem, dan
+            kegiatan DPMPTSP Kota Bogor
+          </p>
         </div>
 
-        {/* Other News */}
-        <div className="space-y-6 md:space-y-8">
-          {news.map((item) => (
-            <div key={item.id} className="flex gap-4 border border-gray-300 rounded-xl">
-              <div className="relative w-28 h-28 shrink-0 overflow-hidden rounded-l-xl">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="flex flex-col justify-center">
-                <p className="text-xs text-muted-foreground mb-1">
-                  {item.category}
-                </p>
-                <h4 className="font-semibold leading-snug line-clamp-2">
-                  {item.title}
-                </h4>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {item.time}
-                </p>
-              </div>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {/* Main News */}
+          <div className="lg:col-span-2 bg-white rounded-xl border border-gray-300">
+            <div className="relative aspect-video overflow-hidden rounded-t-xl">
+              <Image
+                src={mainNews.image}
+                alt={mainNews.title}
+                fill
+                className="object-cover"
+              />
             </div>
-          ))}
+
+            <div className="p-8">
+              <p className="text-sm text-muted-foreground mb-1">
+                {mainNews.category}
+              </p>
+              <h3 className="text-2xl font-semibold leading-tight">
+                {mainNews.title}
+              </h3>
+              <p className="text-xs text-muted-foreground mt-2">
+                {mainNews.author} • {mainNews.time}
+              </p>
+              <p className="mt-3 text-muted-foreground line-clamp-3">
+                {mainNews.excerpt}
+              </p>
+            </div>
+          </div>
+
+          {/* Other News */}
+          <div className="space-y-6 md:space-y-8">
+            {news.map((item) => (
+              <div key={item.id} className="flex bg-white gap-4 border border-gray-300 rounded-xl">
+                <div className="relative w-28 h-28 shrink-0 overflow-hidden rounded-l-xl">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="flex flex-col justify-center">
+                  <p className="text-xs text-muted-foreground mb-1">
+                    {item.category}
+                  </p>
+                  <h4 className="font-semibold leading-snug line-clamp-2">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {item.time}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
