@@ -144,7 +144,7 @@ export default function Header() {
             <Image
               src="/images/pemkot-bogor.png"
               alt="DPMPTSP Logo"
-              width={50} // Sedikit diperkecil karena ada top bar
+              width={50}
               height={32}
               priority
             />
@@ -242,14 +242,18 @@ export default function Header() {
         className={`fixed top-0 right-0 h-full w-72 bg-white z-50 transform transition-transform duration-300
         ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}
       >
-        <div className="flex items-center justify-between px-6 py-4 border-b">
-          <Image
-            src="/images/main-logo.png"
-            alt="DPMPTSP Logo"
-            width={100}
-            height={32}
-          />
-          <button onClick={() => setMobileOpen(false)}>
+        <div className="flex items-center justify-between py-4 border-b">
+          <Link href="/" className="flex items-center gap-2 px-4">
+            <Image
+              src="/images/pemkot-bogor.png"
+              alt="DPMPTSP Logo"
+              width={50}
+              height={32}
+              priority
+            />
+            <h1 className="text-lg font-bold leading-tight">DPMPTSP<br /> KOTA BOGOR</h1>
+          </Link>
+          <button onClick={() => setMobileOpen(false)} className="px-6">
             <X size={24} />
           </button>
         </div>
